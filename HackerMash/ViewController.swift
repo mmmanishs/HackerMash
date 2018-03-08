@@ -7,12 +7,24 @@
 //
 
 import UIKit
-
+import Promises
 class ViewController: UIViewController {
 
+    let viewModel = MainArticlesViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        viewModel.getData(){ success in
+            if success {
+                print("In view controller")
+                self.viewModel.rows.forEach() { row in
+                    print(row.title)
+                }
+            } else {
+                print("Failed to get all data")
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
