@@ -10,6 +10,8 @@ import UIKit
 import Promises
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableview: UITableView!
+
     let viewModel = MainArticlesViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +19,10 @@ class ViewController: UIViewController {
         viewModel.getData(){ success in
             if success {
                 print("In view controller")
-                self.viewModel.rows.forEach() { row in
-                    print(row.title)
-                }
+                self.tableview.reloadData()
+//                self.viewModel.rows.forEach() { row in
+////                    print(row.title)
+//                }
             } else {
                 print("Failed to get all data")
             }
@@ -35,3 +38,20 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UITableViewDelegate {
+    
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.rows.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "abc")
+        cell.textLabel?.text = viewModel.rows[indexPath.row].title
+        return cell
+    }
+    
+    
+}
