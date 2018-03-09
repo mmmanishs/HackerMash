@@ -36,7 +36,7 @@ class StoriesDataManager {
         }
         return sPromise
     }
-    
+    //TODO: Make all the promises execute on background threads
     
     func getTopNews() -> Promise<[Story]> {
         let sPromise = Promise<[Story]> { fullfil, reject in

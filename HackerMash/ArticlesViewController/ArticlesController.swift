@@ -7,39 +7,48 @@
 //
 
 import Foundation
-enum ControllerCommand<T> {
+enum ControllerCommand {
+    case initialSetup
     case showLoading
-    case showData(T)
+    case showData
+    case showError
 }
+
 protocol ViewModelInteractor {
-    func updateView(command: ControllerCommand<ArticlesViewModel>)
+    func updateView(viewModel: ArticlesViewModel, command: ControllerCommand)
 }
 
 class ArticlesController {
     var stories: [Story]?
-    var ssRequested = 0
     var delegate: ViewModelInteractor?
+    var viewModel = ArticlesViewModel(title: "Top Stories")
     func getData() {
-        ssRequested = 0
-        let promsise = StoriesDataManager().getTopNews()
-        self.delegate?.updateView(command: .showLoading)
-        promsise.then(){ stories in
+        self.delegate?.updateView(viewModel: self.viewModel, command: .showLoading)
+        
+        let promise = StoriesDataManager().getTopNews()
+        promise.then(){ stories in
             self.stories = stories
-            let viewModel = ArticlesViewModel(stories: stories)
-            self.delegate?.updateView(command: .showData(viewModel))
+            self.viewModel.update(withStories: stories)
+            self.delegate?.updateView(viewModel: self.viewModel, command: .showData)
             }.catch() {exception in
-                print(exception.localizedDescription)
+                self.delegate?.updateView(viewModel: self.viewModel, command: .showError)
         }
     }
 }
 
 struct ArticlesViewModel {
     var rows: [ArticlesRowViewModel]
-    init(stories: [Story]) {
+    var title: String
+    init(title: String) {
+        self.title = title
         self.rows = [ArticlesRowViewModel]()
+    }
+    
+    mutating func update(withStories stories: [Story]) {
         stories.forEach(){ story in
             self.rows.append(ArticlesRowViewModel(title: story.title))
         }
+
     }
 }
 
