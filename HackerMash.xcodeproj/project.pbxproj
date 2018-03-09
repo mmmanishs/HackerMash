@@ -13,16 +13,16 @@
 		06EC64D320510176009C9960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64D220510176009C9960 /* Assets.xcassets */; };
 		06EC64D620510176009C9960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64D420510176009C9960 /* LaunchScreen.storyboard */; };
 		06EC64DF20510366009C9960 /* SOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64DE20510366009C9960 /* SOperation.swift */; };
-		06EC64EB2051037B009C9960 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64E12051037B009C9960 /* Result.swift */; };
-		06EC64EC2051037B009C9960 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64E32051037B009C9960 /* DataManager.swift */; };
-		06EC64ED2051037B009C9960 /* StoryIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64E52051037B009C9960 /* StoryIDs.swift */; };
-		06EC64EE2051037B009C9960 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64E72051037B009C9960 /* Router.swift */; };
-		06EC64EF2051037B009C9960 /* RemoteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64E92051037B009C9960 /* RemoteDataController.swift */; };
-		06EC64F02051037B009C9960 /* StoryIDsRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64EA2051037B009C9960 /* StoryIDsRequestProvider.swift */; };
-		06EC64F320510A9A009C9960 /* StoryRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64F220510A9A009C9960 /* StoryRequestProvider.swift */; };
-		06EC64F520510C5C009C9960 /* StoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64F420510C5C009C9960 /* StoryDataManager.swift */; };
-		06EC64F720510CB3009C9960 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64F620510CB3009C9960 /* Story.swift */; };
 		06EC64F920511548009C9960 /* MainArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64F820511548009C9960 /* MainArticlesViewModel.swift */; };
+		06EC650920520D94009C9960 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64FB20520D94009C9960 /* Result.swift */; };
+		06EC650A20520D94009C9960 /* StoryRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64FE20520D94009C9960 /* StoryRequestProvider.swift */; };
+		06EC650B20520D94009C9960 /* StoryIDsRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64FF20520D94009C9960 /* StoryIDsRequestProvider.swift */; };
+		06EC650C20520D94009C9960 /* RemoteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650020520D94009C9960 /* RemoteDataController.swift */; };
+		06EC650D20520D94009C9960 /* StoryIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650220520D94009C9960 /* StoryIDs.swift */; };
+		06EC650E20520D94009C9960 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650320520D94009C9960 /* Story.swift */; };
+		06EC650F20520D94009C9960 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650520520D94009C9960 /* DataManager.swift */; };
+		06EC651020520D94009C9960 /* StoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650620520D94009C9960 /* StoryDataManager.swift */; };
+		06EC651120520D94009C9960 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650820520D94009C9960 /* Router.swift */; };
 		1A5B9A8FAD1478009D70C729 /* Pods_HackerMash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,16 +35,16 @@
 		06EC64D520510176009C9960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06EC64D720510176009C9960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06EC64DE20510366009C9960 /* SOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOperation.swift; sourceTree = "<group>"; };
-		06EC64E12051037B009C9960 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		06EC64E32051037B009C9960 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		06EC64E52051037B009C9960 /* StoryIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIDs.swift; sourceTree = "<group>"; };
-		06EC64E72051037B009C9960 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		06EC64E92051037B009C9960 /* RemoteDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataController.swift; sourceTree = "<group>"; };
-		06EC64EA2051037B009C9960 /* StoryIDsRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIDsRequestProvider.swift; sourceTree = "<group>"; };
-		06EC64F220510A9A009C9960 /* StoryRequestProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryRequestProvider.swift; sourceTree = "<group>"; };
-		06EC64F420510C5C009C9960 /* StoryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDataManager.swift; sourceTree = "<group>"; };
-		06EC64F620510CB3009C9960 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		06EC64F820511548009C9960 /* MainArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainArticlesViewModel.swift; sourceTree = "<group>"; };
+		06EC64FB20520D94009C9960 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		06EC64FE20520D94009C9960 /* StoryRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryRequestProvider.swift; sourceTree = "<group>"; };
+		06EC64FF20520D94009C9960 /* StoryIDsRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIDsRequestProvider.swift; sourceTree = "<group>"; };
+		06EC650020520D94009C9960 /* RemoteDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataController.swift; sourceTree = "<group>"; };
+		06EC650220520D94009C9960 /* StoryIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIDs.swift; sourceTree = "<group>"; };
+		06EC650320520D94009C9960 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		06EC650520520D94009C9960 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		06EC650620520D94009C9960 /* StoryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDataManager.swift; sourceTree = "<group>"; };
+		06EC650820520D94009C9960 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		142DF01CCB8D917F91E0074B /* Pods-HackerMash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerMash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash.debug.xcconfig"; sourceTree = "<group>"; };
 		BD04C8FAFB87A5361869B710 /* Pods-HackerMash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerMash.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash.release.xcconfig"; sourceTree = "<group>"; };
 		C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackerMash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,11 +83,11 @@
 		06EC64CA20510176009C9960 /* HackerMash */ = {
 			isa = PBXGroup;
 			children = (
-				06EC64E62051037B009C9960 /* Router */,
-				06EC64E42051037B009C9960 /* Models */,
-				06EC64E02051037B009C9960 /* Utils */,
-				06EC64E22051037B009C9960 /* DataManagers */,
-				06EC64E82051037B009C9960 /* RemoteDataControllers */,
+				06EC650420520D94009C9960 /* DataManagers */,
+				06EC650120520D94009C9960 /* Models */,
+				06EC64FC20520D94009C9960 /* RemoteDataControllers */,
+				06EC650720520D94009C9960 /* Router */,
+				06EC64FA20520D94009C9960 /* Utils */,
 				06EC64DD20510366009C9960 /* Operation */,
 				06EC64CB20510176009C9960 /* AppDelegate.swift */,
 				06EC64CD20510176009C9960 /* ViewController.swift */,
@@ -108,62 +108,56 @@
 			path = Operation;
 			sourceTree = "<group>";
 		};
-		06EC64E02051037B009C9960 /* Utils */ = {
+		06EC64FA20520D94009C9960 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				06EC64E12051037B009C9960 /* Result.swift */,
+				06EC64FB20520D94009C9960 /* Result.swift */,
 			);
-			name = Utils;
-			path = ../../NewsMash/Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		06EC64E22051037B009C9960 /* DataManagers */ = {
+		06EC64FC20520D94009C9960 /* RemoteDataControllers */ = {
 			isa = PBXGroup;
 			children = (
-				06EC64E32051037B009C9960 /* DataManager.swift */,
-				06EC64F420510C5C009C9960 /* StoryDataManager.swift */,
+				06EC64FD20520D94009C9960 /* RequestProvider */,
+				06EC650020520D94009C9960 /* RemoteDataController.swift */,
 			);
-			name = DataManagers;
-			path = ../../NewsMash/DataManagers;
+			path = RemoteDataControllers;
 			sourceTree = "<group>";
 		};
-		06EC64E42051037B009C9960 /* Models */ = {
+		06EC64FD20520D94009C9960 /* RequestProvider */ = {
 			isa = PBXGroup;
 			children = (
-				06EC64E52051037B009C9960 /* StoryIDs.swift */,
-				06EC64F620510CB3009C9960 /* Story.swift */,
+				06EC64FE20520D94009C9960 /* StoryRequestProvider.swift */,
+				06EC64FF20520D94009C9960 /* StoryIDsRequestProvider.swift */,
 			);
-			name = Models;
-			path = ../../NewsMash/Models;
+			path = RequestProvider;
 			sourceTree = "<group>";
 		};
-		06EC64E62051037B009C9960 /* Router */ = {
+		06EC650120520D94009C9960 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				06EC64E72051037B009C9960 /* Router.swift */,
+				06EC650220520D94009C9960 /* StoryIDs.swift */,
+				06EC650320520D94009C9960 /* Story.swift */,
 			);
-			name = Router;
-			path = ../../NewsMash/Router;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		06EC64E82051037B009C9960 /* RemoteDataControllers */ = {
+		06EC650420520D94009C9960 /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
-				06EC64E92051037B009C9960 /* RemoteDataController.swift */,
-				06EC64F120510A82009C9960 /* RequestProvider */,
+				06EC650520520D94009C9960 /* DataManager.swift */,
+				06EC650620520D94009C9960 /* StoryDataManager.swift */,
 			);
-			name = RemoteDataControllers;
-			path = ../../NewsMash/RemoteDataControllers;
+			path = DataManagers;
 			sourceTree = "<group>";
 		};
-		06EC64F120510A82009C9960 /* RequestProvider */ = {
+		06EC650720520D94009C9960 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				06EC64EA2051037B009C9960 /* StoryIDsRequestProvider.swift */,
-				06EC64F220510A9A009C9960 /* StoryRequestProvider.swift */,
+				06EC650820520D94009C9960 /* Router.swift */,
 			);
-			name = RequestProvider;
-			path = ../RequestProvider;
+			path = Router;
 			sourceTree = "<group>";
 		};
 		1519C6911BAC1C3EFE31C197 /* Pods */ = {
@@ -320,19 +314,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06EC64F320510A9A009C9960 /* StoryRequestProvider.swift in Sources */,
+				06EC650B20520D94009C9960 /* StoryIDsRequestProvider.swift in Sources */,
+				06EC650A20520D94009C9960 /* StoryRequestProvider.swift in Sources */,
 				06EC64CE20510176009C9960 /* ViewController.swift in Sources */,
-				06EC64EC2051037B009C9960 /* DataManager.swift in Sources */,
-				06EC64ED2051037B009C9960 /* StoryIDs.swift in Sources */,
-				06EC64EE2051037B009C9960 /* Router.swift in Sources */,
+				06EC650920520D94009C9960 /* Result.swift in Sources */,
 				06EC64F920511548009C9960 /* MainArticlesViewModel.swift in Sources */,
-				06EC64F520510C5C009C9960 /* StoryDataManager.swift in Sources */,
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,
-				06EC64EB2051037B009C9960 /* Result.swift in Sources */,
-				06EC64F02051037B009C9960 /* StoryIDsRequestProvider.swift in Sources */,
 				06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */,
-				06EC64EF2051037B009C9960 /* RemoteDataController.swift in Sources */,
-				06EC64F720510CB3009C9960 /* Story.swift in Sources */,
+				06EC650C20520D94009C9960 /* RemoteDataController.swift in Sources */,
+				06EC650F20520D94009C9960 /* DataManager.swift in Sources */,
+				06EC650D20520D94009C9960 /* StoryIDs.swift in Sources */,
+				06EC650E20520D94009C9960 /* Story.swift in Sources */,
+				06EC651020520D94009C9960 /* StoryDataManager.swift in Sources */,
+				06EC651120520D94009C9960 /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
