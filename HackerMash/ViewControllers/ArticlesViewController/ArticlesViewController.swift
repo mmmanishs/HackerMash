@@ -17,6 +17,7 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var activityView: NVActivityIndicatorView!
     
+    @IBOutlet var navigationBarView: UIView!
     let controller = ArticlesController()
     var viewModel: ArticlesViewModel?
     
@@ -28,15 +29,9 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
             navigationController.scrollingNavbarDelegate = self
         }
         
-        self.view.backgroundColor = UIColor.flatWhite
-        self.navigationController?.navigationBar.backgroundColor = UIColor.orange
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let navigationController = self.navigationController as? ScrollingNavigationController {
-            navigationController.followScrollView(tableview, delay: 50, scrollSpeedFactor: 1.0, collapseDirection: .scrollUp, followers: [tableview])
-        }
+        self.view.backgroundColor = UIColor.white
+        
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,6 +64,12 @@ extension ArticlesViewController: ViewModelInteractor {
     }
 }
 
+extension ArticlesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Router.detailNewsScreen(self, controller.stories?[indexPath.row]).route()
+    }
+}
+
 extension ArticlesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.rows.count ?? 0
@@ -86,11 +87,39 @@ extension ArticlesViewController {
         
         switch state {
         case .collapsed:
-            tableview.frame.size.height = tableview.frame.size.height + 44
+            tableview.frame.origin.y = self.view.frame.origin.y
+            tableview.frame.size.height = self.view.frame.size.height
         case .expanded:
-            tableview.frame.size.height = tableview.frame.size.height - 44
+            tableview.frame.origin.y = self.view.frame.origin.y + 44
+            tableview.frame.size.height = self.view.frame.size.height - 44
         case .scrolling:
             print("scrolling")
         }
     }
 }
+
+extension ArticlesViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let navigationController = self.navigationController as? ScrollingNavigationController {
+            navigationController.followScrollView(tableview, delay: 50, scrollSpeedFactor: 1.0, collapseDirection: .scrollUp, followers: [tableview])
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let navigationController = navigationController as? ScrollingNavigationController {
+            navigationController.showNavbar(animated: true)
+        }
+    }
+}
+/*
+ ballPulse    2. ballGridPulse    3. ballClipRotate    4. squareSpin
+ 5. ballClipRotatePulse    6. ballClipRotateMultiple    7. ballPulseRise    8. ballRotate
+ 9. cubeTransition    10. ballZigZag    11. ballZigZagDeflect    12. ballTrianglePath
+ 13. ballScale    14. lineScale    15. lineScaleParty    16. ballScaleMultiple
+ 17. ballPulseSync    18. ballBeat    19. lineScalePulseOut    20. lineScalePulseOutRapid
+ 21. ballScaleRipple    22. ballScaleRippleMultiple    23. ballSpinFadeLoader    24. lineSpinFadeLoader
+ 25. triangleSkewSpin    26. pacman    27. ballGridBeat    28. semiCircleSpin
+ 29. ballRotateChase    30. orbit    31. audioEqualizer    32. circleStrokeSpin
+ */

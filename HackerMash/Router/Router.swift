@@ -9,14 +9,15 @@
 import Foundation
 import UIKit
 enum Router {
-    case detailNewsScreen
+    case detailNewsScreen(UIViewController, Story?)
     
-//    func route() {
-//        switch self {
-//        case .detailNewsScreen(let vc, let article):
-//            let newsDetailViewController = NewsDetailViewController(nibName: "NewsDetailViewController", bundle: nil)
-//            newsDetailViewController.article = article
-//            vc.navigationController?.pushViewController(newsDetailViewController, animated: true)
-//        }
-//    }
+    func route() {
+        switch self {
+        case .detailNewsScreen(let vc, let article):
+            let newsDetailViewController = NewsDetailViewController(nibName: "NewsDetailViewController", bundle: nil)
+            newsDetailViewController.article = article
+            vc.navigationController?.pushViewController(newsDetailViewController, animated: true)
+        }
+    }
 }
+

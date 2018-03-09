@@ -25,6 +25,8 @@
 		06EC651920521F8D009C9960 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651720521F8D009C9960 /* ArticlesViewController.swift */; };
 		06EC651A20521F8D009C9960 /* ArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651820521F8D009C9960 /* ArticlesController.swift */; };
 		06EC651D205226F7009C9960 /* ArticlesTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651C205226F6009C9960 /* ArticlesTCell.swift */; };
+		06EC652220526410009C9960 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC652020526410009C9960 /* NewsDetailViewController.swift */; };
+		06EC652320526410009C9960 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC652120526410009C9960 /* NewsDetailViewController.xib */; };
 		1A5B9A8FAD1478009D70C729 /* Pods_HackerMash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		06EC651720521F8D009C9960 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		06EC651820521F8D009C9960 /* ArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesController.swift; sourceTree = "<group>"; };
 		06EC651C205226F6009C9960 /* ArticlesTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTCell.swift; sourceTree = "<group>"; };
+		06EC652020526410009C9960 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		06EC652120526410009C9960 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		142DF01CCB8D917F91E0074B /* Pods-HackerMash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerMash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash.debug.xcconfig"; sourceTree = "<group>"; };
 		BD04C8FAFB87A5361869B710 /* Pods-HackerMash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerMash.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash.release.xcconfig"; sourceTree = "<group>"; };
 		C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackerMash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +98,7 @@
 				06EC64DD20510366009C9960 /* Operation */,
 				06EC650420520D94009C9960 /* DataManagers */,
 				06EC64CB20510176009C9960 /* AppDelegate.swift */,
-				06EC651620521F8D009C9960 /* ArticlesViewController */,
+				06EC651E20526403009C9960 /* ViewControllers */,
 				06EC64CF20510176009C9960 /* Main.storyboard */,
 				06EC64D220510176009C9960 /* Assets.xcassets */,
 				06EC64D420510176009C9960 /* LaunchScreen.storyboard */,
@@ -182,6 +186,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		06EC651E20526403009C9960 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				06EC651F20526410009C9960 /* DetailNewsScreen */,
+				06EC651620521F8D009C9960 /* ArticlesViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		06EC651F20526410009C9960 /* DetailNewsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				06EC652020526410009C9960 /* NewsDetailViewController.swift */,
+				06EC652120526410009C9960 /* NewsDetailViewController.xib */,
+			);
+			path = DetailNewsScreen;
+			sourceTree = "<group>";
+		};
 		1519C6911BAC1C3EFE31C197 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06EC652320526410009C9960 /* NewsDetailViewController.xib in Resources */,
 				06EC64D620510176009C9960 /* LaunchScreen.storyboard in Resources */,
 				06EC64D320510176009C9960 /* Assets.xcassets in Resources */,
 				06EC64D120510176009C9960 /* Main.storyboard in Resources */,
@@ -348,6 +371,7 @@
 				06EC650920520D94009C9960 /* Result.swift in Sources */,
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,
 				06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */,
+				06EC652220526410009C9960 /* NewsDetailViewController.swift in Sources */,
 				06EC650C20520D94009C9960 /* RemoteDataController.swift in Sources */,
 				06EC650F20520D94009C9960 /* StoryIdsDataManager.swift in Sources */,
 				06EC651320521006009C9960 /* StoriesDataManager.swift in Sources */,

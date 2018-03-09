@@ -46,7 +46,10 @@ struct ArticlesViewModel {
     
     mutating func update(withStories stories: [Story]) {
         stories.forEach(){ story in
-            self.rows.append(ArticlesRowViewModel(title: story.title))
+            self.rows.append(ArticlesRowViewModel(
+                title: story.title,
+                time:story.getTimeAgo()
+            ))
         }
 
     }
@@ -54,6 +57,7 @@ struct ArticlesViewModel {
 
 struct ArticlesRowViewModel {
     var title: String
+    var time: String
 }
 
 //class MainTableRowViewModelBuilder {

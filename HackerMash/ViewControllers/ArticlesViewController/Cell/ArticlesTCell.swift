@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 class ArticlesTCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
-//    @IBOutlet weak var points: UILabel!
+    @IBOutlet weak var time: UILabel!
 //    @IBOutlet weak var commentsCount: UILabel!
     
     func updateCell(viewModel: ArticlesRowViewModel?) {
@@ -18,5 +18,6 @@ class ArticlesTCell: UITableViewCell {
             return
         }
         self.title.text = viewModel.title
+        self.time.text = viewModel.time
     }
 }
