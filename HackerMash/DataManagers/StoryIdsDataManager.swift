@@ -1,5 +1,5 @@
 //
-//  DataManager.swift
+//  StoryIdsDataManager.swift
 //  HackerMash
 //
 //  Created by Manish Singh on 2/24/18.
@@ -8,8 +8,8 @@
 
 import Foundation
 import Promises
-class DataManager {
-    func getBestNewStories() -> Promise<StoryIDs> {
+class StoryIdsDataManager {
+    func getBestNewStoryIds() -> Promise<StoryIDs> {
         do {
             let bestStoriesUrl = try StoryIDsRequestProvider.bestStories.getRequest()
             return RemoteDataController().getStoriesID(url: bestStoriesUrl)
@@ -22,7 +22,7 @@ class DataManager {
         
     }
     
-    func getTopNewStories() -> Promise<StoryIDs> {
+    func getTopNewStoryIds() -> Promise<StoryIDs> {
         do {
             let topStoriesUrl = try StoryIDsRequestProvider.topStories.getRequest()
             return RemoteDataController().getStoriesID(url: topStoriesUrl)

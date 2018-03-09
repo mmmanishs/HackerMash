@@ -1,5 +1,5 @@
 //
-//  StoryDataManager.swift
+//  StoryStoryIdsDataManager.swift
 //  HackerMash
 //
 //  Created by Manish Singh on 3/8/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 import Promises
-class StoryDataManager {
+class StoryStoryIdsDataManager {
     func getStory(forID id: Int) -> Promise<Story> {
         do {
             let storyURL = try StoryRequestProvider.story(id).getRequest()

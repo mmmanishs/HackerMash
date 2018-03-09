@@ -8,43 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64CB20510176009C9960 /* AppDelegate.swift */; };
-		06EC64CE20510176009C9960 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64CD20510176009C9960 /* ViewController.swift */; };
 		06EC64D120510176009C9960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64CF20510176009C9960 /* Main.storyboard */; };
 		06EC64D320510176009C9960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64D220510176009C9960 /* Assets.xcassets */; };
 		06EC64D620510176009C9960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64D420510176009C9960 /* LaunchScreen.storyboard */; };
 		06EC64DF20510366009C9960 /* SOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64DE20510366009C9960 /* SOperation.swift */; };
-		06EC64F920511548009C9960 /* MainArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64F820511548009C9960 /* MainArticlesViewModel.swift */; };
+		06EC64F920511548009C9960 /* ArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64F820511548009C9960 /* ArticlesController.swift */; };
 		06EC650920520D94009C9960 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64FB20520D94009C9960 /* Result.swift */; };
 		06EC650A20520D94009C9960 /* StoryRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64FE20520D94009C9960 /* StoryRequestProvider.swift */; };
 		06EC650B20520D94009C9960 /* StoryIDsRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64FF20520D94009C9960 /* StoryIDsRequestProvider.swift */; };
 		06EC650C20520D94009C9960 /* RemoteDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650020520D94009C9960 /* RemoteDataController.swift */; };
 		06EC650D20520D94009C9960 /* StoryIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650220520D94009C9960 /* StoryIDs.swift */; };
 		06EC650E20520D94009C9960 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650320520D94009C9960 /* Story.swift */; };
-		06EC650F20520D94009C9960 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650520520D94009C9960 /* DataManager.swift */; };
+		06EC650F20520D94009C9960 /* StoryIdsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650520520D94009C9960 /* StoryIdsDataManager.swift */; };
 		06EC651020520D94009C9960 /* StoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650620520D94009C9960 /* StoryDataManager.swift */; };
 		06EC651120520D94009C9960 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC650820520D94009C9960 /* Router.swift */; };
+		06EC651320521006009C9960 /* StoriesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651220521006009C9960 /* StoriesDataManager.swift */; };
+		06EC6515205219CF009C9960 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC6514205219CF009C9960 /* ArticlesViewController.swift */; };
 		1A5B9A8FAD1478009D70C729 /* Pods_HackerMash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06EC64C820510176009C9960 /* HackerMash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerMash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC64CB20510176009C9960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		06EC64CD20510176009C9960 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06EC64D020510176009C9960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06EC64D220510176009C9960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06EC64D520510176009C9960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06EC64D720510176009C9960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06EC64DE20510366009C9960 /* SOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOperation.swift; sourceTree = "<group>"; };
-		06EC64F820511548009C9960 /* MainArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainArticlesViewModel.swift; sourceTree = "<group>"; };
+		06EC64F820511548009C9960 /* ArticlesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesController.swift; sourceTree = "<group>"; };
 		06EC64FB20520D94009C9960 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		06EC64FE20520D94009C9960 /* StoryRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryRequestProvider.swift; sourceTree = "<group>"; };
 		06EC64FF20520D94009C9960 /* StoryIDsRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIDsRequestProvider.swift; sourceTree = "<group>"; };
 		06EC650020520D94009C9960 /* RemoteDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataController.swift; sourceTree = "<group>"; };
 		06EC650220520D94009C9960 /* StoryIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIDs.swift; sourceTree = "<group>"; };
 		06EC650320520D94009C9960 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
-		06EC650520520D94009C9960 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		06EC650520520D94009C9960 /* StoryIdsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryIdsDataManager.swift; sourceTree = "<group>"; };
 		06EC650620520D94009C9960 /* StoryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDataManager.swift; sourceTree = "<group>"; };
 		06EC650820520D94009C9960 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		06EC651220521006009C9960 /* StoriesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesDataManager.swift; sourceTree = "<group>"; };
+		06EC6514205219CF009C9960 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		142DF01CCB8D917F91E0074B /* Pods-HackerMash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerMash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash.debug.xcconfig"; sourceTree = "<group>"; };
 		BD04C8FAFB87A5361869B710 /* Pods-HackerMash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerMash.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash.release.xcconfig"; sourceTree = "<group>"; };
 		C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackerMash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,15 +85,15 @@
 		06EC64CA20510176009C9960 /* HackerMash */ = {
 			isa = PBXGroup;
 			children = (
-				06EC650420520D94009C9960 /* DataManagers */,
 				06EC650120520D94009C9960 /* Models */,
 				06EC64FC20520D94009C9960 /* RemoteDataControllers */,
 				06EC650720520D94009C9960 /* Router */,
 				06EC64FA20520D94009C9960 /* Utils */,
 				06EC64DD20510366009C9960 /* Operation */,
+				06EC650420520D94009C9960 /* DataManagers */,
+				06EC64F820511548009C9960 /* ArticlesController.swift */,
+				06EC6514205219CF009C9960 /* ArticlesViewController.swift */,
 				06EC64CB20510176009C9960 /* AppDelegate.swift */,
-				06EC64CD20510176009C9960 /* ViewController.swift */,
-				06EC64F820511548009C9960 /* MainArticlesViewModel.swift */,
 				06EC64CF20510176009C9960 /* Main.storyboard */,
 				06EC64D220510176009C9960 /* Assets.xcassets */,
 				06EC64D420510176009C9960 /* LaunchScreen.storyboard */,
@@ -146,8 +148,9 @@
 		06EC650420520D94009C9960 /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
-				06EC650520520D94009C9960 /* DataManager.swift */,
+				06EC650520520D94009C9960 /* StoryIdsDataManager.swift */,
 				06EC650620520D94009C9960 /* StoryDataManager.swift */,
+				06EC651220521006009C9960 /* StoriesDataManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -316,13 +319,14 @@
 			files = (
 				06EC650B20520D94009C9960 /* StoryIDsRequestProvider.swift in Sources */,
 				06EC650A20520D94009C9960 /* StoryRequestProvider.swift in Sources */,
-				06EC64CE20510176009C9960 /* ViewController.swift in Sources */,
 				06EC650920520D94009C9960 /* Result.swift in Sources */,
-				06EC64F920511548009C9960 /* MainArticlesViewModel.swift in Sources */,
+				06EC64F920511548009C9960 /* ArticlesController.swift in Sources */,
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,
 				06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */,
 				06EC650C20520D94009C9960 /* RemoteDataController.swift in Sources */,
-				06EC650F20520D94009C9960 /* DataManager.swift in Sources */,
+				06EC650F20520D94009C9960 /* StoryIdsDataManager.swift in Sources */,
+				06EC6515205219CF009C9960 /* ArticlesViewController.swift in Sources */,
+				06EC651320521006009C9960 /* StoriesDataManager.swift in Sources */,
 				06EC650D20520D94009C9960 /* StoryIDs.swift in Sources */,
 				06EC650E20520D94009C9960 /* Story.swift in Sources */,
 				06EC651020520D94009C9960 /* StoryDataManager.swift in Sources */,
