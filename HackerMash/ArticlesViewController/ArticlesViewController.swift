@@ -10,19 +10,26 @@ import Foundation
 import UIKit
 import Promises
 import AMScrollingNavbar
+import ChameleonFramework
+import NVActivityIndicatorView
 
 class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var activityView: NVActivityIndicatorView!
+    
     let controller = ArticlesController()
     var viewModel: ArticlesViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controller.getData()
         controller.delegate = self
+        controller.getData()
         if let navigationController = self.navigationController as? ScrollingNavigationController {
             navigationController.scrollingNavbarDelegate = self
         }
+        
+        self.view.backgroundColor = UIColor.flatWhite
+        self.navigationController?.navigationBar.backgroundColor = UIColor.orange
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +48,12 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
 extension ArticlesViewController: ViewModelInteractor {
     func updateView(viewModel: ArticlesViewModel, command: ControllerCommand) {
         self.viewModel = viewModel
+        self.activityView.stopAnimating()
+        self.activityView.isHidden = true
         switch command {
         case .showLoading:
+            self.activityView.isHidden = false
+            self.activityView.startAnimating()
             break
         case .showData:
             self.tableview.reloadData()
@@ -64,8 +75,8 @@ extension ArticlesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "abc")
-        cell.textLabel?.text = viewModel?.rows[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticlesTCell", for: indexPath) as! ArticlesTCell
+        cell.updateCell(viewModel: viewModel?.rows[indexPath.row])
         return cell
     }
 }

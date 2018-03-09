@@ -24,6 +24,7 @@
 		06EC651320521006009C9960 /* StoriesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651220521006009C9960 /* StoriesDataManager.swift */; };
 		06EC651920521F8D009C9960 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651720521F8D009C9960 /* ArticlesViewController.swift */; };
 		06EC651A20521F8D009C9960 /* ArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651820521F8D009C9960 /* ArticlesController.swift */; };
+		06EC651D205226F7009C9960 /* ArticlesTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651C205226F6009C9960 /* ArticlesTCell.swift */; };
 		1A5B9A8FAD1478009D70C729 /* Pods_HackerMash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		06EC651220521006009C9960 /* StoriesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesDataManager.swift; sourceTree = "<group>"; };
 		06EC651720521F8D009C9960 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		06EC651820521F8D009C9960 /* ArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesController.swift; sourceTree = "<group>"; };
+		06EC651C205226F6009C9960 /* ArticlesTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTCell.swift; sourceTree = "<group>"; };
 		142DF01CCB8D917F91E0074B /* Pods-HackerMash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerMash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash.debug.xcconfig"; sourceTree = "<group>"; };
 		BD04C8FAFB87A5361869B710 /* Pods-HackerMash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerMash.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash.release.xcconfig"; sourceTree = "<group>"; };
 		C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackerMash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,10 +167,19 @@
 		06EC651620521F8D009C9960 /* ArticlesViewController */ = {
 			isa = PBXGroup;
 			children = (
+				06EC651B205226DD009C9960 /* Cell */,
 				06EC651720521F8D009C9960 /* ArticlesViewController.swift */,
 				06EC651820521F8D009C9960 /* ArticlesController.swift */,
 			);
 			path = ArticlesViewController;
+			sourceTree = "<group>";
+		};
+		06EC651B205226DD009C9960 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				06EC651C205226F6009C9960 /* ArticlesTCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		1519C6911BAC1C3EFE31C197 /* Pods */ = {
@@ -286,6 +297,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMScrollingNavbar/AMScrollingNavbar.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -294,6 +307,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMScrollingNavbar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -328,6 +343,7 @@
 				06EC650B20520D94009C9960 /* StoryIDsRequestProvider.swift in Sources */,
 				06EC650A20520D94009C9960 /* StoryRequestProvider.swift in Sources */,
 				06EC651A20521F8D009C9960 /* ArticlesController.swift in Sources */,
+				06EC651D205226F7009C9960 /* ArticlesTCell.swift in Sources */,
 				06EC651920521F8D009C9960 /* ArticlesViewController.swift in Sources */,
 				06EC650920520D94009C9960 /* Result.swift in Sources */,
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,

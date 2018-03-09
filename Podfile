@@ -10,4 +10,6 @@ target 'HackerMash' do
   pod 'Alamofire', '~> 4.6'
   pod 'SDWebImage', '~> 4.0'
   pod 'AMScrollingNavbar', '~> 4.2.1'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'NVActivityIndicatorView'
 end
