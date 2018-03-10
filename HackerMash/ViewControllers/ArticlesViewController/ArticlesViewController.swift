@@ -12,6 +12,7 @@ import Promises
 import AMScrollingNavbar
 import ChameleonFramework
 import NVActivityIndicatorView
+import RainyRefreshControl
 
 class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
     @IBOutlet weak var tableview: UITableView!
@@ -19,18 +20,33 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     
     let controller = ArticlesController()
     var viewModel: ArticlesViewModel?
+    let refresh = RainyRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.delegate = self
-        controller.getData()
+        getData()
         if let navigationController = self.navigationController as? ScrollingNavigationController {
             navigationController.scrollingNavbarDelegate = self
         }
-        
+        TSNotificationCenter.defaultCenter.addObserver(notificationName: "downloadStories", observer: self, selector: #selector(ArticlesViewController.downloadProgress(notification:)))
         self.view.backgroundColor = UIColor.white
-        
-        self.navigationController?.navigationBar.isTranslucent = false
+        refresh.addTarget(self, action: #selector(ArticlesViewController.getData), for: .valueChanged)
+        tableview.addSubview(refresh)
+    }
+    
+    @objc func getData() {
+        controller.getData()
+    }
+    
+    @objc func downloadProgress(notification: TSNotification) {
+        guard let value = notification.payload as? Float else {
+            return
+        }
+//        self.navigationController?.setProgress(value, animated: true)
+//        if value == 1.0 {
+//            self.navigationController?.cancelProgress()
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,21 +57,24 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
 
 extension ArticlesViewController: ViewModelInteractor {
     func updateView(viewModel: ArticlesViewModel, command: ControllerCommand) {
-        self.viewModel = viewModel
-        self.activityView.stopAnimating()
-        self.activityView.isHidden = true
-        switch command {
-        case .showLoading:
-            self.activityView.isHidden = false
-            self.activityView.startAnimating()
-            break
-        case .showData:
-            self.tableview.reloadData()
-        case .showError:
-            break
-        default: break
+        DispatchQueue.main.async {
+            self.viewModel = viewModel
+            self.activityView.stopAnimating()
+            self.activityView.isHidden = true
+            switch command {
+            case .showLoading:
+                self.activityView.isHidden = false
+                self.activityView.startAnimating()
+                break
+            case .showData:
+                self.tableview.reloadData()
+                self.refresh.endRefreshing()
+            case .showError:
+                break
+            default: break
+            }
+            self.updateView(viewModel: viewModel)
         }
-        updateView(viewModel: viewModel)
     }
     
     func updateView(viewModel: ArticlesViewModel) {
@@ -69,7 +88,10 @@ extension ArticlesViewController: UITableViewDelegate {
             return
         }
         let story = stories[indexPath.row]
-//        Router.showKidsScreen(self, stories[indexPath.row].kids).route()
+        controller.localDataManager.writeIDAsRead(id: story.id)
+
+        let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
+        cell?.setUpIsReadIndicator(isRead: true)
         controller.localDataManager.writeIDAsRead(id: story.id)
         Router.detailNewsScreen(self, story).route()
     }
@@ -82,16 +104,20 @@ extension ArticlesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticlesTCell", for: indexPath) as! ArticlesTCell
-        cell.updateCell(viewModel: viewModel?.rows[indexPath.row])
+        if var rowModel = viewModel?.rows[indexPath.row] {
+            print(rowModel.id)
+            rowModel.isRead = controller.localDataManager.isIDMarkedAsRead(id: rowModel.id)
+            cell.updateCell(viewModel: rowModel)
+        }
         return cell
     }
 }
 
 extension ArticlesViewController {
     func scrollingNavigationController(_ controller: AMScrollingNavbar.ScrollingNavigationController, didChangeState state: AMScrollingNavbar.NavigationBarState) {
-//        tableview.frame = self.view.frame
+        //        tableview.frame = self.view.frame
         tableview.frame.size.height = self.view.frame.size.height
-
+        
     }
 }
 

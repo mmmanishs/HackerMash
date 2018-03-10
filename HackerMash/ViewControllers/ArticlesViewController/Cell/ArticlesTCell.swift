@@ -12,6 +12,7 @@ class ArticlesTCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var time: UILabel!
 //    @IBOutlet weak var commentsCount: UILabel!
+    @IBOutlet weak var isReadIndicatorView: UIView!
     
     func updateCell(viewModel: ArticlesRowViewModel?) {
         guard let viewModel = viewModel else {
@@ -19,5 +20,16 @@ class ArticlesTCell: UITableViewCell {
         }
         self.title.text = viewModel.title
         self.time.text = viewModel.time
+        setUpIsReadIndicator(isRead: viewModel.isRead)
+    }
+    
+    func setUpIsReadIndicator(isRead: Bool) {
+        if isRead {
+            isReadIndicatorView.backgroundColor = UIColor.flatOrange
+        } else {
+            isReadIndicatorView.backgroundColor = UIColor.clear
+            isReadIndicatorView.layer.borderWidth = 1.0
+            isReadIndicatorView.layer.borderColor = UIColor.flatOrange.cgColor
+        }
     }
 }

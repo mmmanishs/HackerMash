@@ -25,16 +25,20 @@ final class Story: Codable, DefaultStorable {
         let timeInSecs = Date().timeIntervalSince(publish)
         let timeInHrs = Int(timeInSecs / 3600)
         switch true {
-        case (timeInHrs > 24) && (timeInHrs < 48):
+        case (timeInHrs > 1) && (timeInHrs < 24):
+            return "\(timeInHrs) hrs ago"
+        case (timeInHrs == 1):
+            return "\(timeInHrs) hour ago"
+        case (timeInHrs >= 24) && (timeInHrs < 48):
             return "\(timeInHrs / 24) day ago"
-        case (timeInHrs > 48):
+        case (timeInHrs >= 48) && (timeInHrs < 168):
             return "\(timeInHrs / 24) days ago"
-        case (timeInHrs > 168) && (timeInHrs < 336):
+        case (timeInHrs >= 168) && (timeInHrs < 336):
             return "\(timeInHrs / 24) week ago"
         case timeInHrs > 336:
             return "\(timeInHrs / 168) weeks ago"
         default:
-            return "\(timeInHrs) hrs"
+            return "timeless"
         }
     }
     

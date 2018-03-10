@@ -12,7 +12,7 @@ import Alamofire
 
 class RemoteDataController {
     func getStoriesID(url: URLRequest) -> Promise<StoryIDs> {
-        let promise = Promise<StoryIDs> { fullfil, reject in
+        let promise = Promise<StoryIDs>(on:.global()) { fullfil, reject in
             let remote = Alamofire.request(url)
             remote.responseData() { response in
                 guard let data = response.result.value else {
@@ -23,7 +23,6 @@ class RemoteDataController {
                 do { //Parsing now
                     let decodedData = try decoder.decode([Int].self, from: data) as [Int]
                     fullfil(StoryIDs(ids: decodedData))
-    
                 } catch (let error){
                     reject(error)
                 }
@@ -33,7 +32,7 @@ class RemoteDataController {
     }
     
     func getStory(url: URLRequest) -> Promise<Story> {
-        let promise = Promise<Story> { fullfil, reject in
+        let promise = Promise<Story>(on:.global()) { fullfil, reject in
             let remote = Alamofire.request(url)
             remote.responseData() { response in
                 guard let data = response.result.value else {

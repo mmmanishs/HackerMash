@@ -37,7 +37,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDZ-YJ-6XG">
-                                                    <rect key="frame" x="15" y="4" width="329" height="17.5"/>
+                                                    <rect key="frame" x="41" y="4" width="303" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -51,18 +51,34 @@
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0Y-M2-VmV">
+                                                    <rect key="frame" x="5" y="25" width="10" height="10"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="10" id="Gx9-jg-ngr"/>
+                                                        <constraint firstAttribute="height" constant="10" id="oSF-hj-yMs"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="IDZ-YJ-6XG" secondAttribute="trailing" constant="31" id="Aro-Ib-7pi"/>
                                                 <constraint firstItem="IDZ-YJ-6XG" firstAttribute="top" secondItem="ISm-m0-fEP" secondAttribute="top" constant="4" id="TWj-SO-aAE"/>
+                                                <constraint firstItem="Y0Y-M2-VmV" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" constant="5" id="fbq-aQ-ygA"/>
+                                                <constraint firstItem="Y0Y-M2-VmV" firstAttribute="centerY" secondItem="ISm-m0-fEP" secondAttribute="centerY" id="leh-wX-hCL"/>
                                                 <constraint firstItem="Cha-I6-LSn" firstAttribute="bottom" secondItem="ISm-m0-fEP" secondAttribute="bottomMargin" id="nc0-EQ-09Y"/>
                                                 <constraint firstItem="Cha-I6-LSn" firstAttribute="trailing" secondItem="ISm-m0-fEP" secondAttribute="trailingMargin" id="qcB-Uh-9sd"/>
-                                                <constraint firstItem="IDZ-YJ-6XG" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" constant="15" id="zt5-Ac-kBg"/>
+                                                <constraint firstItem="IDZ-YJ-6XG" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" constant="41" id="zt5-Ac-kBg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="isReadIndicatorView" destination="Y0Y-M2-VmV" id="lsw-MT-6Cm"/>
                                             <outlet property="time" destination="Cha-I6-LSn" id="Lrk-tt-ua4"/>
                                             <outlet property="title" destination="IDZ-YJ-6XG" id="to1-gb-b1f"/>
                                         </connections>
@@ -80,7 +96,7 @@
                                     <constraint firstAttribute="height" constant="50" id="zim-zW-9tV"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballScaleRippleMultiple"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="circleStrokeSpin"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
                                         <color key="value" red="1" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -109,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="268" y="395"/>
+            <point key="canvasLocation" x="268" y="394.45277361319341"/>
         </scene>
         <!--Scrolling Navigation Controller-->
         <scene sceneID="PcT-uP-Kcf">

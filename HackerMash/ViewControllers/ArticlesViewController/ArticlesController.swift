@@ -12,6 +12,7 @@ enum ControllerCommand {
     case showLoading
     case showData
     case showError
+    case progress(Float)
 }
 
 protocol ViewModelInteractor {
@@ -41,6 +42,8 @@ class ArticlesController {
 struct ArticlesViewModel {
     var rows: [ArticlesRowViewModel]
     var title: String
+    let localDataManager = LocalDataManager()
+
     init(title: String) {
         self.title = title
         self.rows = [ArticlesRowViewModel]()
@@ -49,16 +52,25 @@ struct ArticlesViewModel {
     mutating func update(withStories stories: [Story]) {
         stories.forEach(){ story in
             self.rows.append(ArticlesRowViewModel(
+                id: story.id,
+                timeStamp: story.time,
                 title: story.title,
-                time:story.getTimeAgo()
+                time:story.getTimeAgo(),
+                isRead:localDataManager.isIDMarkedAsRead(id: story.id)
             ))
+            self.rows = self.rows.sorted() {a,b in
+                a.timeStamp > b.timeStamp
+            }
         }
 
     }
 }
 
 struct ArticlesRowViewModel {
+    var id: Int
+    var timeStamp: Int64
     var title: String
     var time: String
+    var isRead: Bool
 }
 

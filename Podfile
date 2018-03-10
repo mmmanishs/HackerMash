@@ -13,4 +13,7 @@ target 'HackerMash' do
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'NVActivityIndicatorView'
   pod 'Default'
+  pod 'KYNavigationProgress'
+  pod 'RainyRefreshControl'
+
 end

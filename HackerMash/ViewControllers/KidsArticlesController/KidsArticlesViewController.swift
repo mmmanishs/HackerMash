@@ -41,6 +41,7 @@ class KidsArticlesViewController: UIViewController, ScrollingNavigationControlle
 
 extension KidsArticlesViewController: ViewModelInteractor {
     func updateView(viewModel: ArticlesViewModel, command: ControllerCommand) {
+        DispatchQueue.main.async {
         self.viewModel = viewModel
         self.activityView.stopAnimating()
         self.activityView.isHidden = true
@@ -55,7 +56,8 @@ extension KidsArticlesViewController: ViewModelInteractor {
             break
         default: break
         }
-        updateView(viewModel: viewModel)
+        self.updateView(viewModel: viewModel)
+        }
     }
     
     func updateView(viewModel: ArticlesViewModel) {

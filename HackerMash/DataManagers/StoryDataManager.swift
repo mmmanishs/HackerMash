@@ -15,9 +15,7 @@ class StoryDataManager {
             return RemoteDataController().getStory(url: storyURL)
         }
         catch {
-            return Promise<Story> { fullfil, reject in
-                reject(ApiError.badURL)
-            }
+            return Promise(ApiError.badURL)
         }
         
     }

@@ -15,9 +15,7 @@ class StoryIdsDataManager {
             return RemoteDataController().getStoriesID(url: bestStoriesUrl)
         }
         catch {
-            return Promise<StoryIDs> { fullfil, reject in
-                reject(ApiError.badURL)
-            }
+            return Promise(ApiError.badURL)
         }
         
     }
@@ -28,9 +26,7 @@ class StoryIdsDataManager {
             return RemoteDataController().getStoriesID(url: topStoriesUrl)
         }
         catch {
-            return Promise<StoryIDs> { fullfil, reject in
-                reject(ApiError.badURL)
-            }
+            return Promise(ApiError.badURL)
         }
         
     }

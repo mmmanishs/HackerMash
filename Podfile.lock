@@ -1,16 +1,18 @@
 PODS:
   - Alamofire (4.7.0)
-  - AMScrollingNavbar (4.2.2)
+  - AMScrollingNavbar (4.2.4)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
   - Default (2.1.0)
+  - KYNavigationProgress (2.0.2)
   - NVActivityIndicatorView (4.1.1):
     - NVActivityIndicatorView/Presenter (= 4.1.1)
   - NVActivityIndicatorView/Presenter (4.1.1)
-  - PromisesObjC (1.0.6)
-  - PromisesSwift (1.0.6):
-    - PromisesObjC (= 1.0.6)
+  - PromisesObjC (1.0.7)
+  - PromisesSwift (1.0.7):
+    - PromisesObjC (= 1.0.7)
+  - RainyRefreshControl (0.4.0)
   - SDWebImage (4.3.2):
     - SDWebImage/Core (= 4.3.2)
   - SDWebImage/Core (4.3.2)
@@ -20,8 +22,10 @@ DEPENDENCIES:
   - AMScrollingNavbar (~> 4.2.1)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Default
+  - KYNavigationProgress
   - NVActivityIndicatorView
   - PromisesSwift (~> 1.0)
+  - RainyRefreshControl
   - SDWebImage (~> 4.0)
 
 EXTERNAL SOURCES:
@@ -35,14 +39,16 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
-  AMScrollingNavbar: ddeb2d3bdc2b2403ae63f76c649e10d797dbf4ae
+  AMScrollingNavbar: e5676bc9caae93d1a3dd5a708d7d9b0cf2fd89d3
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Default: 6b79a17b84763dac64c2e49ea1198c00ce8c2631
+  KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
   NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
-  PromisesObjC: a37b7cd19f67ec3c4b44faf9055e13fa1a1b79a5
-  PromisesSwift: 1f644919a1f8c3b01ef7c10b84735a013a92f175
+  PromisesObjC: e188094093ab3be6d2b975583e5c12022ad98c4f
+  PromisesSwift: 60f58ca196d891f290477a58e888eb97ac17ff49
+  RainyRefreshControl: de2236ad2f46d6cfb22bf029e0067b48cdcb2925
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
 
-PODFILE CHECKSUM: f5e916a4ed891d51ab25f7ae32f66684b4cf4fa5
+PODFILE CHECKSUM: 0255075cdb24bc1c9c2c65c123aeaf3a86c44588
 
 COCOAPODS: 1.4.0
