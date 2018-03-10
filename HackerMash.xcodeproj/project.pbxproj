@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06028EA2205395F600FC0669 /* KidsArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EA1205395F600FC0669 /* KidsArticlesController.swift */; };
+		06028EA42053BD9D00FC0669 /* KidsArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EA32053BD9D00FC0669 /* KidsArticlesViewController.swift */; };
+		06028EA62053C22600FC0669 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EA52053C22600FC0669 /* Comment.swift */; };
 		06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64CB20510176009C9960 /* AppDelegate.swift */; };
 		06EC64D120510176009C9960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64CF20510176009C9960 /* Main.storyboard */; };
 		06EC64D320510176009C9960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64D220510176009C9960 /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06028EA1205395F600FC0669 /* KidsArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsArticlesController.swift; sourceTree = "<group>"; };
+		06028EA32053BD9D00FC0669 /* KidsArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsArticlesViewController.swift; sourceTree = "<group>"; };
+		06028EA52053C22600FC0669 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		06EC64C820510176009C9960 /* HackerMash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerMash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC64CB20510176009C9960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06EC64D020510176009C9960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06028EA0205395DC00FC0669 /* KidsArticlesController */ = {
+			isa = PBXGroup;
+			children = (
+				06028EA1205395F600FC0669 /* KidsArticlesController.swift */,
+				06028EA32053BD9D00FC0669 /* KidsArticlesViewController.swift */,
+			);
+			path = KidsArticlesController;
+			sourceTree = "<group>";
+		};
 		06EC64BF20510176009C9960 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +161,7 @@
 			children = (
 				06EC650220520D94009C9960 /* StoryIDs.swift */,
 				06EC650320520D94009C9960 /* Story.swift */,
+				06028EA52053C22600FC0669 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +205,7 @@
 		06EC651E20526403009C9960 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				06028EA0205395DC00FC0669 /* KidsArticlesController */,
 				06EC651F20526410009C9960 /* DetailNewsScreen */,
 				06EC651620521F8D009C9960 /* ArticlesViewController */,
 			);
@@ -366,8 +383,10 @@
 				06EC650B20520D94009C9960 /* StoryIDsRequestProvider.swift in Sources */,
 				06EC650A20520D94009C9960 /* StoryRequestProvider.swift in Sources */,
 				06EC651A20521F8D009C9960 /* ArticlesController.swift in Sources */,
+				06028EA42053BD9D00FC0669 /* KidsArticlesViewController.swift in Sources */,
 				06EC651D205226F7009C9960 /* ArticlesTCell.swift in Sources */,
 				06EC651920521F8D009C9960 /* ArticlesViewController.swift in Sources */,
+				06028EA2205395F600FC0669 /* KidsArticlesController.swift in Sources */,
 				06EC650920520D94009C9960 /* Result.swift in Sources */,
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,
 				06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */,
@@ -377,6 +396,7 @@
 				06EC651320521006009C9960 /* StoriesDataManager.swift in Sources */,
 				06EC650D20520D94009C9960 /* StoryIDs.swift in Sources */,
 				06EC650E20520D94009C9960 /* Story.swift in Sources */,
+				06028EA62053C22600FC0669 /* Comment.swift in Sources */,
 				06EC651020520D94009C9960 /* StoryDataManager.swift in Sources */,
 				06EC651120520D94009C9960 /* Router.swift in Sources */,
 			);

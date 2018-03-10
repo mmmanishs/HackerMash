@@ -1,4 +1,4 @@
-//
+
 //  ArticlesViewController.swift
 //  HackerMash
 //
@@ -13,17 +13,17 @@ import AMScrollingNavbar
 import ChameleonFramework
 import NVActivityIndicatorView
 
-class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
+class KidsArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var activityView: NVActivityIndicatorView!
     
-    let controller = ArticlesController()
+    var controller: KidsArticlesController?
     var viewModel: ArticlesViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controller.delegate = self
-        controller.getData()
+        controller?.delegate = self
+        controller?.getData()
         if let navigationController = self.navigationController as? ScrollingNavigationController {
             navigationController.scrollingNavbarDelegate = self
         }
@@ -39,7 +39,7 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     }    
 }
 
-extension ArticlesViewController: ViewModelInteractor {
+extension KidsArticlesViewController: ViewModelInteractor {
     func updateView(viewModel: ArticlesViewModel, command: ControllerCommand) {
         self.viewModel = viewModel
         self.activityView.stopAnimating()
@@ -63,18 +63,13 @@ extension ArticlesViewController: ViewModelInteractor {
     }
 }
 
-extension ArticlesViewController: UITableViewDelegate {
+extension KidsArticlesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let stories = controller.stories else {
-            return
-        }
-        let story = stories[indexPath.row]
-//        Router.showKidsScreen(self, stories[indexPath.row].kids).route()
-        Router.detailNewsScreen(self, story).route()
+//        Router.detailNewsScreen(self, controller.stories?[indexPath.row]).route()
     }
 }
 
-extension ArticlesViewController: UITableViewDataSource {
+extension KidsArticlesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.rows.count ?? 0
     }
@@ -86,7 +81,7 @@ extension ArticlesViewController: UITableViewDataSource {
     }
 }
 
-extension ArticlesViewController {
+extension KidsArticlesViewController {
     func scrollingNavigationController(_ controller: AMScrollingNavbar.ScrollingNavigationController, didChangeState state: AMScrollingNavbar.NavigationBarState) {
 //        tableview.frame = self.view.frame
         tableview.frame.size.height = self.view.frame.size.height
@@ -94,7 +89,7 @@ extension ArticlesViewController {
     }
 }
 
-extension ArticlesViewController {
+extension KidsArticlesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let navigationController = self.navigationController as? ScrollingNavigationController {

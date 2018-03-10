@@ -27,7 +27,7 @@ class NewsDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let navigationController = self.navigationController as? ScrollingNavigationController {
-            navigationController.followScrollView(webview, delay: 50, scrollSpeedFactor: 1.0, collapseDirection: .scrollUp, followers: [webview])
+            navigationController.followScrollView(webview, delay: 50, scrollSpeedFactor: 1.0, collapseDirection: .scrollUp, followers: [])
         }
     }
     
@@ -55,10 +55,10 @@ extension NewsDetailViewController {
         switch state {
         case .collapsed:
             webview.frame.origin.y = self.view.frame.origin.y
-            webview.frame.size.height = self.view.frame.size.height
+            webview.frame.size.height = self.view.frame.size.height + 44
         case .expanded:
             webview.frame.origin.y = self.view.frame.origin.y + 44
-            webview.frame.size.height = self.view.frame.size.height - 44
+            webview.frame.size.height = self.view.frame.size.height
         case .scrolling:
             print("scrolling")
         }

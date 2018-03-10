@@ -7,25 +7,21 @@
 //
 
 import Foundation
-enum ControllerCommand {
-    case initialSetup
-    case showLoading
-    case showData
-    case showError
-}
 
-protocol ViewModelInteractor {
-    func updateView(viewModel: ArticlesViewModel, command: ControllerCommand)
-}
-
-class ArticlesController {
+class KidsArticlesController {
     var stories: [Story]?
     var delegate: ViewModelInteractor?
-    var viewModel = ArticlesViewModel(title: "Top Stories")
+    var viewModel = ArticlesViewModel(title: "Kids details")
+    var storyIds: [Int]
+    
+    init(storyIds:[Int]) {
+        self.storyIds = storyIds
+    }
+    
     func getData() {
         self.delegate?.updateView(viewModel: self.viewModel, command: .showLoading)
         
-        let promise = StoriesDataManager().getTopNews()
+        let promise = KidsDataManager().getKidsNews(ids: storyIds)
         promise.then(){ stories in
             self.stories = stories
             self.viewModel.update(withStories: stories)
@@ -35,42 +31,3 @@ class ArticlesController {
         }
     }
 }
-
-struct ArticlesViewModel {
-    var rows: [ArticlesRowViewModel]
-    var title: String
-    init(title: String) {
-        self.title = title
-        self.rows = [ArticlesRowViewModel]()
-    }
-    
-    mutating func update(withStories stories: [Story]) {
-        stories.forEach(){ story in
-            self.rows.append(ArticlesRowViewModel(
-                title: story.title,
-                time:story.getTimeAgo()
-            ))
-        }
-
-    }
-}
-
-struct ArticlesRowViewModel {
-    var title: String
-    var time: String
-}
-
-//class MainTableRowViewModelBuilder {
-//    let stories: [Story]
-//    init(stories: [Story]) {
-//        self.stories = stories
-//    }
-//    func build() -> [MainTableRowViewModel] {
-//        var rows = [MainArticlesViewModel]()
-//        for story in stories {
-//            rows.append(MainTableRowViewModel(title: story.title))
-//        }
-//        return rows
-//    }
-//}
-

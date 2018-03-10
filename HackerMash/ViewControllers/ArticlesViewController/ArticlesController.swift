@@ -15,6 +15,7 @@ enum ControllerCommand {
 }
 
 protocol ViewModelInteractor {
+
     func updateView(viewModel: ArticlesViewModel, command: ControllerCommand)
 }
 

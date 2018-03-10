@@ -20,7 +20,7 @@ class StoriesDataManager {
                 var processedCount = 0
                 var stories = [Story]()
                 for id in ids {
-                    StoryStoryIdsDataManager().getStory(forID: id).then() { story in
+                    StoryDataManager().getStory(forID: id).then() { story in
                         stories.append(story)
                         }.catch() { error in
                         }.always {
@@ -49,7 +49,7 @@ class StoriesDataManager {
                 var processedCount = 0
                 var stories = [Story]()
                 for id in ids {
-                    StoryStoryIdsDataManager().getStory(forID: id).then() { story in
+                    StoryDataManager().getStory(forID: id).then() { story in
                         stories.append(story)
                         }.catch() { error in
                         }.always {
@@ -67,15 +67,16 @@ class StoriesDataManager {
     }
 }
 
-class KidsDataManager {
+class KidsDataManager { //TODO: This need not be Kids Data Manager.
     func getKidsNews(ids: [Int]) -> Promise<[Story]> {
         let sPromise = Promise<[Story]> { fullfil, reject in
             var processedCount = 0
             var stories = [Story]()
             for id in ids {
-                StoryStoryIdsDataManager().getStory(forID: id).then() { story in
+                StoryDataManager().getStory(forID: id).then() { story in
                     stories.append(story)
                     }.catch() { error in
+                        
                     }.always {
                         processedCount = processedCount + 1
                         if processedCount == ids.count {

@@ -7,3 +7,12 @@
 //
 
 import Foundation
+class Comment: Codable {
+    let by: String
+    let parent: Int
+    let id: Int
+    let kids: [Int]
+    let text: String
+    let time: Int64
+    let type: String
+}
