@@ -10,6 +10,7 @@
 		06028EA2205395F600FC0669 /* KidsArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EA1205395F600FC0669 /* KidsArticlesController.swift */; };
 		06028EA42053BD9D00FC0669 /* KidsArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EA32053BD9D00FC0669 /* KidsArticlesViewController.swift */; };
 		06028EA62053C22600FC0669 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EA52053C22600FC0669 /* Comment.swift */; };
+		06028EA92053C58F00FC0669 /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EA82053C58F00FC0669 /* LocalData.swift */; };
 		06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64CB20510176009C9960 /* AppDelegate.swift */; };
 		06EC64D120510176009C9960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64CF20510176009C9960 /* Main.storyboard */; };
 		06EC64D320510176009C9960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64D220510176009C9960 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		06028EA1205395F600FC0669 /* KidsArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsArticlesController.swift; sourceTree = "<group>"; };
 		06028EA32053BD9D00FC0669 /* KidsArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsArticlesViewController.swift; sourceTree = "<group>"; };
 		06028EA52053C22600FC0669 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		06028EA82053C58F00FC0669 /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
 		06EC64C820510176009C9960 /* HackerMash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerMash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC64CB20510176009C9960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06EC64D020510176009C9960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				06EC650220520D94009C9960 /* StoryIDs.swift */,
 				06EC650320520D94009C9960 /* Story.swift */,
 				06028EA52053C22600FC0669 /* Comment.swift */,
+				06028EA82053C58F00FC0669 /* LocalData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				"${BUILT_PRODUCTS_DIR}/AMScrollingNavbar/AMScrollingNavbar.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Default/Default.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
@@ -348,6 +352,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMScrollingNavbar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Default.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
@@ -391,6 +396,7 @@
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,
 				06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */,
 				06EC652220526410009C9960 /* NewsDetailViewController.swift in Sources */,
+				06028EA92053C58F00FC0669 /* LocalData.swift in Sources */,
 				06EC650C20520D94009C9960 /* RemoteDataController.swift in Sources */,
 				06EC650F20520D94009C9960 /* StoryIdsDataManager.swift in Sources */,
 				06EC651320521006009C9960 /* StoriesDataManager.swift in Sources */,

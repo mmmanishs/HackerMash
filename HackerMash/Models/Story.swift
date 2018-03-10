@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Default
 
-class Story: Codable {
+final class Story: Codable, DefaultStorable {
     let by: String
     let descendants: Int
     let id: Int

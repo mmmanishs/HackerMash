@@ -23,9 +23,10 @@ class ArticlesController {
     var stories: [Story]?
     var delegate: ViewModelInteractor?
     var viewModel = ArticlesViewModel(title: "Top Stories")
+    let localDataManager = LocalDataManager()
+    
     func getData() {
         self.delegate?.updateView(viewModel: self.viewModel, command: .showLoading)
-        
         let promise = StoriesDataManager().getTopNews()
         promise.then(){ stories in
             self.stories = stories
@@ -60,18 +61,4 @@ struct ArticlesRowViewModel {
     var title: String
     var time: String
 }
-
-//class MainTableRowViewModelBuilder {
-//    let stories: [Story]
-//    init(stories: [Story]) {
-//        self.stories = stories
-//    }
-//    func build() -> [MainTableRowViewModel] {
-//        var rows = [MainArticlesViewModel]()
-//        for story in stories {
-//            rows.append(MainTableRowViewModel(title: story.title))
-//        }
-//        return rows
-//    }
-//}
 

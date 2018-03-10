@@ -70,6 +70,7 @@ extension ArticlesViewController: UITableViewDelegate {
         }
         let story = stories[indexPath.row]
 //        Router.showKidsScreen(self, stories[indexPath.row].kids).route()
+        controller.localDataManager.writeIDAsRead(id: story.id)
         Router.detailNewsScreen(self, story).route()
     }
 }
