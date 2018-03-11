@@ -15,6 +15,9 @@
 		06028EB12053CFCC00FC0669 /* TSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EAE2053CFCC00FC0669 /* TSNotification.swift */; };
 		06028EB22053CFCC00FC0669 /* TSNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EAF2053CFCC00FC0669 /* TSNotificationCenter.swift */; };
 		06028EB32053CFCC00FC0669 /* TSNotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB02053CFCC00FC0669 /* TSNotificationObserver.swift */; };
+		06028EB52054ED8F00FC0669 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB42054ED8F00FC0669 /* FontName.swift */; };
+		06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */; };
+		06028EBA2054F7F300FC0669 /* LocalDataManager+SavedStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB92054F7F300FC0669 /* LocalDataManager+SavedStories.swift */; };
 		06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64CB20510176009C9960 /* AppDelegate.swift */; };
 		06EC64D120510176009C9960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64CF20510176009C9960 /* Main.storyboard */; };
 		06EC64D320510176009C9960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64D220510176009C9960 /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 		06028EAE2053CFCC00FC0669 /* TSNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotification.swift; sourceTree = "<group>"; };
 		06028EAF2053CFCC00FC0669 /* TSNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotificationCenter.swift; sourceTree = "<group>"; };
 		06028EB02053CFCC00FC0669 /* TSNotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotificationObserver.swift; sourceTree = "<group>"; };
+		06028EB42054ED8F00FC0669 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
+		06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Menu.swift"; sourceTree = "<group>"; };
+		06028EB92054F7F300FC0669 /* LocalDataManager+SavedStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalDataManager+SavedStories.swift"; sourceTree = "<group>"; };
 		06EC64C820510176009C9960 /* HackerMash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerMash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC64CB20510176009C9960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06EC64D020510176009C9960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +119,15 @@
 			path = TSNotiifcation;
 			sourceTree = "<group>";
 		};
+		06028EB82054F77700FC0669 /* LocalDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				06028EA82053C58F00FC0669 /* LocalDataManager.swift */,
+				06028EB92054F7F300FC0669 /* LocalDataManager+SavedStories.swift */,
+			);
+			path = LocalDataManager;
+			sourceTree = "<group>";
+		};
 		06EC64BF20510176009C9960 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +150,7 @@
 		06EC64CA20510176009C9960 /* HackerMash */ = {
 			isa = PBXGroup;
 			children = (
+				06028EB82054F77700FC0669 /* LocalDataManager */,
 				06028EAA2053CB6E00FC0669 /* Extensions */,
 				06EC650120520D94009C9960 /* Models */,
 				06EC64FC20520D94009C9960 /* RemoteDataControllers */,
@@ -164,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				06EC64FB20520D94009C9960 /* Result.swift */,
+				06028EB42054ED8F00FC0669 /* FontName.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -192,7 +209,6 @@
 				06EC650220520D94009C9960 /* StoryIDs.swift */,
 				06EC650320520D94009C9960 /* Story.swift */,
 				06028EA52053C22600FC0669 /* Comment.swift */,
-				06028EA82053C58F00FC0669 /* LocalDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +236,7 @@
 			children = (
 				06EC651B205226DD009C9960 /* Cell */,
 				06EC651720521F8D009C9960 /* ArticlesViewController.swift */,
+				06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */,
 				06EC651820521F8D009C9960 /* ArticlesController.swift */,
 			);
 			path = ArticlesViewController;
@@ -367,6 +384,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMScrollingNavbar/AMScrollingNavbar.framework",
+				"${BUILT_PRODUCTS_DIR}/AZDropdownMenu/AZDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Default/Default.framework",
@@ -380,6 +398,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMScrollingNavbar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AZDropdownMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Default.framework",
@@ -421,17 +440,20 @@
 				06EC650A20520D94009C9960 /* StoryRequestProvider.swift in Sources */,
 				06EC651A20521F8D009C9960 /* ArticlesController.swift in Sources */,
 				06028EA42053BD9D00FC0669 /* KidsArticlesViewController.swift in Sources */,
+				06028EBA2054F7F300FC0669 /* LocalDataManager+SavedStories.swift in Sources */,
 				06EC651D205226F7009C9960 /* ArticlesTCell.swift in Sources */,
 				06028EB32053CFCC00FC0669 /* TSNotificationObserver.swift in Sources */,
 				06EC651920521F8D009C9960 /* ArticlesViewController.swift in Sources */,
 				06028EA2205395F600FC0669 /* KidsArticlesController.swift in Sources */,
 				06EC650920520D94009C9960 /* Result.swift in Sources */,
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,
+				06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */,
 				06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */,
 				06EC652220526410009C9960 /* NewsDetailViewController.swift in Sources */,
 				06028EA92053C58F00FC0669 /* LocalDataManager.swift in Sources */,
 				06EC650C20520D94009C9960 /* RemoteDataController.swift in Sources */,
 				06028EAC2053CB8A00FC0669 /* NavigationBar.swift in Sources */,
+				06028EB52054ED8F00FC0669 /* FontName.swift in Sources */,
 				06EC650F20520D94009C9960 /* StoryIdsDataManager.swift in Sources */,
 				06EC651320521006009C9960 /* StoriesDataManager.swift in Sources */,
 				06EC650D20520D94009C9960 /* StoryIDs.swift in Sources */,

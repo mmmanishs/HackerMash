@@ -8,18 +8,28 @@
 
 import Foundation
 import UIKit
+import SDWebImage
+
 class ArticlesTCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var time: UILabel!
 //    @IBOutlet weak var commentsCount: UILabel!
     @IBOutlet weak var isReadIndicatorView: UIView!
-    
+    //            imageView.sd_setImage(with: URL(string: urlToImage), placeholderImage: UIImage(named: "placeholderImage"))
+
     func updateCell(viewModel: ArticlesRowViewModel?) {
         guard let viewModel = viewModel else {
             return
         }
         self.title.text = viewModel.title
         self.time.text = viewModel.time
+        
+//        if let host = URL(string: viewModel.url)?.host {
+//            if let url = StoryIDsRequestProvider.getLogoUrl(domainName: host) {
+//                logo.sd_setImage(with: url, placeholderImage: nil)
+//            }
+//        }
+        
         setUpIsReadIndicator(isRead: viewModel.isRead)
     }
     

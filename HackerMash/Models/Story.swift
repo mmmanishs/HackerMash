@@ -28,15 +28,15 @@ final class Story: Codable, DefaultStorable {
         case (timeInHrs > 1) && (timeInHrs < 24):
             return "\(timeInHrs) hrs ago"
         case (timeInHrs == 1):
-            return "\(timeInHrs) hour ago"
+            return "about an hour ago"
         case (timeInHrs >= 24) && (timeInHrs < 48):
-            return "\(timeInHrs / 24) day ago"
+            return "a day ago"
         case (timeInHrs >= 48) && (timeInHrs < 168):
             return "\(timeInHrs / 24) days ago"
         case (timeInHrs >= 168) && (timeInHrs < 336):
-            return "\(timeInHrs / 24) week ago"
+            return "a week ago"
         case timeInHrs > 336:
-            return "\(timeInHrs / 168) weeks ago"
+            return "some \(timeInHrs / 168) weeks ago"
         default:
             return "timeless"
         }
@@ -54,7 +54,7 @@ final class Story: Codable, DefaultStorable {
         print("url : \(type)")
     }
 }
-
+//https://hacker-news.firebaseio.com/v0/item/16542395.json
 /*
  by : matant
  descendants : 222

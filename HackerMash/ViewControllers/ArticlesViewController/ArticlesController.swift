@@ -7,6 +7,13 @@
 //
 
 import Foundation
+import Promises
+enum ArticleType {
+    case topStories
+    case bestStories
+    case savedStories
+}
+
 enum ControllerCommand {
     case initialSetup
     case showLoading
@@ -23,18 +30,29 @@ protocol ViewModelInteractor {
 class ArticlesController {
     var stories: [Story]?
     var delegate: ViewModelInteractor?
-    var viewModel = ArticlesViewModel(title: "Top Stories")
     let localDataManager = LocalDataManager()
     
-    func getData() {
-        self.delegate?.updateView(viewModel: self.viewModel, command: .showLoading)
-        let promise = StoriesDataManager().getTopNews()
-        promise.then(){ stories in
+    func getData(articlesType: ArticleType) {
+        var viewModel: ArticlesViewModel
+        var promise: Promise<[Story]>?
+        switch articlesType {
+        case .topStories:
+            promise = StoriesDataManager().getTopNews()
+            viewModel = ArticlesViewModel(title: "Top Stories")
+        case .bestStories:
+            promise = StoriesDataManager().getBestNews()
+            viewModel = ArticlesViewModel(title: "Best Stories")
+        case .savedStories:
+            viewModel = ArticlesViewModel(title: "Saved Stories")
+            break
+        }
+        self.delegate?.updateView(viewModel: viewModel, command: .showLoading)
+        promise?.then(){ stories in
             self.stories = stories
-            self.viewModel.update(withStories: stories)
-            self.delegate?.updateView(viewModel: self.viewModel, command: .showData)
+            viewModel.update(withStories: stories)
+            self.delegate?.updateView(viewModel: viewModel, command: .showData)
             }.catch() {exception in
-                self.delegate?.updateView(viewModel: self.viewModel, command: .showError)
+                self.delegate?.updateView(viewModel: viewModel, command: .showError)
         }
     }
 }
@@ -50,17 +68,16 @@ struct ArticlesViewModel {
     }
     
     mutating func update(withStories stories: [Story]) {
+        self.rows.removeAll()
         stories.forEach(){ story in
             self.rows.append(ArticlesRowViewModel(
                 id: story.id,
                 timeStamp: story.time,
                 title: story.title,
                 time:story.getTimeAgo(),
-                isRead:localDataManager.isIDMarkedAsRead(id: story.id)
+                isRead:localDataManager.isIDMarkedAsRead(id: story.id),
+                url: story.url
             ))
-            self.rows = self.rows.sorted() {a,b in
-                a.timeStamp > b.timeStamp
-            }
         }
 
     }
@@ -72,5 +89,6 @@ struct ArticlesRowViewModel {
     var title: String
     var time: String
     var isRead: Bool
+    var url: String
 }
 

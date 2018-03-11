@@ -13,6 +13,7 @@ import AMScrollingNavbar
 import ChameleonFramework
 import NVActivityIndicatorView
 import RainyRefreshControl
+import AZDropdownMenu
 
 class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
     @IBOutlet weak var tableview: UITableView!
@@ -21,6 +22,8 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     let controller = ArticlesController()
     var viewModel: ArticlesViewModel?
     let refresh = RainyRefreshControl()
+    let menu = AZDropdownMenu(titles: ["_", "_","• Top Stories", "• Best Stories", "• Saved Stories"])
+    var  currentArticleType: ArticleType = .topStories
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +36,11 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
         self.view.backgroundColor = UIColor.white
         refresh.addTarget(self, action: #selector(ArticlesViewController.getData), for: .valueChanged)
         tableview.addSubview(refresh)
+        addMenu()
     }
     
     @objc func getData() {
-        controller.getData()
+        controller.getData(articlesType: currentArticleType)
     }
     
     @objc func downloadProgress(notification: TSNotification) {
@@ -65,10 +69,11 @@ extension ArticlesViewController: ViewModelInteractor {
             case .showLoading:
                 self.activityView.isHidden = false
                 self.activityView.startAnimating()
+                self.tableview.isHidden = true
                 break
             case .showData:
-                self.tableview.reloadData()
                 self.refresh.endRefreshing()
+                self.tableview.isHidden = false
             case .showError:
                 break
             default: break
@@ -79,6 +84,7 @@ extension ArticlesViewController: ViewModelInteractor {
     
     func updateView(viewModel: ArticlesViewModel) {
         self.title = viewModel.title
+        self.tableview.reloadData()
     }
 }
 
@@ -105,7 +111,6 @@ extension ArticlesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticlesTCell", for: indexPath) as! ArticlesTCell
         if var rowModel = viewModel?.rows[indexPath.row] {
-            print(rowModel.id)
             rowModel.isRead = controller.localDataManager.isIDMarkedAsRead(id: rowModel.id)
             cell.updateCell(viewModel: rowModel)
         }
@@ -133,6 +138,16 @@ extension ArticlesViewController {
         super.viewWillDisappear(animated)
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.showNavbar(animated: true)
+        }
+    }
+}
+
+extension ArticlesViewController {
+    @objc func showDropdown() {
+        if (self.menu.isDescendant(of: self.view) == true) {
+            self.menu.hideMenu()
+        } else {
+            self.menu.showMenuFromView(self.view)
         }
     }
 }

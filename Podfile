@@ -15,5 +15,6 @@ target 'HackerMash' do
   pod 'Default'
   pod 'KYNavigationProgress'
   pod 'RainyRefreshControl'
+  pod 'AZDropdownMenu'
 
 end

@@ -31,6 +31,9 @@ class LocalDataManager {
     }
 }
 
+
 struct LocalData: Codable, DefaultStorable {
     var readIds: [Int]
 }
+
+
