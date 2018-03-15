@@ -12,7 +12,6 @@ import Promises
 import AMScrollingNavbar
 import ChameleonFramework
 import NVActivityIndicatorView
-import RainyRefreshControl
 import AZDropdownMenu
 
 class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
@@ -21,7 +20,6 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     
     let controller = ArticlesController()
     var viewModel: ArticlesViewModel?
-    let refresh = RainyRefreshControl()
     let menu = AZDropdownMenu(titles: ["_", "_","• Top Stories", "• Best Stories", "• Saved Stories"])
     var  currentArticleType: ArticleType = .topStories
     
@@ -34,8 +32,7 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
         }
         TSNotificationCenter.defaultCenter.addObserver(notificationName: "downloadStories", observer: self, selector: #selector(ArticlesViewController.downloadProgress(notification:)))
         self.view.backgroundColor = UIColor.white
-        refresh.addTarget(self, action: #selector(ArticlesViewController.getData), for: .valueChanged)
-        tableview.addSubview(refresh)
+        
         addMenu()
     }
     
@@ -47,10 +44,10 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
         guard let value = notification.payload as? Float else {
             return
         }
-//        self.navigationController?.setProgress(value, animated: true)
-//        if value == 1.0 {
-//            self.navigationController?.cancelProgress()
-//        }
+        //        self.navigationController?.setProgress(value, animated: true)
+        //        if value == 1.0 {
+        //            self.navigationController?.cancelProgress()
+        //        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,11 +66,8 @@ extension ArticlesViewController: ViewModelInteractor {
             case .showLoading:
                 self.activityView.isHidden = false
                 self.activityView.startAnimating()
-                self.tableview.isHidden = true
                 break
-            case .showData:
-                self.refresh.endRefreshing()
-                self.tableview.isHidden = false
+            case .showData: self.tableview.reloadData()
             case .showError:
                 break
             default: break
@@ -84,7 +78,7 @@ extension ArticlesViewController: ViewModelInteractor {
     
     func updateView(viewModel: ArticlesViewModel) {
         self.title = viewModel.title
-        self.tableview.reloadData()
+        
     }
 }
 
@@ -95,7 +89,7 @@ extension ArticlesViewController: UITableViewDelegate {
         }
         let story = stories[indexPath.row]
         controller.localDataManager.writeIDAsRead(id: story.id)
-
+        
         let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
         cell?.setUpIsReadIndicator(isRead: true)
         controller.localDataManager.writeIDAsRead(id: story.id)

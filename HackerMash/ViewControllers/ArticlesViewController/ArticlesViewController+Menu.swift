@@ -23,7 +23,7 @@ extension ArticlesViewController {
         menu.itemColor = UIColor.white
         menu.itemFontName = FontName.HelveticaNeue_Italic.getString()
         let menuButton = UIBarButtonItem(title: "⌘", style: .plain, target: self, action: #selector(showDropdown))
-        navigationItem.rightBarButtonItem = menuButton
+        navigationItem.leftBarButtonItem = menuButton
         menu.cellTapHandler = { [weak self] (indexPath: IndexPath) -> Void in
             switch indexPath.row {
             case 2:
