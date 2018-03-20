@@ -13,6 +13,7 @@ import AMScrollingNavbar
 import ChameleonFramework
 import NVActivityIndicatorView
 import AZDropdownMenu
+import ESPullToRefresh
 
 class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
     @IBOutlet weak var tableview: UITableView!
@@ -27,12 +28,14 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
         super.viewDidLoad()
         controller.delegate = self
         getData()
+        tableview.es.addPullToRefresh { [unowned self] in
+            self.getData()
+        }
         if let navigationController = self.navigationController as? ScrollingNavigationController {
             navigationController.scrollingNavbarDelegate = self
         }
         TSNotificationCenter.defaultCenter.addObserver(notificationName: "downloadStories", observer: self, selector: #selector(ArticlesViewController.downloadProgress(notification:)))
         self.view.backgroundColor = UIColor.white
-        
         addMenu()
     }
     
@@ -66,8 +69,13 @@ extension ArticlesViewController: ViewModelInteractor {
             case .showLoading:
                 self.activityView.isHidden = false
                 self.activityView.startAnimating()
+                self.tableview.isUserInteractionEnabled = false
                 break
-            case .showData: self.tableview.reloadData()
+            case .showData:
+                self.tableview.es.stopPullToRefresh()
+                self.tableview.reloadData()
+                self.tableview.isUserInteractionEnabled = true
+
             case .showError:
                 break
             default: break
