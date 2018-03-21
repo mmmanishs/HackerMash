@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import SDWebImage
+import SwipeCellKit
 
-class ArticlesTCell: UITableViewCell {
+class ArticlesTCell: SwipeTableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var time: UILabel!
 //    @IBOutlet weak var commentsCount: UILabel!

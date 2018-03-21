@@ -17,5 +17,6 @@ target 'HackerMash' do
   pod 'RainyRefreshControl'
   pod 'AZDropdownMenu'
   pod 'ESPullToRefresh'
+  pod 'SwipeCellKit'
 
 end

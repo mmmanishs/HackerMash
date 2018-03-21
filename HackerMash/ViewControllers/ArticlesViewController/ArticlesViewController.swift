@@ -14,6 +14,7 @@ import ChameleonFramework
 import NVActivityIndicatorView
 import AZDropdownMenu
 import ESPullToRefresh
+import SwipeCellKit
 
 class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
     @IBOutlet weak var tableview: UITableView!
@@ -59,66 +60,7 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     }    
 }
 
-extension ArticlesViewController: ViewModelInteractor {
-    func updateView(viewModel: ArticlesViewModel, command: ControllerCommand) {
-        DispatchQueue.main.async {
-            self.viewModel = viewModel
-            self.activityView.stopAnimating()
-            self.activityView.isHidden = true
-            switch command {
-            case .showLoading:
-                self.activityView.isHidden = false
-                self.activityView.startAnimating()
-                self.tableview.isUserInteractionEnabled = false
-                break
-            case .showData:
-                self.tableview.es.stopPullToRefresh()
-                self.tableview.reloadData()
-                self.tableview.isUserInteractionEnabled = true
 
-            case .showError:
-                break
-            default: break
-            }
-            self.updateView(viewModel: viewModel)
-        }
-    }
-    
-    func updateView(viewModel: ArticlesViewModel) {
-        self.title = viewModel.title
-        
-    }
-}
-
-extension ArticlesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let stories = controller.stories else {
-            return
-        }
-        let story = stories[indexPath.row]
-        controller.localDataManager.writeIDAsRead(id: story.id)
-        
-        let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
-        cell?.setUpIsReadIndicator(isRead: true)
-        controller.localDataManager.writeIDAsRead(id: story.id)
-        Router.detailNewsScreen(self, story).route()
-    }
-}
-
-extension ArticlesViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.rows.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticlesTCell", for: indexPath) as! ArticlesTCell
-        if var rowModel = viewModel?.rows[indexPath.row] {
-            rowModel.isRead = controller.localDataManager.isIDMarkedAsRead(id: rowModel.id)
-            cell.updateCell(viewModel: rowModel)
-        }
-        return cell
-    }
-}
 
 extension ArticlesViewController {
     func scrollingNavigationController(_ controller: AMScrollingNavbar.ScrollingNavigationController, didChangeState state: AMScrollingNavbar.NavigationBarState) {
