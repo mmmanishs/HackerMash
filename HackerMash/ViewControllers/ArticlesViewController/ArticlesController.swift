@@ -57,7 +57,7 @@ class ArticlesController {
     }
 }
 
-struct ArticlesViewModel {
+class ArticlesViewModel {
     var rows: [ArticlesRowViewModel]
     var title: String
     let localDataManager = LocalDataManager()
@@ -67,7 +67,7 @@ struct ArticlesViewModel {
         self.rows = [ArticlesRowViewModel]()
     }
     
-    mutating func update(withStories stories: [Story]) {
+    func update(withStories stories: [Story]) {
         self.rows.removeAll()
         stories.forEach(){ story in
             self.rows.append(ArticlesRowViewModel(
@@ -76,19 +76,37 @@ struct ArticlesViewModel {
                 title: story.title,
                 time:story.getTimeAgo(),
                 isRead:localDataManager.isIDMarkedAsRead(id: story.id),
-                url: story.url
+                url: story.url,
+                isSaved: false
             ))
         }
 
     }
 }
 
-struct ArticlesRowViewModel {
+class ArticlesRowViewModel {
     var id: Int
     var timeStamp: Int64
     var title: String
     var time: String
     var isRead: Bool
     var url: String
+    var isSaved: Bool
+    init(id: Int,
+         timeStamp: Int64,
+         title: String,
+         time: String,
+         isRead: Bool,
+         url: String,
+         isSaved: Bool) {
+        self.id = id
+        self.timeStamp = timeStamp
+        self.title = title
+        self.time = time
+        self.isRead = isRead
+        self.url = url
+        self.isSaved = isSaved
+    }
 }
+
 

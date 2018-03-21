@@ -14,10 +14,10 @@ import SwipeCellKit
 class ArticlesTCell: SwipeTableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var time: UILabel!
-//    @IBOutlet weak var commentsCount: UILabel!
-    @IBOutlet weak var isReadIndicatorView: UIView!
+    //    @IBOutlet weak var commentsCount: UILabel!
+    @IBOutlet weak var isReadIndicatorLabel: UILabel!
     //            imageView.sd_setImage(with: URL(string: urlToImage), placeholderImage: UIImage(named: "placeholderImage"))
-
+    
     func updateCell(viewModel: ArticlesRowViewModel?) {
         guard let viewModel = viewModel else {
             return
@@ -25,22 +25,24 @@ class ArticlesTCell: SwipeTableViewCell {
         self.title.text = viewModel.title
         self.time.text = viewModel.time
         
-//        if let host = URL(string: viewModel.url)?.host {
-//            if let url = StoryIDsRequestProvider.getLogoUrl(domainName: host) {
-//                logo.sd_setImage(with: url, placeholderImage: nil)
-//            }
-//        }
+        //        if let host = URL(string: viewModel.url)?.host {
+        //            if let url = StoryIDsRequestProvider.getLogoUrl(domainName: host) {
+        //                logo.sd_setImage(with: url, placeholderImage: nil)
+        //            }
+        //        }
         
-        setUpIsReadIndicator(isRead: viewModel.isRead)
+        setUpIsReadIndicator(isRead: viewModel.isRead, isSaved: viewModel.isSaved)
     }
     
-    func setUpIsReadIndicator(isRead: Bool) {
-        if isRead {
-            isReadIndicatorView.backgroundColor = UIColor.flatOrange
-        } else {
-            isReadIndicatorView.backgroundColor = UIColor.clear
-            isReadIndicatorView.layer.borderWidth = 1.0
-            isReadIndicatorView.layer.borderColor = UIColor.flatOrange.cgColor
+    func setUpIsReadIndicator(isRead: Bool, isSaved: Bool) {
+        switch (true,true) {
+        case (isSaved, isRead): isReadIndicatorLabel.text = "★"
+        case (isSaved, !isRead): isReadIndicatorLabel.text = "☆"
+        case (!isSaved, isRead): isReadIndicatorLabel.text = "●"
+        case (!isSaved, !isRead): isReadIndicatorLabel.text = "○"
+        default : isReadIndicatorLabel.text = "○"
         }
     }
 }
+
+

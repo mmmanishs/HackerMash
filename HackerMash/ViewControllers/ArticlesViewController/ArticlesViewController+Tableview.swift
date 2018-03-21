@@ -11,14 +11,15 @@ import UIKit
 
 extension ArticlesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let stories = controller.stories else {
+        guard let stories = controller.stories,
+        let viewModel = self.viewModel else {
             return
         }
         let story = stories[indexPath.row]
         controller.localDataManager.writeIDAsRead(id: story.id)
-        viewModel?.rows[indexPath.row].isRead = true
+        self.viewModel?.rows[indexPath.row].isRead = true
         let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
-        cell?.setUpIsReadIndicator(isRead: true)
+        cell?.setUpIsReadIndicator(isRead: true, isSaved: viewModel.rows[indexPath.row].isSaved)
         controller.localDataManager.writeIDAsRead(id: story.id)
         Router.detailNewsScreen(self, story).route() //refactor with a viewModel here
     }
