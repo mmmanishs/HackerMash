@@ -45,19 +45,14 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     }
     
     @objc func downloadProgress(notification: TSNotification) {
-        guard let value = notification.payload as? Float else {
-            return
-        }
+//        guard let value = notification.payload as? Float else {
+//            return
+//        }
         //        self.navigationController?.setProgress(value, animated: true)
         //        if value == 1.0 {
         //            self.navigationController?.cancelProgress()
         //        }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }    
 }
 
 

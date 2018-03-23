@@ -30,7 +30,7 @@ protocol ViewModelInteractor {
 class ArticlesController {
     var stories: [Story]?
     var delegate: ViewModelInteractor?
-    let localDataManager = LocalDataManager()
+    let uspLocalDataManager = LocalDataManagerUSP()
     
     func getData(articlesType: ArticleType) {
         var viewModel: ArticlesViewModel
@@ -60,7 +60,7 @@ class ArticlesController {
 class ArticlesViewModel {
     var rows: [ArticlesRowViewModel]
     var title: String
-    let localDataManager = LocalDataManager()
+    let localDataManager = LocalDataManagerUSP()
 
     init(title: String) {
         self.title = title
@@ -70,17 +70,16 @@ class ArticlesViewModel {
     func update(withStories stories: [Story]) {
         self.rows.removeAll()
         stories.forEach(){ story in
+            
             self.rows.append(ArticlesRowViewModel(
                 id: story.id,
                 timeStamp: story.time,
                 title: story.title,
                 time:story.getTimeAgo(),
-                isRead:localDataManager.isIDMarkedAsRead(id: story.id),
                 url: story.url,
-                isSaved: false
-            ))
+                usp: (localDataManager.getUSP(id: story.id)
+            )))
         }
-
     }
 }
 
@@ -89,23 +88,20 @@ class ArticlesRowViewModel {
     var timeStamp: Int64
     var title: String
     var time: String
-    var isRead: Bool
     var url: String
-    var isSaved: Bool
+    var usp: USP
     init(id: Int,
          timeStamp: Int64,
          title: String,
          time: String,
-         isRead: Bool,
          url: String,
-         isSaved: Bool) {
+         usp: USP) {
         self.id = id
         self.timeStamp = timeStamp
         self.title = title
         self.time = time
-        self.isRead = isRead
         self.url = url
-        self.isSaved = isSaved
+        self.usp = usp
     }
 }
 

@@ -37,6 +37,7 @@ class StoriesDataManager {
                     reject(error)
             }
         }
+        StoryLocalDataManager().saveStories(promise: sPromise, repo: .mainStory)
         return sPromise
     }
     //TODO: Make all the promises execute on background threads
@@ -68,6 +69,8 @@ class StoriesDataManager {
                     reject(error)
             }
         }
+        
+        StoryLocalDataManager().saveStories(promise: sPromise, repo: .mainStory)
         return sPromise
     }
 }

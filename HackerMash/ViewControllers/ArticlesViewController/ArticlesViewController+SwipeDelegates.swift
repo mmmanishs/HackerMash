@@ -15,68 +15,58 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
         guard let viewModel = self.viewModel  else {
             return nil
         }
-        let isRead = viewModel.rows[indexPath.row].isRead
-        let isSaved = viewModel.rows[indexPath.row].isSaved
+        let isRead = viewModel.rows[indexPath.row].usp.isRead
+        let isSaved = viewModel.rows[indexPath.row].usp.isSaved
         let makeUnread = SwipeAction(style: .default, title: "○") { action, indexPath in
-            guard let stories = self.controller.stories else {
-                return
-            }
-            let story = stories[indexPath.row]
-            self.controller.localDataManager.writeIDAsRead(id: story.id)
-            self.viewModel?.rows[indexPath.row].isRead = false
+            viewModel.rows[indexPath.row].usp.isRead = false
+
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: false, isSaved: isSaved)
             cell?.hideSwipe(animated: true)
+            self.controller.uspLocalDataManager.save(usp: viewModel.rows[indexPath.row].usp)
+
         }
         makeUnread.backgroundColor = UIColor.flatWhite
         makeUnread.font = UIFont(name: "Helvetica", size: 20.0)
         makeUnread.textColor = UIColor.flatBlue
 
         let makeRead = SwipeAction(style: .default, title: "●") { action, indexPath in
-            guard let stories = self.controller.stories else {
-                return
-            }
-            let story = stories[indexPath.row]
-            self.controller.localDataManager.writeIDAsRead(id: story.id)
-            self.viewModel?.rows[indexPath.row].isRead = true
+
+            viewModel.rows[indexPath.row].usp.isRead = true
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: true, isSaved: isSaved)
             cell?.hideSwipe(animated: true)
+            self.controller.uspLocalDataManager.save(usp: viewModel.rows[indexPath.row].usp)
+
         }
         makeRead.backgroundColor = UIColor.flatWhite
         makeRead.font = UIFont(name: "Helvetica", size: 40.0)
         makeRead.textColor = UIColor.flatBlue
 
-        
         let makeSave = SwipeAction(style: .default, title: "★") { action, indexPath in
-            guard let stories = self.controller.stories else {
-                return
-            }
-            let story = stories[indexPath.row]
-            self.controller.localDataManager.writeIDAsRead(id: story.id)
-            self.viewModel?.rows[indexPath.row].isSaved = true
+            viewModel.rows[indexPath.row].usp.isSaved = true
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: isRead, isSaved: true)
             cell?.hideSwipe(animated: true)
+            self.controller.uspLocalDataManager.save(usp: viewModel.rows[indexPath.row].usp)
+
         }
         makeSave.backgroundColor = UIColor.flatBlue
         makeSave.font = UIFont(name: "Helvetica", size: 20.0)
         
         let makeUnSave = SwipeAction(style: .default, title: "☆") { action, indexPath in
-            guard let stories = self.controller.stories else {
-                return
-            }
-            let story = stories[indexPath.row]
-            self.controller.localDataManager.writeIDAsRead(id: story.id)
-            self.viewModel?.rows[indexPath.row].isSaved = false
+
+            viewModel.rows[indexPath.row].usp.isSaved = false
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: isRead, isSaved: false)
             cell?.hideSwipe(animated: true)
+            self.controller.uspLocalDataManager.save(usp: viewModel.rows[indexPath.row].usp)
+
         }
         makeUnSave.backgroundColor = UIColor.flatBlue
         makeUnSave.font = UIFont(name: "Helvetica", size: 20.0)
 
-        
+
         switch (true,true) {
         case (isRead, isSaved): return [makeUnread, makeUnSave]
         case (isRead, !isSaved): return [makeUnread, makeSave]

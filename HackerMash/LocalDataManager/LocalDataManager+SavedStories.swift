@@ -9,24 +9,25 @@
 import Foundation
 import Default
 
-extension LocalDataManager {
-    func readSavedStories() -> [Story] {
-        if let savedStories = SavedStories.read(forKey: "savedStories") {
-            return savedStories.stories
-        } else {
-            return []
-        }
-    }
-    
-    func saveStory(story: Story) {
-        if var savedStories = SavedStories.read(forKey: "savedStories") {
-            savedStories.stories.append(story)
-        } else {
-            SavedStories(stories: [story]).write(withKey: "savedStories")
-        }
-    }
-}
+//extension LocalDataManager {
+//    func readSavedStories() -> [Story] {
+//        if let savedStories = SavedStories.read(forKey: "savedStories") {
+//            return savedStories.stories
+//        } else {
+//            return []
+//        }
+//    }
+//
+//    func saveStory(story: Story) {
+//        if var savedStories = SavedStories.read(forKey: "savedStories") {
+//            savedStories.stories.append(story)
+//        } else {
+//            SavedStories(stories: [story]).write(withKey: "savedStories")
+//        }
+//    }
+//}
+//
+//struct SavedStories: Codable, DefaultStorable {
+//    var stories: [Story]
+//}
 
-struct SavedStories: Codable, DefaultStorable {
-    var stories: [Story]
-}

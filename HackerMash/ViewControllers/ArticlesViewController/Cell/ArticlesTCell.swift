@@ -31,15 +31,23 @@ class ArticlesTCell: SwipeTableViewCell {
         //            }
         //        }
         
-        setUpIsReadIndicator(isRead: viewModel.isRead, isSaved: viewModel.isSaved)
+        setUpIsReadIndicator(isRead: viewModel.usp.isRead, isSaved: viewModel.usp.isSaved)
     }
     
     func setUpIsReadIndicator(isRead: Bool, isSaved: Bool) {
         switch (true,true) {
-        case (isSaved, isRead): isReadIndicatorLabel.text = "★"
-        case (isSaved, !isRead): isReadIndicatorLabel.text = "☆"
-        case (!isSaved, isRead): isReadIndicatorLabel.text = "●"
-        case (!isSaved, !isRead): isReadIndicatorLabel.text = "○"
+        case (isSaved, isRead):
+            isReadIndicatorLabel.font = UIFont(name: FontName.HelveticaNeue.getString(), size: 16.0)
+            isReadIndicatorLabel.text = "★"
+        case (isSaved, !isRead):
+            isReadIndicatorLabel.font = UIFont(name: FontName.HelveticaNeue.getString(), size: 16.0)
+            isReadIndicatorLabel.text = "☆"
+        case (!isSaved, isRead):
+            isReadIndicatorLabel.font = UIFont(name: FontName.HelveticaNeue.getString(), size: 13.0)
+            isReadIndicatorLabel.text = "●"
+        case (!isSaved, !isRead):
+            isReadIndicatorLabel.font = UIFont(name: FontName.HelveticaNeue.getString(), size: 13.0)
+            isReadIndicatorLabel.text = "○"
         default : isReadIndicatorLabel.text = "○"
         }
     }

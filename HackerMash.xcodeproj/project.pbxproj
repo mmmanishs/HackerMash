@@ -18,10 +18,13 @@
 		06028EB52054ED8F00FC0669 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB42054ED8F00FC0669 /* FontName.swift */; };
 		06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */; };
 		06028EBA2054F7F300FC0669 /* LocalDataManager+SavedStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB92054F7F300FC0669 /* LocalDataManager+SavedStories.swift */; };
+		0631C47F2064913F00785FF8 /* LocalDataManagerUSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C47E2064913F00785FF8 /* LocalDataManagerUSP.swift */; };
+		0631C4812064924F00785FF8 /* DiskPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4802064924F00785FF8 /* DiskPath.swift */; };
 		06A14234206205C500BAECA9 /* ArticlesViewController+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A14233206205C500BAECA9 /* ArticlesViewController+Interactor.swift */; };
 		06A14236206205FA00BAECA9 /* ArticlesViewController+SwipeDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A14235206205FA00BAECA9 /* ArticlesViewController+SwipeDelegates.swift */; };
 		06A142382062065000BAECA9 /* ArticlesViewController+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A142372062065000BAECA9 /* ArticlesViewController+Tableview.swift */; };
 		06A1423A206206A900BAECA9 /* ArticlesViewController+UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A14239206206A900BAECA9 /* ArticlesViewController+UtilityFunctions.swift */; };
+		06A1423C2062392300BAECA9 /* StoryLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A1423B2062392300BAECA9 /* StoryLocalDataManager.swift */; };
 		06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64CB20510176009C9960 /* AppDelegate.swift */; };
 		06EC64D120510176009C9960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64CF20510176009C9960 /* Main.storyboard */; };
 		06EC64D320510176009C9960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64D220510176009C9960 /* Assets.xcassets */; };
@@ -57,10 +60,13 @@
 		06028EB42054ED8F00FC0669 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
 		06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Menu.swift"; sourceTree = "<group>"; };
 		06028EB92054F7F300FC0669 /* LocalDataManager+SavedStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalDataManager+SavedStories.swift"; sourceTree = "<group>"; };
+		0631C47E2064913F00785FF8 /* LocalDataManagerUSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManagerUSP.swift; sourceTree = "<group>"; };
+		0631C4802064924F00785FF8 /* DiskPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPath.swift; sourceTree = "<group>"; };
 		06A14233206205C500BAECA9 /* ArticlesViewController+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Interactor.swift"; sourceTree = "<group>"; };
 		06A14235206205FA00BAECA9 /* ArticlesViewController+SwipeDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+SwipeDelegates.swift"; sourceTree = "<group>"; };
 		06A142372062065000BAECA9 /* ArticlesViewController+Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Tableview.swift"; sourceTree = "<group>"; };
 		06A14239206206A900BAECA9 /* ArticlesViewController+UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+UtilityFunctions.swift"; sourceTree = "<group>"; };
+		06A1423B2062392300BAECA9 /* StoryLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryLocalDataManager.swift; sourceTree = "<group>"; };
 		06EC64C820510176009C9960 /* HackerMash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerMash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC64CB20510176009C9960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06EC64D020510176009C9960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,7 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				06028EA82053C58F00FC0669 /* LocalDataManager.swift */,
+				0631C47E2064913F00785FF8 /* LocalDataManagerUSP.swift */,
+				06A1423B2062392300BAECA9 /* StoryLocalDataManager.swift */,
 				06028EB92054F7F300FC0669 /* LocalDataManager+SavedStories.swift */,
+				0631C4802064924F00785FF8 /* DiskPath.swift */,
 			);
 			path = LocalDataManager;
 			sourceTree = "<group>";
@@ -475,10 +484,13 @@
 				06028EB52054ED8F00FC0669 /* FontName.swift in Sources */,
 				06EC650F20520D94009C9960 /* StoryIdsDataManager.swift in Sources */,
 				06EC651320521006009C9960 /* StoriesDataManager.swift in Sources */,
+				06A1423C2062392300BAECA9 /* StoryLocalDataManager.swift in Sources */,
 				06EC650D20520D94009C9960 /* StoryIDs.swift in Sources */,
 				06EC650E20520D94009C9960 /* Story.swift in Sources */,
 				06028EA62053C22600FC0669 /* Comment.swift in Sources */,
 				06EC651020520D94009C9960 /* StoryDataManager.swift in Sources */,
+				0631C4812064924F00785FF8 /* DiskPath.swift in Sources */,
+				0631C47F2064913F00785FF8 /* LocalDataManagerUSP.swift in Sources */,
 				06EC651120520D94009C9960 /* Router.swift in Sources */,
 				06028EB22053CFCC00FC0669 /* TSNotificationCenter.swift in Sources */,
 				06A14234206205C500BAECA9 /* ArticlesViewController+Interactor.swift in Sources */,
