@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import Default
 
-final class Story: Codable, DefaultStorable {
+final class Story: Codable {
     let by: String
     let descendants: Int
     let id: Int
@@ -19,7 +18,27 @@ final class Story: Codable, DefaultStorable {
     let title: String
     let type: String
     let url: String
-
+    
+    init(by: String
+    ,descendants: Int
+    ,id: Int
+    ,kids: [Int]
+    ,score: Int
+    ,time: Int64
+    ,title: String
+    ,type: String
+    ,url: String) {
+        self.by = by
+        self.descendants = descendants
+        self.id = id
+        self.kids = kids
+        self.score = score
+        self.time = time
+        self.title = title
+        self.type = type
+        self.url = url
+    }
+    
     func getTimeAgo() -> String {
         let publish = Date.init(timeIntervalSince1970: TimeInterval(time))
         let timeInSecs = Date().timeIntervalSince(publish)
@@ -52,6 +71,16 @@ final class Story: Codable, DefaultStorable {
         print("title : \(title)")
         print("type : \(type)")
         print("url : \(type)")
+    }
+}
+
+extension Story: Comparable {
+    static func <(lhs: Story, rhs: Story) -> Bool {
+        return lhs.id < rhs.id
+    }
+    
+    static func ==(lhs: Story, rhs: Story) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 //https://hacker-news.firebaseio.com/v0/item/16542395.json

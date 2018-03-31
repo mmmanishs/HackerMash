@@ -37,10 +37,10 @@ class ArticlesController {
         var promise: Promise<[Story]>?
         switch articlesType {
         case .topStories:
-            promise = StoriesDataManager().getTopNews()
+            promise = StoryDataManager().getTop()
             viewModel = ArticlesViewModel(title: "Top Stories")
         case .bestStories:
-            promise = StoriesDataManager().getBestNews()
+            promise = StoryDataManager().getBest()
             viewModel = ArticlesViewModel(title: "Best Stories")
         case .savedStories:
             viewModel = ArticlesViewModel(title: "Saved Stories")

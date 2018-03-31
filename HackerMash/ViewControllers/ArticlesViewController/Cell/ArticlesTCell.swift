@@ -24,13 +24,6 @@ class ArticlesTCell: SwipeTableViewCell {
         }
         self.title.text = viewModel.title
         self.time.text = viewModel.time
-        
-        //        if let host = URL(string: viewModel.url)?.host {
-        //            if let url = StoryIDsRequestProvider.getLogoUrl(domainName: host) {
-        //                logo.sd_setImage(with: url, placeholderImage: nil)
-        //            }
-        //        }
-        
         setUpIsReadIndicator(isRead: viewModel.usp.isRead, isSaved: viewModel.usp.isSaved)
     }
     

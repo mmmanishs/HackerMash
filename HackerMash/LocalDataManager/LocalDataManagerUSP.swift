@@ -13,11 +13,12 @@ class LocalDataManagerUSP {
     let path = DiskPath.userStoryPref.filepath()
     
     func save(usp: USP) {
-        var u = read()
-        if let index = u.index(of: usp) {
-            u.remove(at: index)
+        let u = read()
+        if let index = u.usps.index(of: usp) {
+            u.usps.remove(at: index)
         }
-        u.append(usp)
+        u.date = Date()
+        u.usps.append(usp)
         let data = try? JSONEncoder().encode(u)
         do {
             try data?.write(to: path)
@@ -27,27 +28,36 @@ class LocalDataManagerUSP {
         }
     }
     
-    func read() -> [USP] {
+    func read() -> USPDisk {
         let jsonDecoder = JSONDecoder()
         do {
             let data = try Data(contentsOf: path)
             do {
-                return try jsonDecoder.decode([USP].self, from: data)
+                return try jsonDecoder.decode(USPDisk.self, from: data)
             } catch {
-                return []
+                return USPDisk(date: Date(), usps: [])
             }
         } catch {
-            return []
+            return USPDisk(date: Date(), usps: [])
         }
     }
     
     func getUSP(id: Int) -> USP {
-        let usp = USP(id: id, isRead: false, isSaved: false) // Dummy for finding
+        let usp = USP(id: id, isRead: false, isSaved: false, date: Date()) // Dummy for finding
         let data = read()
-        if let index = data.index(of: usp) {
-            return data[index]
+        if let index = data.usps.index(of: usp) {
+            return data.usps[index]
         }
         return usp
+    }
+}
+
+class USPDisk: Codable {
+    var date: Date //Date last updated
+    var usps: [USP]
+    init(date: Date, usps: [USP]) {
+        self.date = date
+        self.usps = usps
     }
 }
 
@@ -55,6 +65,7 @@ struct USP: Codable {
     var id: Int
     var isRead: Bool
     var isSaved: Bool
+    var date: Date //Date last created
 }
 
 extension USP: Comparable {
