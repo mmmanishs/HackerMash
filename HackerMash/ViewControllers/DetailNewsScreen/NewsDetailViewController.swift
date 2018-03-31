@@ -22,6 +22,7 @@ class NewsDetailViewController: UIViewController {
         } catch {
             print("Error loading news article")
         }
+        title = article?.url
     }
     
     override func viewWillAppear(_ animated: Bool) {
