@@ -5,7 +5,6 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - ESPullToRefresh (2.7)
   - KYNavigationProgress (2.0.2)
   - NVActivityIndicatorView (4.1.1):
     - NVActivityIndicatorView/Presenter (= 4.1.1)
@@ -13,7 +12,6 @@ PODS:
   - PromisesObjC (1.0.7)
   - PromisesSwift (1.0.7):
     - PromisesObjC (= 1.0.7)
-  - RainyRefreshControl (0.4.0)
   - SDWebImage (4.3.2):
     - SDWebImage/Core (= 4.3.2)
   - SDWebImage/Core (4.3.2)
@@ -24,11 +22,9 @@ DEPENDENCIES:
   - AMScrollingNavbar (~> 4.2.1)
   - AZDropdownMenu
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
-  - ESPullToRefresh
   - KYNavigationProgress
   - NVActivityIndicatorView
   - PromisesSwift (~> 1.0)
-  - RainyRefreshControl
   - SDWebImage (~> 4.0)
   - SwipeCellKit
 
@@ -46,15 +42,13 @@ SPEC CHECKSUMS:
   AMScrollingNavbar: e5676bc9caae93d1a3dd5a708d7d9b0cf2fd89d3
   AZDropdownMenu: 5aa9d598d0c8aa36ca51a7302e79b98d544d5554
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
   NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
   PromisesObjC: e188094093ab3be6d2b975583e5c12022ad98c4f
   PromisesSwift: 60f58ca196d891f290477a58e888eb97ac17ff49
-  RainyRefreshControl: de2236ad2f46d6cfb22bf029e0067b48cdcb2925
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
 
-PODFILE CHECKSUM: 8fc910b41d60d4a829411a4715d784dd08ccd244
+PODFILE CHECKSUM: 5e1096efbbe0f0a1a8a197a73af0740a5420a00c
 
 COCOAPODS: 1.4.0

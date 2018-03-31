@@ -21,7 +21,6 @@ extension ArticlesViewController: ViewModelInteractor {
                 self.tableview.isUserInteractionEnabled = false
                 break
             case .showData:
-                self.tableview.es.stopPullToRefresh()
                 self.tableview.reloadData()
                 self.tableview.isUserInteractionEnabled = true
                 

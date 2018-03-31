@@ -12,18 +12,27 @@ import Promises
 import AMScrollingNavbar
 import ChameleonFramework
 import NVActivityIndicatorView
-import RainyRefreshControl
 import AZDropdownMenu
 
 extension ArticlesViewController {
+    func configureBarButtons() {
+        let menuButton = UIBarButtonItem(title: "⌘", style: .plain, target: self, action: #selector(showDropdown))
+        let refershButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(getData))
+        navigationItem.leftBarButtonItem = menuButton
+        navigationItem.rightBarButtonItem = refershButton
+    }
+    
+    @objc func getData() {
+        controller.getData(articlesType: currentArticleType)
+    }
+    
     func addMenu() {
         menu.itemFontColor = UIColor.flatBlack
         menu.itemFontSize = 16.0
         menu.menuSeparatorColor = UIColor.orange
         menu.itemColor = UIColor.white
         menu.itemFontName = FontName.HelveticaNeue_Italic.getString()
-        let menuButton = UIBarButtonItem(title: "⌘", style: .plain, target: self, action: #selector(showDropdown))
-        navigationItem.leftBarButtonItem = menuButton
+        
         menu.cellTapHandler = { [weak self] (indexPath: IndexPath) -> Void in
             switch indexPath.row {
             case 2:

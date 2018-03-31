@@ -13,7 +13,6 @@ import AMScrollingNavbar
 import ChameleonFramework
 import NVActivityIndicatorView
 import AZDropdownMenu
-import ESPullToRefresh
 import SwipeCellKit
 
 class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
@@ -28,22 +27,16 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.delegate = self
-        getData()
-        tableview.es.addPullToRefresh { [unowned self] in
-            self.getData()
-        }
+        controller.getData(articlesType: currentArticleType)
         if let navigationController = self.navigationController as? ScrollingNavigationController {
             navigationController.scrollingNavbarDelegate = self
         }
         TSNotificationCenter.defaultCenter.addObserver(notificationName: "downloadStories", observer: self, selector: #selector(ArticlesViewController.downloadProgress(notification:)))
         self.view.backgroundColor = UIColor.white
+        configureBarButtons()
         addMenu()
     }
-    
-    @objc func getData() {
-        controller.getData(articlesType: currentArticleType)
-    }
-    
+
     @objc func downloadProgress(notification: TSNotification) {
 //        guard let value = notification.payload as? Float else {
 //            return
