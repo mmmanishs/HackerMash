@@ -15,15 +15,15 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
         guard let viewModel = self.viewModel  else {
             return nil
         }
-        let isRead = viewModel.rows[indexPath.row].usp.isRead
-        let isSaved = viewModel.rows[indexPath.row].usp.isSaved
+        let isRead = viewModel.rows[indexPath.row].favorite.isRead
+        let isSaved = viewModel.rows[indexPath.row].favorite.isSaved
         let makeUnread = SwipeAction(style: .default, title: "○") { action, indexPath in
-            viewModel.rows[indexPath.row].usp.isRead = false
+            viewModel.rows[indexPath.row].favorite.isRead = false
 
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: false, isSaved: isSaved)
             cell?.hideSwipe(animated: true)
-            self.controller.uspLocalDataManager.save(usp: viewModel.rows[indexPath.row].usp)
+            self.controller.favoriteLocalDataManager.save(favorite: viewModel.rows[indexPath.row].favorite)
 
         }
         makeUnread.backgroundColor = UIColor.flatWhite
@@ -32,11 +32,11 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
 
         let makeRead = SwipeAction(style: .default, title: "●") { action, indexPath in
 
-            viewModel.rows[indexPath.row].usp.isRead = true
+            viewModel.rows[indexPath.row].favorite.isRead = true
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: true, isSaved: isSaved)
             cell?.hideSwipe(animated: true)
-            self.controller.uspLocalDataManager.save(usp: viewModel.rows[indexPath.row].usp)
+            self.controller.favoriteLocalDataManager.save(favorite: viewModel.rows[indexPath.row].favorite)
 
         }
         makeRead.backgroundColor = UIColor.flatWhite
@@ -44,23 +44,22 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
         makeRead.textColor = UIColor.flatBlue
 
         let makeSave = SwipeAction(style: .default, title: "★") { action, indexPath in
-            viewModel.rows[indexPath.row].usp.isSaved = true
+            viewModel.rows[indexPath.row].favorite.isSaved = !viewModel.rows[indexPath.row].favorite.isSaved
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: isRead, isSaved: true)
             cell?.hideSwipe(animated: true)
-            self.controller.uspLocalDataManager.save(usp: viewModel.rows[indexPath.row].usp)
+            self.controller.favoriteLocalDataManager.save(favorite: viewModel.rows[indexPath.row].favorite)
 
         }
         makeSave.backgroundColor = UIColor.flatBlue
         makeSave.font = UIFont(name: "Helvetica", size: 20.0)
         
         let makeUnSave = SwipeAction(style: .default, title: "☆") { action, indexPath in
-
-            viewModel.rows[indexPath.row].usp.isSaved = false
+            viewModel.rows[indexPath.row].favorite.isSaved = !viewModel.rows[indexPath.row].favorite.isSaved
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: isRead, isSaved: false)
             cell?.hideSwipe(animated: true)
-            self.controller.uspLocalDataManager.save(usp: viewModel.rows[indexPath.row].usp)
+            self.controller.favoriteLocalDataManager.save(favorite: viewModel.rows[indexPath.row].favorite)
 
         }
         makeUnSave.backgroundColor = UIColor.flatBlue

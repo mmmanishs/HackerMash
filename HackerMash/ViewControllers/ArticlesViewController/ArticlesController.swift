@@ -30,7 +30,7 @@ protocol ViewModelInteractor {
 class ArticlesController {
     var stories: [Story]?
     var delegate: ViewModelInteractor?
-    let uspLocalDataManager = LocalDataManagerUSP()
+    let favoriteLocalDataManager = LocalDataManagerFavorites()
     
     func getData(articlesType: ArticleType) {
         var viewModel: ArticlesViewModel
@@ -44,6 +44,9 @@ class ArticlesController {
             viewModel = ArticlesViewModel(title: "Best Stories")
         case .savedStories:
             viewModel = ArticlesViewModel(title: "Saved Stories")
+            viewModel.update(withStories: StoryDataManager().getFavorites())
+            self.delegate?.updateView(viewModel: viewModel, command: .showData)
+            return
             break
         }
         self.delegate?.updateView(viewModel: viewModel, command: .showLoading)
@@ -60,7 +63,7 @@ class ArticlesController {
 class ArticlesViewModel {
     var rows: [ArticlesRowViewModel]
     var title: String
-    let localDataManager = LocalDataManagerUSP()
+    let localDataManager = LocalDataManagerFavorites()
 
     init(title: String) {
         self.title = title
@@ -77,7 +80,7 @@ class ArticlesViewModel {
                 title: story.title,
                 time:story.getTimeAgo(),
                 url: story.url,
-                usp: (localDataManager.getUSP(id: story.id)
+                usp: (localDataManager.getFavorite(id: story.id)
             )))
         }
     }
@@ -89,19 +92,19 @@ class ArticlesRowViewModel {
     var title: String
     var time: String
     var url: String
-    var usp: USP
+    var favorite: Favorite
     init(id: Int,
          timeStamp: Int64,
          title: String,
          time: String,
          url: String,
-         usp: USP) {
+         usp: Favorite) {
         self.id = id
         self.timeStamp = timeStamp
         self.title = title
         self.time = time
         self.url = url
-        self.usp = usp
+        self.favorite = usp
     }
 }
 

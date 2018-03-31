@@ -35,7 +35,9 @@ extension ArticlesViewController {
             default:
                 break
             }
-            self?.getData()
+            if let s = self {
+                s.controller.getData(articlesType: s.currentArticleType)
+            }
         }
     }
 }

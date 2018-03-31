@@ -9,11 +9,21 @@
 import Foundation
 
 extension StoryDataManager {
-//    func getFavorites() -> Promise<[Story]> {
-//        let usps = LocalDataManagerUSP().read().usps
-//        let bs = LocalDataManagerStory().read(repo: .bestStory)
-//        let ts = LocalDataManagerStory().read(repo: .topStory)
-//        bs.stories.merge
-//    }
+    func getFavorites() -> [Story] {
+        let favorites = LocalDataManagerFavorites().read().favorites
+        let bs = LocalDataManagerStory().read(repo: .bestStory)
+        let ts = LocalDataManagerStory().read(repo: .topStory)
+        let data = merge(array1: bs.stories, array2: ts.stories)
+        var favoriteStories = [Story]()
+        for favorite in favorites {
+            for story in data {
+                if story.id == favorite.id {
+                    favoriteStories.append(story)
+                    break
+                }
+            }
+        }
+        return favoriteStories
+    }
 }
 

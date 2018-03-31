@@ -21,3 +21,23 @@ func merge<T>(old: inout [T], new: [T]) where T: Comparable{
         }
     }
 }
+
+
+func merge<T>(array1: [T], array2: [T]) -> [T] where T: Comparable{
+    guard array1.count > 0 else {
+        return array2
+    }
+    guard array2.count > 0 else {
+        return array1
+    }
+    
+    var finalArray = array1
+    for element in array2 {
+        if let index = finalArray.index(of: element) {
+            finalArray[index] = element
+        } else {
+            finalArray.append(element)
+        }
+    }
+    return finalArray
+}

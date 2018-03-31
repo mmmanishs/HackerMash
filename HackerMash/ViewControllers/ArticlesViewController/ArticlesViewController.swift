@@ -23,7 +23,7 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     let controller = ArticlesController()
     var viewModel: ArticlesViewModel?
     let menu = AZDropdownMenu(titles: ["_", "_","• Top Stories", "• Best Stories", "• Saved Stories"])
-    var  currentArticleType: ArticleType = .topStories
+    var  currentArticleType: ArticleType = .topStories // The only reason that I would tolerate a global variable like this becasue there does not seem to be any other way that the tableview pull down to refesh can know what data to pull down
     
     override func viewDidLoad() {
         super.viewDidLoad()

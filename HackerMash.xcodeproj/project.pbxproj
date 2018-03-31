@@ -14,7 +14,7 @@
 		06028EB32053CFCC00FC0669 /* TSNotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB02053CFCC00FC0669 /* TSNotificationObserver.swift */; };
 		06028EB52054ED8F00FC0669 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB42054ED8F00FC0669 /* FontName.swift */; };
 		06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */; };
-		0631C47F2064913F00785FF8 /* LocalDataManagerUSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C47E2064913F00785FF8 /* LocalDataManagerUSP.swift */; };
+		0631C47F2064913F00785FF8 /* LocalDataManagerFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C47E2064913F00785FF8 /* LocalDataManagerFavorites.swift */; };
 		0631C4812064924F00785FF8 /* DiskPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4802064924F00785FF8 /* DiskPath.swift */; };
 		0631C4832064C76000785FF8 /* StoryDataManager+Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */; };
 		06446BBD206B659300B460CD /* HelperFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06446BBC206B659300B460CD /* HelperFuncs.swift */; };
@@ -53,7 +53,7 @@
 		06028EB02053CFCC00FC0669 /* TSNotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotificationObserver.swift; sourceTree = "<group>"; };
 		06028EB42054ED8F00FC0669 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
 		06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Menu.swift"; sourceTree = "<group>"; };
-		0631C47E2064913F00785FF8 /* LocalDataManagerUSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManagerUSP.swift; sourceTree = "<group>"; };
+		0631C47E2064913F00785FF8 /* LocalDataManagerFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManagerFavorites.swift; sourceTree = "<group>"; };
 		0631C4802064924F00785FF8 /* DiskPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPath.swift; sourceTree = "<group>"; };
 		0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryDataManager+Favorites.swift"; sourceTree = "<group>"; };
 		06446BBC206B659300B460CD /* HelperFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFuncs.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		06028EB82054F77700FC0669 /* LocalDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				0631C47E2064913F00785FF8 /* LocalDataManagerUSP.swift */,
+				0631C47E2064913F00785FF8 /* LocalDataManagerFavorites.swift */,
 				06A1423B2062392300BAECA9 /* LocalDataManagerStory.swift */,
 				0631C4802064924F00785FF8 /* DiskPath.swift */,
 			);
@@ -474,7 +474,7 @@
 				06EC650E20520D94009C9960 /* Story.swift in Sources */,
 				06028EA62053C22600FC0669 /* Comment.swift in Sources */,
 				0631C4812064924F00785FF8 /* DiskPath.swift in Sources */,
-				0631C47F2064913F00785FF8 /* LocalDataManagerUSP.swift in Sources */,
+				0631C47F2064913F00785FF8 /* LocalDataManagerFavorites.swift in Sources */,
 				06EC651120520D94009C9960 /* Router.swift in Sources */,
 				06028EB22053CFCC00FC0669 /* TSNotificationCenter.swift in Sources */,
 				06A14234206205C500BAECA9 /* ArticlesViewController+Interactor.swift in Sources */,

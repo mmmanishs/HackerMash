@@ -24,7 +24,7 @@ class ArticlesTCell: SwipeTableViewCell {
         }
         self.title.text = viewModel.title
         self.time.text = viewModel.time
-        setUpIsReadIndicator(isRead: viewModel.usp.isRead, isSaved: viewModel.usp.isSaved)
+        setUpIsReadIndicator(isRead: viewModel.favorite.isRead, isSaved: viewModel.favorite.isSaved)
     }
     
     func setUpIsReadIndicator(isRead: Bool, isSaved: Bool) {
