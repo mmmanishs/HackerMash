@@ -65,20 +65,31 @@
                                                     <color key="textColor" red="1" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73a-IQ-hrK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="6" height="99.5"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="6" id="nfV-Ne-4Yv"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="73a-IQ-hrK" secondAttribute="bottom" id="4B1-W9-CYR"/>
                                                 <constraint firstItem="XuU-9z-tsQ" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" constant="5" id="BSG-eu-mXt"/>
                                                 <constraint firstItem="XuU-9z-tsQ" firstAttribute="centerY" secondItem="ISm-m0-fEP" secondAttribute="centerY" id="EP5-di-cJH"/>
+                                                <constraint firstItem="73a-IQ-hrK" firstAttribute="top" secondItem="ISm-m0-fEP" secondAttribute="top" id="JMO-Sa-DhU"/>
                                                 <constraint firstAttribute="bottom" secondItem="Cha-I6-LSn" secondAttribute="bottom" constant="3" id="NLZ-Y5-9oE"/>
                                                 <constraint firstItem="kaB-xo-dgN" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" constant="40" id="Nxw-UH-ODl"/>
                                                 <constraint firstItem="kaB-xo-dgN" firstAttribute="centerY" secondItem="ISm-m0-fEP" secondAttribute="centerY" id="U9I-pi-kUQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="kaB-xo-dgN" secondAttribute="trailing" constant="15" id="cdr-Ft-aRg"/>
+                                                <constraint firstItem="73a-IQ-hrK" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" id="ewO-Ku-7qD"/>
                                                 <constraint firstItem="Cha-I6-LSn" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" constant="40" id="nWT-Yy-mtJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="borderColorView" destination="73a-IQ-hrK" id="IBd-mG-5Zg"/>
                                             <outlet property="isReadIndicatorLabel" destination="XuU-9z-tsQ" id="ATk-Zh-Jk9"/>
                                             <outlet property="time" destination="Cha-I6-LSn" id="Lrk-tt-ua4"/>
                                             <outlet property="title" destination="kaB-xo-dgN" id="Tgt-Fc-jYG"/>

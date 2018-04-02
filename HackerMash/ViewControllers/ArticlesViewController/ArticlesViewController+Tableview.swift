@@ -11,11 +11,10 @@ import UIKit
 
 extension ArticlesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let stories = controller.stories,
-        let viewModel = self.viewModel else {
+        guard let viewModel = self.viewModel else {
             return
         }
-        let story = stories[indexPath.row]
+        let story = viewModel.rows[indexPath.row].story
         viewModel.rows[indexPath.row].favorite.isRead = true
         let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
         cell?.setUpIsReadIndicator(isRead: true, isSaved: viewModel.rows[indexPath.row].favorite.isSaved)

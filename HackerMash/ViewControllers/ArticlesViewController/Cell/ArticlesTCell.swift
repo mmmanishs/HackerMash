@@ -17,6 +17,7 @@ class ArticlesTCell: SwipeTableViewCell {
     //    @IBOutlet weak var commentsCount: UILabel!
     @IBOutlet weak var isReadIndicatorLabel: UILabel!
     //            imageView.sd_setImage(with: URL(string: urlToImage), placeholderImage: UIImage(named: "placeholderImage"))
+    @IBOutlet weak var borderColorView: UIView!
     
     func updateCell(viewModel: ArticlesRowViewModel?) {
         guard let viewModel = viewModel else {
@@ -25,6 +26,7 @@ class ArticlesTCell: SwipeTableViewCell {
         self.title.text = viewModel.title
         self.time.text = viewModel.time
         setUpIsReadIndicator(isRead: viewModel.favorite.isRead, isSaved: viewModel.favorite.isSaved)
+        borderColorView.backgroundColor = getRandomColor()
     }
     
     func setUpIsReadIndicator(isRead: Bool, isSaved: Bool) {
@@ -45,5 +47,4 @@ class ArticlesTCell: SwipeTableViewCell {
         }
     }
 }
-
 
