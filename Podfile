@@ -15,5 +15,6 @@ target 'HackerMash' do
   pod 'KYNavigationProgress'
   pod 'AZDropdownMenu'
   pod 'SwipeCellKit'
-
+  pod 'Popover'
+  pod 'UIView+Shake'
 end

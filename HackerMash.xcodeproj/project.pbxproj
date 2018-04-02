@@ -239,7 +239,7 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		06EC651620521F8D009C9960 /* ArticlesViewController */ = {
+		06EC651620521F8D009C9960 /* ArticlesViewController(Main) */ = {
 			isa = PBXGroup;
 			children = (
 				06EC651B205226DD009C9960 /* Cell */,
@@ -251,7 +251,7 @@
 				06A14239206206A900BAECA9 /* ArticlesViewController+UtilityFunctions.swift */,
 				06EC651820521F8D009C9960 /* ArticlesController.swift */,
 			);
-			path = ArticlesViewController;
+			path = "ArticlesViewController(Main)";
 			sourceTree = "<group>";
 		};
 		06EC651B205226DD009C9960 /* Cell */ = {
@@ -267,7 +267,7 @@
 			children = (
 				06028EA0205395DC00FC0669 /* KidsArticlesController */,
 				06EC651F20526410009C9960 /* DetailNewsScreen */,
-				06EC651620521F8D009C9960 /* ArticlesViewController */,
+				06EC651620521F8D009C9960 /* ArticlesViewController(Main) */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -401,10 +401,12 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/KYNavigationProgress/KYNavigationProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+				"${BUILT_PRODUCTS_DIR}/UIView+Shake/UIView_Shake.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -414,10 +416,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYNavigationProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIView_Shake.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

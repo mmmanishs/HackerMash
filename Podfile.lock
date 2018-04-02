@@ -9,6 +9,7 @@ PODS:
   - NVActivityIndicatorView (4.1.1):
     - NVActivityIndicatorView/Presenter (= 4.1.1)
   - NVActivityIndicatorView/Presenter (4.1.1)
+  - Popover (1.2.0)
   - PromisesObjC (1.0.7)
   - PromisesSwift (1.0.7):
     - PromisesObjC (= 1.0.7)
@@ -16,6 +17,7 @@ PODS:
     - SDWebImage/Core (= 4.3.2)
   - SDWebImage/Core (4.3.2)
   - SwipeCellKit (2.0.1)
+  - UIView+Shake (1.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.6)
@@ -24,9 +26,11 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - KYNavigationProgress
   - NVActivityIndicatorView
+  - Popover
   - PromisesSwift (~> 1.0)
   - SDWebImage (~> 4.0)
   - SwipeCellKit
+  - UIView+Shake
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -44,11 +48,13 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
   NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
+  Popover: 28c1ac8e937ab2b3965bd2da7dd18324357abc41
   PromisesObjC: e188094093ab3be6d2b975583e5c12022ad98c4f
   PromisesSwift: 60f58ca196d891f290477a58e888eb97ac17ff49
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
+  UIView+Shake: 055ad67721de1f74d29c0a1d464697e505dfc62f
 
-PODFILE CHECKSUM: 5e1096efbbe0f0a1a8a197a73af0740a5420a00c
+PODFILE CHECKSUM: e9bc3baf38ec70e2f0079a70de0dc5ddf5a4bd22
 
 COCOAPODS: 1.4.0

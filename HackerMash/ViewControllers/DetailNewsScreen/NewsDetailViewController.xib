@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsDetailViewController" customModule="HackerMash" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewPopover" destination="Q8j-hW-KCo" id="HLQ-eZ-QYv"/>
                 <outlet property="webview" destination="2op-LQ-OAq" id="jAm-kS-w3C"/>
             </connections>
         </placeholder>
@@ -32,12 +32,61 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="2op-LQ-OAq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="52G-df-PBF"/>
+                <constraint firstItem="2op-LQ-OAq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="52G-df-PBF"/>
                 <constraint firstAttribute="bottom" secondItem="2op-LQ-OAq" secondAttribute="bottom" id="UZ9-xd-G05"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2op-LQ-OAq" secondAttribute="trailing" id="fdb-Pj-VpA"/>
+                <constraint firstAttribute="trailing" secondItem="2op-LQ-OAq" secondAttribute="trailing" id="fdb-Pj-VpA"/>
                 <constraint firstItem="2op-LQ-OAq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kN2-pP-4dF"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+        <view contentMode="scaleToFill" id="Q8j-hW-KCo">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMK-Qo-azY">
+                    <rect key="frame" x="317" y="18.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3Ad-0q-Fz9"/>
+                        <constraint firstAttribute="width" constant="30" id="sbi-4T-Q34"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="copy"/>
+                    <connections>
+                        <action selector="copyButtonClicked:" destination="-1" eventType="touchUpInside" id="mUj-D6-yym"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What would you like to do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWN-A6-rcM">
+                    <rect key="frame" x="44" y="25" width="163" height="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgV-B6-lWv">
+                    <rect key="frame" x="257" y="18.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="51Q-Ze-FYa"/>
+                        <constraint firstAttribute="height" constant="30" id="WQa-b1-f4G"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="safari"/>
+                    <connections>
+                        <action selector="safariButtonClicked:" destination="-1" eventType="touchUpInside" id="WUX-tg-oSH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QMK-Qo-azY" firstAttribute="leading" secondItem="JgV-B6-lWv" secondAttribute="trailing" constant="30" id="FVz-dd-HED"/>
+                <constraint firstItem="lWN-A6-rcM" firstAttribute="leading" secondItem="Q8j-hW-KCo" secondAttribute="leading" constant="44" id="Fgk-8i-DfN"/>
+                <constraint firstItem="JgV-B6-lWv" firstAttribute="top" secondItem="Q8j-hW-KCo" secondAttribute="top" constant="18.5" id="PIH-kd-CIo"/>
+                <constraint firstItem="QMK-Qo-azY" firstAttribute="top" secondItem="Q8j-hW-KCo" secondAttribute="top" constant="18.5" id="PlP-fe-CuE"/>
+                <constraint firstItem="JgV-B6-lWv" firstAttribute="leading" secondItem="lWN-A6-rcM" secondAttribute="trailing" constant="50" id="Tbr-j9-ulN"/>
+                <constraint firstItem="lWN-A6-rcM" firstAttribute="top" secondItem="Q8j-hW-KCo" secondAttribute="top" constant="25" id="lA1-1I-oEx"/>
+                <constraint firstAttribute="trailing" secondItem="QMK-Qo-azY" secondAttribute="trailing" constant="10" id="pFP-4J-Tj0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-768.5" y="601.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="copy" width="128" height="128"/>
+        <image name="safari" width="59" height="59"/>
+    </resources>
 </document>

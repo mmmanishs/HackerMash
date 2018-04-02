@@ -44,7 +44,7 @@ func merge<T>(array1: [T], array2: [T]) -> [T] where T: Comparable{
 }
 
 func getRandomColor() -> UIColor {
-    let colorArray = [UIColor.flatRed, UIColor.flatPurple ,UIColor.flatPurpleDark, UIColor.flatPlum ,UIColor.flatGreen, UIColor.flatPinkDark, UIColor.flatGrayDark, UIColor.flatMaroon, UIColor.flatRedDark]
+    let colorArray = [UIColor.flatRed, UIColor.flatPurple ,UIColor.flatPurpleDark, UIColor.flatPlum ,UIColor.flatGreen, UIColor.flatPinkDark, UIColor.flatGrayDark, UIColor.flatMaroon, UIColor.flatRedDark, UIColor.flatMint]
     let i: Int = Int(arc4random_uniform(UInt32(colorArray.count)))
-    return colorArray[i]
+    return UIColor.randomFlat
 }
