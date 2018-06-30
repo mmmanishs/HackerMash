@@ -27,24 +27,12 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.delegate = self
-        controller.getData(articlesType: currentArticleType)
         if let navigationController = self.navigationController as? ScrollingNavigationController {
             navigationController.scrollingNavbarDelegate = self
         }
-        TSNotificationCenter.defaultCenter.addObserver(notificationName: "downloadStories", observer: self, selector: #selector(ArticlesViewController.downloadProgress(notification:)))
         self.view.backgroundColor = UIColor.white
         configureBarButtons()
-        addMenu()
-    }
-
-    @objc func downloadProgress(notification: TSNotification) {
-//        guard let value = notification.payload as? Float else {
-//            return
-//        }
-        //        self.navigationController?.setProgress(value, animated: true)
-        //        if value == 1.0 {
-        //            self.navigationController?.cancelProgress()
-        //        }
+//        addMenu()
     }
 }
 
@@ -52,7 +40,6 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
 
 extension ArticlesViewController {
     func scrollingNavigationController(_ controller: AMScrollingNavbar.ScrollingNavigationController, didChangeState state: AMScrollingNavbar.NavigationBarState) {
-        //        tableview.frame = self.view.frame
         tableview.frame.size.height = self.view.frame.size.height
         
     }

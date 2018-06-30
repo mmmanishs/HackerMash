@@ -16,9 +16,9 @@ import AZDropdownMenu
 
 extension ArticlesViewController {
     func configureBarButtons() {
-        let menuButton = UIBarButtonItem(title: "⌘", style: .plain, target: self, action: #selector(showDropdown))
+//        let menuButton = UIBarButtonItem(title: "⌘", style: .plain, target: self, action: #selector(showDropdown))
         let refershButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(getData))
-        navigationItem.leftBarButtonItem = menuButton
+//        navigationItem.leftBarButtonItem = menuButton
         navigationItem.rightBarButtonItem = refershButton
     }
     
