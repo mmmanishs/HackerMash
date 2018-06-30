@@ -55,7 +55,7 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
         makeSave.font = UIFont(name: "Helvetica", size: 20.0)
         
         let makeUnSave = SwipeAction(style: .default, title: "☆") { action, indexPath in
-            viewModel.rows[indexPath.row].favorite.isSaved = !viewModel.rows[indexPath.row].favorite.isSaved
+            viewModel.rows[indexPath.row].favorite.isSaved.toggle()
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: isRead, isSaved: false)
             cell?.hideSwipe(animated: true)

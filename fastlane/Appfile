@@ -1,0 +1,8 @@
+app_identifier("com.manish.HackerMash") # The bundle identifier of your app
+apple_id("mmmanishs@gmail.com") # Your Apple email address
+
+itc_team_id("118144035") # iTunes Connect Team ID
+team_id("79FS6EETVS") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

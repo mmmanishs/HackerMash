@@ -47,7 +47,6 @@ class ArticlesController {
             viewModel.update(withStories: StoryDataManager().getFavorites())
             self.delegate?.updateView(viewModel: viewModel, command: .showData)
             return
-            break
         }
         self.delegate?.updateView(viewModel: viewModel, command: .showLoading)
         promise?.then(){ stories in
