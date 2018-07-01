@@ -15,7 +15,7 @@ import NVActivityIndicatorView
 import AZDropdownMenu
 import SwipeCellKit
 
-class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate {
+class ArticlesViewController: UIViewController, ScrollingNavigationControllerDelegate, UIScrollViewDelegate {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var activityView: NVActivityIndicatorView!
     
@@ -47,8 +47,10 @@ extension ArticlesViewController {
 extension ArticlesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let navigationController = self.navigationController as? ScrollingNavigationController {
-            navigationController.followScrollView(tableview, delay: 50, scrollSpeedFactor: 1.0, collapseDirection: .scrollUp, followers: [])
+        if let navigationController = self.navigationController as? ScrollingNavigationController,
+            let tabbar = tabBarController?.tabBar{
+            navigationController.followScrollView(tableview, delay: 50, scrollSpeedFactor: 1.0, collapseDirection: .scrollUp, followers: [tabbar])
+            
         }
     }
     

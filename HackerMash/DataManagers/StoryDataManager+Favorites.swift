@@ -16,7 +16,7 @@ extension StoryDataManager {
         var favoriteStories = [Story]()
         for favorite in favorites {
             for story in data {
-                if story.id == favorite.id && favorite.isSaved == true {
+                if story.id == favorite.id && favorite.isSaved {
                     favoriteStories.append(story)
                     break
                 }

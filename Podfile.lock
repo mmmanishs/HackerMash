@@ -17,7 +17,7 @@ PODS:
     - SDWebImage/Core (= 4.3.2)
   - SDWebImage/Core (4.3.2)
   - SwipeCellKit (2.0.1)
-  - UIView+Shake (1.4.0)
+  - "UIView+Shake (1.4.0)"
 
 DEPENDENCIES:
   - Alamofire (~> 4.6)
@@ -30,7 +30,21 @@ DEPENDENCIES:
   - PromisesSwift (~> 1.0)
   - SDWebImage (~> 4.0)
   - SwipeCellKit
-  - UIView+Shake
+  - "UIView+Shake"
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AMScrollingNavbar
+    - AZDropdownMenu
+    - KYNavigationProgress
+    - NVActivityIndicatorView
+    - Popover
+    - PromisesObjC
+    - PromisesSwift
+    - SDWebImage
+    - SwipeCellKit
+    - "UIView+Shake"
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -53,8 +67,8 @@ SPEC CHECKSUMS:
   PromisesSwift: 60f58ca196d891f290477a58e888eb97ac17ff49
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
-  UIView+Shake: 055ad67721de1f74d29c0a1d464697e505dfc62f
+  "UIView+Shake": 055ad67721de1f74d29c0a1d464697e505dfc62f
 
 PODFILE CHECKSUM: e9bc3baf38ec70e2f0079a70de0dc5ddf5a4bd22
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

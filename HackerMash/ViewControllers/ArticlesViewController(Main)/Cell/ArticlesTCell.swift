@@ -24,7 +24,7 @@ class ArticlesTCell: SwipeTableViewCell {
             return
         }
         self.title.text = viewModel.title
-        self.time.text = viewModel.time
+        self.time.text = viewModel.time + " by \(viewModel.story.by)"
         setUpIsReadIndicator(isRead: viewModel.favorite.isRead, isSaved: viewModel.favorite.isSaved)
         borderColorView.backgroundColor = getRandomColor()
     }
