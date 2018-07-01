@@ -11,6 +11,7 @@ import Promises
 enum ArticleType {
     case topStories
     case savedStories
+    case archives
 }
 
 enum ControllerCommand {
@@ -22,7 +23,6 @@ enum ControllerCommand {
 }
 
 protocol ViewModelInteractor {
-
     func updateView(viewModel: ArticlesViewModel, command: ControllerCommand)
 }
 
@@ -43,6 +43,9 @@ class ArticlesController {
             viewModel.update(withStories: StoryDataManager().getFavorites())
             self.delegate?.updateView(viewModel: viewModel, command: .showData)
             return
+        case .archives:
+            promise = StoryDataManager().getArchives()
+            viewModel = ArticlesViewModel(title: "Archives")
         }
         self.delegate?.updateView(viewModel: viewModel, command: .showLoading)
         promise?.then(){ stories in
@@ -55,7 +58,7 @@ class ArticlesController {
     }
 }
 
-class ArticlesViewModel {
+struct ArticlesViewModel {
     var rows: [ArticlesRowViewModel]
     var title: String
     let localDataManager = LocalDataManagerFavorites()
@@ -65,10 +68,9 @@ class ArticlesViewModel {
         self.rows = [ArticlesRowViewModel]()
     }
     
-    func update(withStories stories: [Story]) {
+    mutating func update(withStories stories: [Story]) {
         self.rows.removeAll()
         stories.forEach(){ story in
-            
             self.rows.append(ArticlesRowViewModel(
                 id: story.id,
                 timeStamp: story.time,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Story: Codable {
+struct Story: Codable {
     let by: String
     let descendants: Int
     let id: Int
@@ -18,27 +18,7 @@ final class Story: Codable {
     let title: String
     let type: String
     let url: String
-    
-    init(by: String
-    ,descendants: Int
-    ,id: Int
-    ,kids: [Int]
-    ,score: Int
-    ,time: Int64
-    ,title: String
-    ,type: String
-    ,url: String) {
-        self.by = by
-        self.descendants = descendants
-        self.id = id
-        self.kids = kids
-        self.score = score
-        self.time = time
-        self.title = title
-        self.type = type
-        self.url = url
-    }
-    
+
     func getTimeAgo() -> String {
         let publish = Date.init(timeIntervalSince1970: TimeInterval(time))
         let timeInSecs = Date().timeIntervalSince(publish)

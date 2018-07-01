@@ -25,6 +25,10 @@ class StoryDataManager {
         }
     }
     
+    func getArchives() -> Promise<[Story]> {
+        return Promise(LocalDataManagerStory().read(repo: .topStoryCumulative).stories)
+    }
+    
     func getDownloadedStroriesPromise() -> Promise<[Story]> {
         let sPromise = Promise<[Story]>(on:.global()) { fullfil, reject in
             let idsPromise = StoryIdsDataManager().getTopNewStoryIds()
@@ -67,24 +71,5 @@ extension StoryDataManager {
         catch {
             return Promise(ApiError.badURL)
         }
-    }
-}
-
-class AppData {
-    static let downloadedTimeKey = "lastDownloadedStoriesTime"
-    static let downloadIntervalInSeconds: TimeInterval = 86400
-    static func shouldDownloadNewStories() -> Bool {
-        let userdefaults = UserDefaults.standard
-        if let downloadedDate = userdefaults.value(forKey: downloadedTimeKey) as? Date {
-            let storiesExpiryDate = Date(timeInterval: downloadIntervalInSeconds, since: downloadedDate)
-            return Date() > storiesExpiryDate
-        }
-        return true
-    }
-    
-    static func storiesDownloaded() {
-        let userdefaults = UserDefaults.standard
-        userdefaults.set(Date(), forKey: downloadedTimeKey)
-        userdefaults.synchronize()
     }
 }

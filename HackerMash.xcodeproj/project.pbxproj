@@ -25,6 +25,8 @@
 		06A1423C2062392300BAECA9 /* LocalDataManagerStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A1423B2062392300BAECA9 /* LocalDataManagerStory.swift */; };
 		06ACB63620E8300900FB63A5 /* SavedStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACB63520E8300900FB63A5 /* SavedStoriesViewController.swift */; };
 		06ACB63820E8302400FB63A5 /* MainStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACB63720E8302400FB63A5 /* MainStoriesViewController.swift */; };
+		06ACB65120E92B8600FB63A5 /* ArchivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACB65020E92B8600FB63A5 /* ArchivesViewController.swift */; };
+		06ACB65320E92C0400FB63A5 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ACB65220E92C0400FB63A5 /* AppData.swift */; };
 		06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC64CB20510176009C9960 /* AppDelegate.swift */; };
 		06EC64D120510176009C9960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64CF20510176009C9960 /* Main.storyboard */; };
 		06EC64D320510176009C9960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EC64D220510176009C9960 /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		06A1423B2062392300BAECA9 /* LocalDataManagerStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManagerStory.swift; sourceTree = "<group>"; };
 		06ACB63520E8300900FB63A5 /* SavedStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStoriesViewController.swift; sourceTree = "<group>"; };
 		06ACB63720E8302400FB63A5 /* MainStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoriesViewController.swift; sourceTree = "<group>"; };
+		06ACB65020E92B8600FB63A5 /* ArchivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesViewController.swift; sourceTree = "<group>"; };
+		06ACB65220E92C0400FB63A5 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		06EC64C820510176009C9960 /* HackerMash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerMash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC64CB20510176009C9960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06EC64D020510176009C9960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +159,14 @@
 			path = MainStoriesViewController;
 			sourceTree = "<group>";
 		};
+		06ACB64F20E92B5A00FB63A5 /* ArchivesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06ACB65020E92B8600FB63A5 /* ArchivesViewController.swift */,
+			);
+			path = ArchivesViewController;
+			sourceTree = "<group>";
+		};
 		06EC64BF20510176009C9960 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +189,7 @@
 		06EC64CA20510176009C9960 /* HackerMash */ = {
 			isa = PBXGroup;
 			children = (
+				06ACB65220E92C0400FB63A5 /* AppData.swift */,
 				06EC650420520D94009C9960 /* DataManagers */,
 				06EC64FC20520D94009C9960 /* RemoteDataControllers */,
 				06028EB82054F77700FC0669 /* LocalDataManager */,
@@ -285,6 +298,7 @@
 		06EC651E20526403009C9960 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				06ACB64F20E92B5A00FB63A5 /* ArchivesViewController */,
 				06ACB63920E8302800FB63A5 /* MainStoriesViewController */,
 				06ACB63420E82FE600FB63A5 /* SavedStoriesViewController */,
 				06028EA0205395DC00FC0669 /* KidsArticlesController */,
@@ -465,6 +479,7 @@
 				06EC650920520D94009C9960 /* Result.swift in Sources */,
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,
 				06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */,
+				06ACB65120E92B8600FB63A5 /* ArchivesViewController.swift in Sources */,
 				06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */,
 				06A14236206205FA00BAECA9 /* ArticlesViewController+SwipeDelegates.swift in Sources */,
 				06EC652220526410009C9960 /* NewsDetailViewController.swift in Sources */,
@@ -489,6 +504,7 @@
 				0631C4832064C76000785FF8 /* StoryDataManager+Favorites.swift in Sources */,
 				06446BBD206B659300B460CD /* HelperFuncs.swift in Sources */,
 				06028EB12053CFCC00FC0669 /* TSNotification.swift in Sources */,
+				06ACB65320E92C0400FB63A5 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

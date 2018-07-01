@@ -31,7 +31,7 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
             navigationController.scrollingNavbarDelegate = self
         }
         self.view.backgroundColor = UIColor.white
-        configureBarButtons()
+//        configureBarButtons()
     }
 }
 
