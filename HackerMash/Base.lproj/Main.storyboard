@@ -65,6 +65,17 @@
                                                         <constraint firstAttribute="width" constant="6" id="nfV-Ne-4Yv"/>
                                                     </constraints>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGZ-Zf-tjx">
+                                                    <rect key="frame" x="333" y="69.5" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="0Sj-6t-sKE"/>
+                                                        <constraint firstAttribute="height" constant="30" id="zYm-jx-83D"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="unbookmark"/>
+                                                    <connections>
+                                                        <action selector="buttonBookmarkClicked:" destination="XCS-Dc-vwI" eventType="touchUpInside" id="SqS-5M-qI0"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -74,7 +85,9 @@
                                                 <constraint firstItem="73a-IQ-hrK" firstAttribute="top" secondItem="ISm-m0-fEP" secondAttribute="top" id="JMO-Sa-DhU"/>
                                                 <constraint firstAttribute="bottom" secondItem="Cha-I6-LSn" secondAttribute="bottom" constant="3" id="NLZ-Y5-9oE"/>
                                                 <constraint firstItem="kaB-xo-dgN" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" constant="40" id="Nxw-UH-ODl"/>
+                                                <constraint firstAttribute="trailing" secondItem="lGZ-Zf-tjx" secondAttribute="trailing" constant="12" id="QnL-pl-EzV"/>
                                                 <constraint firstItem="kaB-xo-dgN" firstAttribute="centerY" secondItem="ISm-m0-fEP" secondAttribute="centerY" id="U9I-pi-kUQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="lGZ-Zf-tjx" secondAttribute="bottom" id="ajc-FM-w8B"/>
                                                 <constraint firstAttribute="trailing" secondItem="kaB-xo-dgN" secondAttribute="trailing" constant="15" id="cdr-Ft-aRg"/>
                                                 <constraint firstItem="73a-IQ-hrK" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" id="ewO-Ku-7qD"/>
                                                 <constraint firstItem="Cha-I6-LSn" firstAttribute="leading" secondItem="ISm-m0-fEP" secondAttribute="leading" constant="40" id="nWT-Yy-mtJ"/>
@@ -83,6 +96,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="borderColorView" destination="73a-IQ-hrK" id="IBd-mG-5Zg"/>
+                                            <outlet property="buttonBookmark" destination="lGZ-Zf-tjx" id="7Ac-ch-7nn"/>
                                             <outlet property="isReadIndicatorLabel" destination="XuU-9z-tsQ" id="ATk-Zh-Jk9"/>
                                             <outlet property="time" destination="Cha-I6-LSn" id="Lrk-tt-ua4"/>
                                             <outlet property="title" destination="kaB-xo-dgN" id="Tgt-Fc-jYG"/>
@@ -130,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="1384"/>
+            <point key="canvasLocation" x="1693.5999999999999" y="1383.9580209895053"/>
         </scene>
         <!--Scrolling Navigation Controller-->
         <scene sceneID="PcT-uP-Kcf">
@@ -331,7 +345,10 @@
             <point key="canvasLocation" x="2449" y="620"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="unbookmark" width="85" height="85"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uTv-W3-0fk"/>
+        <segue reference="VoL-IJ-Fxk"/>
     </inferredMetricsTieBreakers>
 </document>

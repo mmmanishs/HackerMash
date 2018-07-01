@@ -10,7 +10,7 @@ import Foundation
 
 class AppData {
     static let downloadedTimeKey = "lastDownloadedStoriesTime"
-    static let downloadIntervalInSeconds: TimeInterval = 120
+    static let downloadIntervalInSeconds: TimeInterval = 7200
     static func shouldDownloadNewStories() -> Bool {
         let userdefaults = UserDefaults.standard
         if let downloadedDate = userdefaults.value(forKey: downloadedTimeKey) as? Date {

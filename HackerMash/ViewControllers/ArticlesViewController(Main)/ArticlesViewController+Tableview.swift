@@ -17,13 +17,22 @@ extension ArticlesViewController: UITableViewDelegate {
         let story = viewModel.rows[indexPath.row].story
         viewModel.rows[indexPath.row].favorite.isRead = true
         let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
-        cell?.setUpIsReadIndicator(isRead: true, isSaved: viewModel.rows[indexPath.row].favorite.isSaved)
+        cell?.setUpIsReadIndicator(isRead: true)
         controller.localDataManagerFavorites.save(favorite: viewModel.rows[indexPath.row].favorite)
         Router.detailNewsScreen(self, story).route() //refactor with a viewModel here
     }
 }
 
-extension ArticlesViewController: UITableViewDataSource {
+extension ArticlesViewController: UITableViewDataSource, ArticleCellResponsder {
+    func buttonToggleTapped(cell: UITableViewCell) {
+        guard let indexPath = tableview.indexPath(for: cell),
+        let viewModel = self.viewModel  else {
+            return
+        }
+        viewModel.rows[indexPath.row].favorite.isSaved.toggle()
+        controller.localDataManagerFavorites.save(favorite: viewModel.rows[indexPath.row].favorite)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.rows.count ?? 0
     }
@@ -35,7 +44,7 @@ extension ArticlesViewController: UITableViewDataSource {
             cell.updateCell(viewModel: rowModel)
         }
         cell.delegate = self
-        
+        cell.responder = self
         return cell
     }
 }
