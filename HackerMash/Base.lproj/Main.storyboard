@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="382"/>
+            <point key="canvasLocation" x="1694" y="1384"/>
         </scene>
         <!--Scrolling Navigation Controller-->
         <scene sceneID="PcT-uP-Kcf">
@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Id-Mi-kFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="373"/>
+            <point key="canvasLocation" x="887" y="1384"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yy3-YN-7MY">
@@ -328,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3J1-aZ-SqH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1289" y="865"/>
+            <point key="canvasLocation" x="2449" y="620"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
