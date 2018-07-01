@@ -32,7 +32,6 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
         }
         self.view.backgroundColor = UIColor.white
         configureBarButtons()
-//        addMenu()
     }
 }
 
