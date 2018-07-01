@@ -95,7 +95,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obW-Jh-7mX" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="167.5" y="321" width="50" height="50"/>
+                                <rect key="frame" x="167.5" y="323.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="dlT-NR-T5I"/>
                                     <constraint firstAttribute="height" constant="50" id="zim-zW-9tV"/>
@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="268" y="394.45277361319341"/>
+            <point key="canvasLocation" x="916" y="382"/>
         </scene>
         <!--Scrolling Navigation Controller-->
         <scene sceneID="PcT-uP-Kcf">
@@ -142,12 +142,45 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eo1-Hx-56M"/>
+                        <segue destination="yxZ-yu-dSw" kind="relationship" relationship="rootViewController" id="hd2-fo-R9G"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lti-cY-5GO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-641" y="382"/>
+        </scene>
+        <!--Articles Base View Controller-->
+        <scene sceneID="eJr-hQ-jNJ">
+            <objects>
+                <viewController id="yxZ-yu-dSw" customClass="ArticlesBaseViewController" customModule="HackerMash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4aQ-gW-A1g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opb-aM-7UR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="embed" id="en8-QB-1sO"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="opb-aM-7UR" secondAttribute="bottom" id="Kbp-iM-d4n"/>
+                            <constraint firstItem="EuE-nm-eSB" firstAttribute="trailing" secondItem="opb-aM-7UR" secondAttribute="trailing" id="Kdu-qZ-tUO"/>
+                            <constraint firstItem="opb-aM-7UR" firstAttribute="leading" secondItem="EuE-nm-eSB" secondAttribute="leading" id="isu-3z-8EV"/>
+                            <constraint firstItem="opb-aM-7UR" firstAttribute="top" secondItem="4aQ-gW-A1g" secondAttribute="top" id="vRP-Ko-ww1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EuE-nm-eSB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5I5-ja-PG9"/>
+                    <connections>
+                        <outlet property="containerView" destination="opb-aM-7UR" id="0y2-Ax-JEG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Id-Mi-kFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="373"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yy3-YN-7MY">
@@ -171,6 +204,7 @@
         <!--Scrolling Navigation Controller-->
         <scene sceneID="G99-Nm-urp">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uoV-eH-Tlm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ScrollingNavigationController" id="7bi-vG-iDw" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="3sd-Er-rce"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vGX-zd-uQc">
@@ -178,10 +212,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="UXT-E2-cMf" kind="relationship" relationship="rootViewController" id="fuA-mW-17f"/>
+                        <segue destination="yxZ-yu-dSw" kind="relationship" relationship="rootViewController" id="VoL-IJ-Fxk"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uoV-eH-Tlm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-322" y="1370"/>
         </scene>
@@ -205,6 +238,7 @@
         <!--Saved Stories View Controller-->
         <scene sceneID="1rP-Xl-VmG">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="srl-yd-QeJ" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SavedArticlesViewController" id="UXT-E2-cMf" customClass="SavedStoriesViewController" customModule="HackerMash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rpD-xE-fQ2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -287,7 +321,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBd-nk-3H5" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="167.5" y="321" width="50" height="50"/>
+                                <rect key="frame" x="167.5" y="323.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ary-pe-yGZ"/>
                                     <constraint firstAttribute="width" constant="50" id="Ep3-Sp-rVE"/>
@@ -320,7 +354,6 @@
                         <outlet property="tableview" destination="YHs-BS-HjQ" id="HLk-qP-49i"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="srl-yd-QeJ" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="588" y="1346"/>
         </scene>
@@ -542,4 +575,7 @@
             <point key="canvasLocation" x="1289" y="865"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="VoL-IJ-Fxk"/>
+    </inferredMetricsTieBreakers>
 </document>
