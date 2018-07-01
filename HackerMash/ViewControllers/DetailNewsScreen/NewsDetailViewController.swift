@@ -50,8 +50,9 @@ class NewsDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let navigationController = self.navigationController as? ScrollingNavigationController {
-            navigationController.followScrollView(webview, delay: 50, scrollSpeedFactor: 1.0, collapseDirection: .scrollUp, followers: [])
+        if let navigationController = self.navigationController as? ScrollingNavigationController,
+            let tabbar = tabBarController?.tabBar{
+            navigationController.followScrollView(webview, delay: 50, scrollSpeedFactor: 1.0, collapseDirection: .scrollUp, followers: [tabbar])
         }
     }
     

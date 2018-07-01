@@ -50,7 +50,6 @@ extension ArticlesViewController {
         if let navigationController = self.navigationController as? ScrollingNavigationController,
             let tabbar = tabBarController?.tabBar{
             navigationController.followScrollView(tableview, delay: 50, scrollSpeedFactor: 1.0, collapseDirection: .scrollUp, followers: [tabbar])
-            
         }
     }
     
