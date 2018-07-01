@@ -33,7 +33,7 @@ class ArticlesTCell: SwipeTableViewCell {
         self.time.text = viewModel.time + " by \(viewModel.story.by)"
         setUpIsReadIndicator(isRead: viewModel.favorite.isRead)
         buttonBookmark.setBackgroundImage(getButtonImage(isSaved: viewModel.favorite.isSaved), for: .normal)
-        borderColorView.backgroundColor = getRandomColor()
+        borderColorView.backgroundColor = UIColor.randomFlat
     }
     
     func setUpIsReadIndicator(isRead: Bool) {
@@ -51,7 +51,6 @@ class ArticlesTCell: SwipeTableViewCell {
             return UIImage(named: "bookmark")!
         } else {
             return UIImage(named: "unbookmark")!
-
         }
     }
     
