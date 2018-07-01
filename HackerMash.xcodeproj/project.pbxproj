@@ -15,7 +15,7 @@
 		06028EB52054ED8F00FC0669 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB42054ED8F00FC0669 /* FontName.swift */; };
 		06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */; };
 		0631926620E958C5005C5C8F /* RemoteStoriesFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631926520E958C5005C5C8F /* RemoteStoriesFetch.swift */; };
-		0631926C20E97DCB005C5C8F /* ArticlesBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631926B20E97DCA005C5C8F /* ArticlesBaseViewController.swift */; };
+		0631926C20E97DCB005C5C8F /* ArticlesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631926B20E97DCA005C5C8F /* ArticlesContainerViewController.swift */; };
 		0631C47F2064913F00785FF8 /* LocalDataManagerFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C47E2064913F00785FF8 /* LocalDataManagerFavorites.swift */; };
 		0631C4812064924F00785FF8 /* DiskPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4802064924F00785FF8 /* DiskPath.swift */; };
 		0631C4832064C76000785FF8 /* StoryDataManager+Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */; };
@@ -57,7 +57,7 @@
 		06028EB42054ED8F00FC0669 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
 		06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Menu.swift"; sourceTree = "<group>"; };
 		0631926520E958C5005C5C8F /* RemoteStoriesFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoriesFetch.swift; sourceTree = "<group>"; };
-		0631926B20E97DCA005C5C8F /* ArticlesBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesBaseViewController.swift; sourceTree = "<group>"; };
+		0631926B20E97DCA005C5C8F /* ArticlesContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesContainerViewController.swift; sourceTree = "<group>"; };
 		0631C47E2064913F00785FF8 /* LocalDataManagerFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManagerFavorites.swift; sourceTree = "<group>"; };
 		0631C4802064924F00785FF8 /* DiskPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPath.swift; sourceTree = "<group>"; };
 		0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryDataManager+Favorites.swift"; sourceTree = "<group>"; };
@@ -141,12 +141,12 @@
 			path = LocalDataManager;
 			sourceTree = "<group>";
 		};
-		0631926A20E97DCA005C5C8F /* ArticlesBaseViewController */ = {
+		0631926A20E97DCA005C5C8F /* ArticlesContainerViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0631926B20E97DCA005C5C8F /* ArticlesBaseViewController.swift */,
+				0631926B20E97DCA005C5C8F /* ArticlesContainerViewController.swift */,
 			);
-			path = ArticlesBaseViewController;
+			path = ArticlesContainerViewController;
 			sourceTree = "<group>";
 		};
 		06EC64BF20510176009C9960 = {
@@ -281,7 +281,7 @@
 		06EC651E20526403009C9960 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0631926A20E97DCA005C5C8F /* ArticlesBaseViewController */,
+				0631926A20E97DCA005C5C8F /* ArticlesContainerViewController */,
 				06028EA0205395DC00FC0669 /* KidsArticlesController */,
 				06EC651F20526410009C9960 /* DetailNewsScreen */,
 				06EC651620521F8D009C9960 /* ArticlesViewController(Main) */,
@@ -451,7 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0631926C20E97DCB005C5C8F /* ArticlesBaseViewController.swift in Sources */,
+				0631926C20E97DCB005C5C8F /* ArticlesContainerViewController.swift in Sources */,
 				06EC650B20520D94009C9960 /* StoryIDsRequestProvider.swift in Sources */,
 				06EC650A20520D94009C9960 /* StoryRequestProvider.swift in Sources */,
 				06EC651A20521F8D009C9960 /* ArticlesController.swift in Sources */,

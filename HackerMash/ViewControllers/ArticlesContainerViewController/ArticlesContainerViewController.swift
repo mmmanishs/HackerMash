@@ -1,5 +1,5 @@
 //
-//  ArticlesBaseViewController.swift
+//  ArticlesContainerViewController.swift
 //  HackerMash
 //
 //  Created by Manish Singh on 7/1/18.
