@@ -18,5 +18,6 @@ class SavedStoriesViewController: ArticlesViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         controller.getData(articlesType: .savedStories)
+        refershButton?.isEnabled = false
     }
 }

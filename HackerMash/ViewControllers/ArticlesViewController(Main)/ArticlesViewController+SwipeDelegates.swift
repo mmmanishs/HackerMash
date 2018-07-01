@@ -43,7 +43,7 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
         makeRead.font = UIFont(name: "Helvetica", size: 40.0)
         makeRead.textColor = UIColor.flatBlue
 
-        let makeSave = SwipeAction(style: .default, title: "★") { action, indexPath in
+        let makeSave = SwipeAction(style: .default, title: "📖") { action, indexPath in
             viewModel.rows[indexPath.row].favorite.isSaved = !viewModel.rows[indexPath.row].favorite.isSaved
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: isRead, isSaved: true)
@@ -51,10 +51,10 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
             self.controller.favoriteLocalDataManager.save(favorite: viewModel.rows[indexPath.row].favorite)
 
         }
-        makeSave.backgroundColor = UIColor.flatBlue
+        makeSave.backgroundColor = UIColor.flatWhite
         makeSave.font = UIFont(name: "Helvetica", size: 20.0)
         
-        let makeUnSave = SwipeAction(style: .default, title: "☆") { action, indexPath in
+        let makeUnSave = SwipeAction(style: .default, title: "un-bookmark") { action, indexPath in
             viewModel.rows[indexPath.row].favorite.isSaved.toggle()
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: isRead, isSaved: false)

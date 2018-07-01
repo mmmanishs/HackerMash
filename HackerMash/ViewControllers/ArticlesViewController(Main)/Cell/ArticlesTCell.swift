@@ -30,17 +30,11 @@ class ArticlesTCell: SwipeTableViewCell {
     }
     
     func setUpIsReadIndicator(isRead: Bool, isSaved: Bool) {
-        switch (true,true) {
-        case (isSaved, isRead):
-            isReadIndicatorLabel.font = UIFont(name: FontName.HelveticaNeue.getString(), size: 16.0)
-            isReadIndicatorLabel.text = "★"
-        case (isSaved, !isRead):
-            isReadIndicatorLabel.font = UIFont(name: FontName.HelveticaNeue.getString(), size: 16.0)
-            isReadIndicatorLabel.text = "☆"
-        case (!isSaved, isRead):
+        switch true {
+        case isRead:
             isReadIndicatorLabel.font = UIFont(name: FontName.HelveticaNeue.getString(), size: 22.0)
             isReadIndicatorLabel.text = "●"
-        case (!isSaved, !isRead):
+        case !isRead:
             isReadIndicatorLabel.font = UIFont(name: FontName.HelveticaNeue.getString(), size: 13.0)
             isReadIndicatorLabel.text = "○"
         default : isReadIndicatorLabel.text = "○"
