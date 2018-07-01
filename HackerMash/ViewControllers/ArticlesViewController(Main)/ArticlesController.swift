@@ -10,7 +10,6 @@ import Foundation
 import Promises
 enum ArticleType {
     case topStories
-    case bestStories
     case savedStories
 }
 
@@ -39,9 +38,6 @@ class ArticlesController {
         case .topStories:
             promise = StoryDataManager().getTop()
             viewModel = ArticlesViewModel(title: "Top Stories")
-        case .bestStories:
-            promise = StoryDataManager().getBest()
-            viewModel = ArticlesViewModel(title: "Best Stories")
         case .savedStories:
             viewModel = ArticlesViewModel(title: "Saved Stories")
             viewModel.update(withStories: StoryDataManager().getFavorites())

@@ -9,17 +9,6 @@
 import Foundation
 import Promises
 class StoryIdsDataManager {
-    func getBestNewStoryIds() -> Promise<StoryIDs> {
-        do {
-            let bestStoriesUrl = try StoryIDsRequestProvider.bestStories.getRequest()
-            return RemoteDataController().getStoriesID(url: bestStoriesUrl)
-        }
-        catch {
-            return Promise(ApiError.badURL)
-        }
-        
-    }
-    
     func getTopNewStoryIds() -> Promise<StoryIDs> {
         do {
             let topStoriesUrl = try StoryIDsRequestProvider.topStories.getRequest()
@@ -28,7 +17,6 @@ class StoryIdsDataManager {
         catch {
             return Promise(ApiError.badURL)
         }
-        
     }
 
 }

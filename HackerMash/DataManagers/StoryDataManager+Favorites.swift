@@ -11,9 +11,8 @@ import Foundation
 extension StoryDataManager {
     func getFavorites() -> [Story] {
         let favorites = LocalDataManagerFavorites().read().favorites
-        let bs = LocalDataManagerStory().read(repo: .bestStory)
         let ts = LocalDataManagerStory().read(repo: .topStory)
-        let data = merge(array1: bs.stories, array2: ts.stories)
+        let data = ts.stories
         var favoriteStories = [Story]()
         for favorite in favorites {
             for story in data {

@@ -9,40 +9,23 @@
 import Foundation
 import Promises
 class StoryDataManager {
-    func getBest() -> Promise<[Story]> {
-//        return Promise(LocalDataManagerStory().read(repo: .bestStory).stories)
-        let sPromise = Promise<[Story]>(on:.global()) { fullfil, reject in
-            let idsPromise = StoryIdsDataManager().getBestNewStoryIds()
-            idsPromise.then(){ storiesID in
-                guard let ids = storiesID.ids else {
-                    reject(ApiError.apiError)
-                    return
-                }
-                var processedCount = 0
-                var stories = [Story]()
-                for id in ids {
-                    self.getStory(forID: id).then() { story in
-                        stories.append(story)
-                        }.catch() { error in
-                        }.always {
-                            processedCount = processedCount + 1
-                            if processedCount == ids.count {
-                                fullfil(stories)
-                            }
-                    }
-                }
-                }.catch() {error in
-                    reject(error)
-            }
-        }
-        LocalDataManagerStory().saveStories(promise: sPromise, repo: .bestStory)
-        return sPromise
-    }
-    //TODO: Make all the promises execute on background threads
-    
     func getTop() -> Promise<[Story]> {
-//        return Promise(LocalDataManagerStory().read(repo: .topStory).stories)
-
+        if AppData.shouldDownloadNewStories() {
+            let downloadedPromises = getDownloadedStroriesPromise()
+            downloadedPromises.then{ _ in
+                AppData.storiesDownloaded()
+            }
+            DispatchQueue.global(qos: .background).async {
+                LocalDataManagerStory().updateStoryDB(promise: downloadedPromises)
+                LocalDataManagerStory().saveBatchOfStories(promise: downloadedPromises)
+            }
+            return downloadedPromises
+        } else {
+            return Promise(LocalDataManagerStory().read(repo: .topStory).stories)
+        }
+    }
+    
+    func getDownloadedStroriesPromise() -> Promise<[Story]> {
         let sPromise = Promise<[Story]>(on:.global()) { fullfil, reject in
             let idsPromise = StoryIdsDataManager().getTopNewStoryIds()
             idsPromise.then(){ storiesID in
@@ -67,8 +50,10 @@ class StoryDataManager {
                     reject(error)
             }
         }
-        
-        LocalDataManagerStory().saveStories(promise: sPromise, repo: .topStory)
+        DispatchQueue.global(qos: .background).async {
+            LocalDataManagerStory().updateStoryDB(promise: sPromise)
+            LocalDataManagerStory().saveBatchOfStories(promise: sPromise)
+        }
         return sPromise
     }
 }
@@ -82,7 +67,24 @@ extension StoryDataManager {
         catch {
             return Promise(ApiError.badURL)
         }
-        
     }
+}
 
+class AppData {
+    static let downloadedTimeKey = "lastDownloadedStoriesTime"
+    static let downloadIntervalInSeconds: TimeInterval = 86400
+    static func shouldDownloadNewStories() -> Bool {
+        let userdefaults = UserDefaults.standard
+        if let downloadedDate = userdefaults.value(forKey: downloadedTimeKey) as? Date {
+            let storiesExpiryDate = Date(timeInterval: downloadIntervalInSeconds, since: downloadedDate)
+            return Date() > storiesExpiryDate
+        }
+        return true
+    }
+    
+    static func storiesDownloaded() {
+        let userdefaults = UserDefaults.standard
+        userdefaults.set(Date(), forKey: downloadedTimeKey)
+        userdefaults.synchronize()
+    }
 }

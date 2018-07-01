@@ -10,17 +10,17 @@ import Foundation
 
 enum DiskPath {
     case topStory
-    case bestStory
     case favoriteStory
     case userStoryPref
+    case topStoryCumulative
     func filepath() -> URL{
         var filepath_topStories: URL {
             let filepath_topStories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             return filepath_topStories.appendingPathComponent("tops", isDirectory: false)
         }
-        var filepath_bestStories: URL {
+        var filepath_topStoryCumulative: URL {
             let filepath_topStories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            return filepath_topStories.appendingPathComponent("bests", isDirectory: false)
+            return filepath_topStories.appendingPathComponent("filepath_topStoryCumulative", isDirectory: false)
         }
         var filepath_favoriteStories: URL {
             let filepath_mainStories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -32,7 +32,7 @@ enum DiskPath {
         }
         switch self {
         case .topStory: return filepath_topStories
-        case .bestStory: return filepath_bestStories
+        case .topStoryCumulative: return filepath_topStoryCumulative
         case .favoriteStory: return filepath_favoriteStories
         case .userStoryPref: return filepath_userStoryPref
         }

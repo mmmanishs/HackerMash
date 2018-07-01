@@ -9,16 +9,26 @@
 import Foundation
 import Promises
 class LocalDataManagerStory {
-    func saveStories(promise: Promise<[Story]>, repo: DiskPath) {
+    func updateStoryDB(promise: Promise<[Story]>) {
         promise.then() { stories in
-            let sd = self.read(repo: repo)
+            let sd = self.read(repo: DiskPath.topStoryCumulative)
             sd.date = Date()
             merge(old: &sd.stories, new: stories)
             do {
                 let data = try JSONEncoder().encode(sd)
-                try? data.write(to: repo.filepath())
+                try? data.write(to: DiskPath.topStoryCumulative.filepath())
             }
             
+        }
+    }
+    
+    func saveBatchOfStories(promise: Promise<[Story]>) {
+        promise.then() { stories in
+            let storyDisk = StoryDisk(date: Date(), stories: stories)
+            do {
+                let data = try JSONEncoder().encode(storyDisk)
+                try? data.write(to: DiskPath.topStory.filepath())
+            }
         }
     }
     
