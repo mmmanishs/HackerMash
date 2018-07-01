@@ -23,6 +23,10 @@ struct Story: Codable {
         let publish = Date.init(timeIntervalSince1970: TimeInterval(time))
         let timeInSecs = Date().timeIntervalSince(publish)
         let timeInHrs = Int(timeInSecs / 3600)
+        return "published \(getTimeDescription(timeInHrs: timeInHrs))"
+     }
+    
+    private func getTimeDescription(timeInHrs: Int) -> String {
         switch true {
         case (timeInHrs > 1) && (timeInHrs < 24):
             return "\(timeInHrs) hrs ago"
@@ -37,7 +41,7 @@ struct Story: Codable {
         case timeInHrs > 336:
             return "some \(timeInHrs / 168) weeks ago"
         default:
-            return "timeless"
+            return "just now"
         }
     }
     
