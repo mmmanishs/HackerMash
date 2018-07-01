@@ -14,6 +14,7 @@
 		06028EB32053CFCC00FC0669 /* TSNotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB02053CFCC00FC0669 /* TSNotificationObserver.swift */; };
 		06028EB52054ED8F00FC0669 /* FontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB42054ED8F00FC0669 /* FontName.swift */; };
 		06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */; };
+		0631926620E958C5005C5C8F /* RemoteStoriesFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631926520E958C5005C5C8F /* RemoteStoriesFetch.swift */; };
 		0631C47F2064913F00785FF8 /* LocalDataManagerFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C47E2064913F00785FF8 /* LocalDataManagerFavorites.swift */; };
 		0631C4812064924F00785FF8 /* DiskPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4802064924F00785FF8 /* DiskPath.swift */; };
 		0631C4832064C76000785FF8 /* StoryDataManager+Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */; };
@@ -57,6 +58,7 @@
 		06028EB02053CFCC00FC0669 /* TSNotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSNotificationObserver.swift; sourceTree = "<group>"; };
 		06028EB42054ED8F00FC0669 /* FontName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontName.swift; sourceTree = "<group>"; };
 		06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Menu.swift"; sourceTree = "<group>"; };
+		0631926520E958C5005C5C8F /* RemoteStoriesFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoriesFetch.swift; sourceTree = "<group>"; };
 		0631C47E2064913F00785FF8 /* LocalDataManagerFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManagerFavorites.swift; sourceTree = "<group>"; };
 		0631C4802064924F00785FF8 /* DiskPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPath.swift; sourceTree = "<group>"; };
 		0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryDataManager+Favorites.swift"; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				06EC64FD20520D94009C9960 /* RequestProvider */,
 				06EC650020520D94009C9960 /* RemoteDataController.swift */,
+				0631926520E958C5005C5C8F /* RemoteStoriesFetch.swift */,
 			);
 			path = RemoteDataControllers;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,
 				06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */,
 				06ACB65120E92B8600FB63A5 /* ArchivesViewController.swift in Sources */,
+				0631926620E958C5005C5C8F /* RemoteStoriesFetch.swift in Sources */,
 				06EC64CC20510176009C9960 /* AppDelegate.swift in Sources */,
 				06A14236206205FA00BAECA9 /* ArticlesViewController+SwipeDelegates.swift in Sources */,
 				06EC652220526410009C9960 /* NewsDetailViewController.swift in Sources */,

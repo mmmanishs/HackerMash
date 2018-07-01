@@ -18,5 +18,4 @@ class StoryIdsDataManager {
             return Promise(ApiError.badURL)
         }
     }
-
 }

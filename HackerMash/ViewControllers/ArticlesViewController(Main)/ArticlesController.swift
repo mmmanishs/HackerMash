@@ -27,9 +27,8 @@ protocol ViewModelInteractor {
 }
 
 class ArticlesController {
-    private var stories: [Story]?
     var delegate: ViewModelInteractor?
-    let favoriteLocalDataManager = LocalDataManagerFavorites()
+    let localDataManagerFavorites = LocalDataManagerFavorites()
     
     func getData(articlesType: ArticleType) {
         var viewModel: ArticlesViewModel
@@ -48,9 +47,10 @@ class ArticlesController {
             viewModel = ArticlesViewModel(title: "Archives")
         }
         self.delegate?.updateView(viewModel: viewModel, command: .showLoading)
-        promise?.then(){ stories in
-            self.stories = stories
-            viewModel.update(withStories: stories)
+        promise?.then(){ stories in             
+            viewModel.update(withStories: stories.sorted { s1, s2 in
+                return s1.time > s2.time
+            })
             self.delegate?.updateView(viewModel: viewModel, command: .showData)
             }.catch() {exception in
                 self.delegate?.updateView(viewModel: viewModel, command: .showError)

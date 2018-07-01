@@ -11,12 +11,12 @@ import Promises
 class LocalDataManagerStory {
     func updateStoryDB(promise: Promise<[Story]>) {
         promise.then() { stories in
-            let sd = self.read(repo: DiskPath.topStoryCumulative)
+            let sd = self.read(repo: DiskPath.topStoryArchives)
             sd.date = Date()
             merge(old: &sd.stories, new: stories)
             do {
                 let data = try JSONEncoder().encode(sd)
-                try? data.write(to: DiskPath.topStoryCumulative.filepath())
+                try? data.write(to: DiskPath.topStoryArchives.filepath())
             }
             
         }

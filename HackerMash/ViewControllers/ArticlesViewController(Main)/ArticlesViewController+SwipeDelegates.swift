@@ -23,7 +23,7 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: false, isSaved: isSaved)
             cell?.hideSwipe(animated: true)
-            self.controller.favoriteLocalDataManager.save(favorite: viewModel.rows[indexPath.row].favorite)
+            self.controller.localDataManagerFavorites.save(favorite: viewModel.rows[indexPath.row].favorite)
 
         }
         makeUnread.backgroundColor = UIColor.flatWhite
@@ -36,7 +36,7 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: true, isSaved: isSaved)
             cell?.hideSwipe(animated: true)
-            self.controller.favoriteLocalDataManager.save(favorite: viewModel.rows[indexPath.row].favorite)
+            self.controller.localDataManagerFavorites.save(favorite: viewModel.rows[indexPath.row].favorite)
 
         }
         makeRead.backgroundColor = UIColor.flatWhite
@@ -48,7 +48,7 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: isRead, isSaved: true)
             cell?.hideSwipe(animated: true)
-            self.controller.favoriteLocalDataManager.save(favorite: viewModel.rows[indexPath.row].favorite)
+            self.controller.localDataManagerFavorites.save(favorite: viewModel.rows[indexPath.row].favorite)
 
         }
         makeSave.backgroundColor = UIColor.flatWhite
@@ -59,7 +59,7 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
             let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
             cell?.setUpIsReadIndicator(isRead: isRead, isSaved: false)
             cell?.hideSwipe(animated: true)
-            self.controller.favoriteLocalDataManager.save(favorite: viewModel.rows[indexPath.row].favorite)
+            self.controller.localDataManagerFavorites.save(favorite: viewModel.rows[indexPath.row].favorite)
 
         }
         makeUnSave.backgroundColor = UIColor.flatBlue

@@ -12,7 +12,7 @@ enum DiskPath {
     case topStory
     case favoriteStory
     case userStoryPref
-    case topStoryCumulative
+    case topStoryArchives
     func filepath() -> URL{
         var filepath_topStories: URL {
             let filepath_topStories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -32,7 +32,7 @@ enum DiskPath {
         }
         switch self {
         case .topStory: return filepath_topStories
-        case .topStoryCumulative: return filepath_topStoryCumulative
+        case .topStoryArchives: return filepath_topStoryCumulative
         case .favoriteStory: return filepath_favoriteStories
         case .userStoryPref: return filepath_userStoryPref
         }

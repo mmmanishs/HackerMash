@@ -12,17 +12,13 @@ protocol RequestProvider {
     func getRequest() throws -> URLRequest
 }
 enum StoryIDsRequestProvider: RequestProvider {
-    case bestStories
     case topStories
     case logo(String)
     func getRequest() throws -> URLRequest {
         do {
             switch self {
-            case .bestStories:
-                return try getBestStoriesRequest()
-                
             case .topStories:
-                return try getBestStoriesRequest()
+                return try getTopStoriesRequest()
                 
             case .logo(let domainName):
                 return try getNewsLogoRequest(domainName: domainName)
@@ -33,20 +29,7 @@ enum StoryIDsRequestProvider: RequestProvider {
             throw error
         }
     }
-    
-    private func getBestStoriesRequest() throws -> URLRequest {
-        let endPoint = "https://hacker-news.firebaseio.com/v0/beststories.json"
-        guard let url = URL(string: endPoint) else {
-            throw ApiError.badURL
-        }
-        do {
-            let request = try URLRequest(url: url, method: .get, headers: nil) //pass the key in headers
-            return request
-        } catch {
-            throw ApiError.badURL
-        }
-    }
-    
+
     private func getTopStoriesRequest() throws -> URLRequest {
         let endPoint = "https://hacker-news.firebaseio.com/v0/topstories.json"
         guard let url = URL(string: endPoint) else {
