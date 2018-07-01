@@ -8,24 +8,41 @@
 
 import UIKit
 
-class ArticlesBaseViewController: UIViewController {
+class ArticlesContainerViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let index = self.tabBarController?.selectedIndex,
+            let articlesViewController = self.childViewControllers[0] as? ArticlesViewController {
+            switch index {
+            case 0:
+                DispatchQueue.global(qos: .userInitiated).async {
+                    articlesViewController.controller.getData(articlesType: .topStories)
+                }
+                title = "Top Stories"
+            case 1: title = "Bookmarked"
+            case 2:
+                DispatchQueue.global(qos: .userInitiated).async {
+                    articlesViewController.controller.getData(articlesType: .archives)
+                }
+                title = "Archives"
+            default: break
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let index = tabBarController?.selectedIndex,
+            let articlesViewController = childViewControllers[0] as? ArticlesViewController {
+            switch index {
+            case 1:
+                DispatchQueue.global(qos: .userInitiated).async {
+                    articlesViewController.controller.getData(articlesType: .savedStories)
+                }
+            default: break
+            }
+        }
     }
-    */
-
 }

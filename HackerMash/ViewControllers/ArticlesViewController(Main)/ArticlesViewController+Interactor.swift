@@ -32,8 +32,6 @@ extension ArticlesViewController: ViewModelInteractor {
         }
     }
     
-    func updateView(viewModel: ArticlesViewModel) {
-        self.title = viewModel.title
-        
+    func updateView(viewModel: ArticlesViewModel) {        
     }
 }

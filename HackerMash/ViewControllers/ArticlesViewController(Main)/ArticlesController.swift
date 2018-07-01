@@ -33,21 +33,19 @@ class ArticlesController {
     func getData(articlesType: ArticleType) {
         var viewModel: ArticlesViewModel
         var promise: Promise<[Story]>?
+        viewModel = ArticlesViewModel()
+        self.delegate?.updateView(viewModel: viewModel, command: .showLoading)
         switch articlesType {
         case .topStories:
             promise = StoryDataManager().getTop()
-            viewModel = ArticlesViewModel(title: "Top Stories")
         case .savedStories:
-            viewModel = ArticlesViewModel(title: "Saved Stories")
             viewModel.update(withStories: StoryDataManager().getFavorites())
             self.delegate?.updateView(viewModel: viewModel, command: .showData)
             return
         case .archives:
             promise = StoryDataManager().getArchives()
-            viewModel = ArticlesViewModel(title: "Archives")
         }
-        self.delegate?.updateView(viewModel: viewModel, command: .showLoading)
-        promise?.then(){ stories in             
+        promise?.then(){ stories in
             viewModel.update(withStories: stories.sorted { s1, s2 in
                 return s1.time > s2.time
             })
@@ -60,11 +58,9 @@ class ArticlesController {
 
 struct ArticlesViewModel {
     var rows: [ArticlesRowViewModel]
-    var title: String
     let localDataManager = LocalDataManagerFavorites()
 
-    init(title: String) {
-        self.title = title
+    init() {
         self.rows = [ArticlesRowViewModel]()
     }
     
