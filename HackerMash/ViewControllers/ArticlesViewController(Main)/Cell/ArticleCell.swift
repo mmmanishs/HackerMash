@@ -1,5 +1,5 @@
 //
-//  ArticlesTCell.swift
+//  ArticleCell.swift
 //  HackerMash
 //
 //  Created by Manish Singh on 3/8/18.
@@ -14,7 +14,7 @@ import SwipeCellKit
 protocol ArticleCellResponsder {
     func buttonToggleTapped(cell: UITableViewCell)
 }
-class ArticlesTCell: SwipeTableViewCell {
+class ArticleCell: SwipeTableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var buttonBookmark: UIButton!

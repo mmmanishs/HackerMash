@@ -30,8 +30,9 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
         if let navigationController = self.navigationController as? ScrollingNavigationController {
             navigationController.scrollingNavbarDelegate = self
         }
-        self.view.backgroundColor = UIColor.white
-//        configureBarButtons()
+        view.backgroundColor = UIColor.white
+        tableview.tableFooterView = UIView(frame: CGRect.zero)
+        configureBarButtons()
     }
 }
 

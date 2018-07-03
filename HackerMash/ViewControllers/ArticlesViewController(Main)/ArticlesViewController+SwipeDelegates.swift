@@ -19,7 +19,7 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
         let makeUnread = SwipeAction(style: .default, title: "○") { action, indexPath in
             viewModel.rows[indexPath.row].favorite.isRead = false
             
-            let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
+            let cell = tableView.cellForRow(at: indexPath) as? ArticleCell
             cell?.setUpIsReadIndicator(isRead: false)
             cell?.hideSwipe(animated: true)
             self.controller.localDataManagerFavorites.save(favorite: viewModel.rows[indexPath.row].favorite)
@@ -32,7 +32,7 @@ extension ArticlesViewController: SwipeTableViewCellDelegate {
         let makeRead = SwipeAction(style: .default, title: "●") { action, indexPath in
             
             viewModel.rows[indexPath.row].favorite.isRead = true
-            let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
+            let cell = tableView.cellForRow(at: indexPath) as? ArticleCell
             cell?.setUpIsReadIndicator(isRead: true)
             cell?.hideSwipe(animated: true)
             self.controller.localDataManagerFavorites.save(favorite: viewModel.rows[indexPath.row].favorite)

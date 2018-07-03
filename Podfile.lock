@@ -5,6 +5,7 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - DLLocalNotifications (0.06)
   - KYNavigationProgress (2.0.2)
   - NVActivityIndicatorView (4.1.1):
     - NVActivityIndicatorView/Presenter (= 4.1.1)
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - AMScrollingNavbar (~> 4.2.1)
   - AZDropdownMenu
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - DLLocalNotifications
   - KYNavigationProgress
   - NVActivityIndicatorView
   - Popover
@@ -37,6 +39,7 @@ SPEC REPOS:
     - Alamofire
     - AMScrollingNavbar
     - AZDropdownMenu
+    - DLLocalNotifications
     - KYNavigationProgress
     - NVActivityIndicatorView
     - Popover
@@ -60,6 +63,7 @@ SPEC CHECKSUMS:
   AMScrollingNavbar: e5676bc9caae93d1a3dd5a708d7d9b0cf2fd89d3
   AZDropdownMenu: 5aa9d598d0c8aa36ca51a7302e79b98d544d5554
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  DLLocalNotifications: 751d53da896bc396bb23d4d3570b7fd3c7654e4e
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
   NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
   Popover: 28c1ac8e937ab2b3965bd2da7dd18324357abc41
@@ -69,6 +73,6 @@ SPEC CHECKSUMS:
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
   "UIView+Shake": 055ad67721de1f74d29c0a1d464697e505dfc62f
 
-PODFILE CHECKSUM: e9bc3baf38ec70e2f0079a70de0dc5ddf5a4bd22
+PODFILE CHECKSUM: bd18e522dff1a218fe73b5616029611584878f76
 
 COCOAPODS: 1.5.0

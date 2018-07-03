@@ -16,6 +16,8 @@
 		06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */; };
 		0631926620E958C5005C5C8F /* RemoteStoriesFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631926520E958C5005C5C8F /* RemoteStoriesFetch.swift */; };
 		0631926C20E97DCB005C5C8F /* ArticlesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631926B20E97DCA005C5C8F /* ArticlesContainerViewController.swift */; };
+		0631926F20E9B2AE005C5C8F /* BackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631926E20E9B2AE005C5C8F /* BackgroundRefresh.swift */; };
+		0631927120E9DE1D005C5C8F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0631927020E9DE1D005C5C8F /* UserNotifications.framework */; };
 		0631C47F2064913F00785FF8 /* LocalDataManagerFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C47E2064913F00785FF8 /* LocalDataManagerFavorites.swift */; };
 		0631C4812064924F00785FF8 /* DiskPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4802064924F00785FF8 /* DiskPath.swift */; };
 		0631C4832064C76000785FF8 /* StoryDataManager+Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */; };
@@ -42,7 +44,7 @@
 		06EC651320521006009C9960 /* StoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651220521006009C9960 /* StoryDataManager.swift */; };
 		06EC651920521F8D009C9960 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651720521F8D009C9960 /* ArticlesViewController.swift */; };
 		06EC651A20521F8D009C9960 /* ArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651820521F8D009C9960 /* ArticlesController.swift */; };
-		06EC651D205226F7009C9960 /* ArticlesTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651C205226F6009C9960 /* ArticlesTCell.swift */; };
+		06EC651D205226F7009C9960 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC651C205226F6009C9960 /* ArticleCell.swift */; };
 		06EC652220526410009C9960 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC652020526410009C9960 /* NewsDetailViewController.swift */; };
 		06EC652320526410009C9960 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06EC652120526410009C9960 /* NewsDetailViewController.xib */; };
 		1A5B9A8FAD1478009D70C729 /* Pods_HackerMash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */; };
@@ -58,6 +60,8 @@
 		06028EB62054F3CA00FC0669 /* ArticlesViewController+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Menu.swift"; sourceTree = "<group>"; };
 		0631926520E958C5005C5C8F /* RemoteStoriesFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStoriesFetch.swift; sourceTree = "<group>"; };
 		0631926B20E97DCA005C5C8F /* ArticlesContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesContainerViewController.swift; sourceTree = "<group>"; };
+		0631926E20E9B2AE005C5C8F /* BackgroundRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefresh.swift; sourceTree = "<group>"; };
+		0631927020E9DE1D005C5C8F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		0631C47E2064913F00785FF8 /* LocalDataManagerFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManagerFavorites.swift; sourceTree = "<group>"; };
 		0631C4802064924F00785FF8 /* DiskPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPath.swift; sourceTree = "<group>"; };
 		0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryDataManager+Favorites.swift"; sourceTree = "<group>"; };
@@ -86,7 +90,7 @@
 		06EC651220521006009C9960 /* StoryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDataManager.swift; sourceTree = "<group>"; };
 		06EC651720521F8D009C9960 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		06EC651820521F8D009C9960 /* ArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesController.swift; sourceTree = "<group>"; };
-		06EC651C205226F6009C9960 /* ArticlesTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTCell.swift; sourceTree = "<group>"; };
+		06EC651C205226F6009C9960 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		06EC652020526410009C9960 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		06EC652120526410009C9960 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		142DF01CCB8D917F91E0074B /* Pods-HackerMash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerMash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackerMash/Pods-HackerMash.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0631927120E9DE1D005C5C8F /* UserNotifications.framework in Frameworks */,
 				1A5B9A8FAD1478009D70C729 /* Pods_HackerMash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +154,14 @@
 			path = ArticlesContainerViewController;
 			sourceTree = "<group>";
 		};
+		0631926D20E9B296005C5C8F /* BackgroundRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				0631926E20E9B2AE005C5C8F /* BackgroundRefresh.swift */,
+			);
+			path = BackgroundRefresh;
+			sourceTree = "<group>";
+		};
 		06EC64BF20510176009C9960 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				06ACB65220E92C0400FB63A5 /* AppData.swift */,
+				06EC64CB20510176009C9960 /* AppDelegate.swift */,
+				0631926D20E9B296005C5C8F /* BackgroundRefresh */,
 				06EC650420520D94009C9960 /* DataManagers */,
 				06EC64FC20520D94009C9960 /* RemoteDataControllers */,
 				06028EB82054F77700FC0669 /* LocalDataManager */,
@@ -180,7 +195,6 @@
 				06EC650720520D94009C9960 /* Router */,
 				06EC64FA20520D94009C9960 /* Utils */,
 				06EC64DD20510366009C9960 /* Operation */,
-				06EC64CB20510176009C9960 /* AppDelegate.swift */,
 				06EC651E20526403009C9960 /* ViewControllers */,
 				06EC64CF20510176009C9960 /* Main.storyboard */,
 				06EC64D220510176009C9960 /* Assets.xcassets */,
@@ -273,7 +287,7 @@
 		06EC651B205226DD009C9960 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				06EC651C205226F6009C9960 /* ArticlesTCell.swift */,
+				06EC651C205226F6009C9960 /* ArticleCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -310,6 +324,7 @@
 		A3C8EB07AFC18BAD4985E2C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0631927020E9DE1D005C5C8F /* UserNotifications.framework */,
 				C1AC1AF1127EDD10F30F6113 /* Pods_HackerMash.framework */,
 			);
 			name = Frameworks;
@@ -350,6 +365,11 @@
 					06EC64C720510176009C9960 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -415,6 +435,7 @@
 				"${BUILT_PRODUCTS_DIR}/AZDropdownMenu/AZDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/DLLocalNotifications/DLLocalNotifications.framework",
 				"${BUILT_PRODUCTS_DIR}/KYNavigationProgress/KYNavigationProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
@@ -430,6 +451,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AZDropdownMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLLocalNotifications.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYNavigationProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
@@ -455,10 +477,11 @@
 				06EC650B20520D94009C9960 /* StoryIDsRequestProvider.swift in Sources */,
 				06EC650A20520D94009C9960 /* StoryRequestProvider.swift in Sources */,
 				06EC651A20521F8D009C9960 /* ArticlesController.swift in Sources */,
-				06EC651D205226F7009C9960 /* ArticlesTCell.swift in Sources */,
+				06EC651D205226F7009C9960 /* ArticleCell.swift in Sources */,
 				06028EB32053CFCC00FC0669 /* TSNotificationObserver.swift in Sources */,
 				06EC651920521F8D009C9960 /* ArticlesViewController.swift in Sources */,
 				06EC650920520D94009C9960 /* Result.swift in Sources */,
+				0631926F20E9B2AE005C5C8F /* BackgroundRefresh.swift in Sources */,
 				06EC64DF20510366009C9960 /* SOperation.swift in Sources */,
 				06028EB72054F3CA00FC0669 /* ArticlesViewController+Menu.swift in Sources */,
 				0631926620E958C5005C5C8F /* RemoteStoriesFetch.swift in Sources */,

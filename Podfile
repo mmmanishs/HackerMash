@@ -17,4 +17,5 @@ target 'HackerMash' do
   pod 'SwipeCellKit'
   pod 'Popover'
   pod 'UIView+Shake'
+  pod 'DLLocalNotifications'
 end

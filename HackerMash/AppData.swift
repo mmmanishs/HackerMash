@@ -11,6 +11,10 @@ import Foundation
 class AppData {
     static let downloadedTimeKey = "lastDownloadedStoriesTime"
     static let downloadIntervalInSeconds: TimeInterval = 7200
+    static let localNotificationsKey = "hacker_mash_local_notifications_counter"
+    static let minimumBackgroundFetchInterval = 3600.0
+    static let enableMockTools = true
+
     static func shouldDownloadNewStories() -> Bool {
         let userdefaults = UserDefaults.standard
         if let downloadedDate = userdefaults.value(forKey: downloadedTimeKey) as? Date {
@@ -20,9 +24,9 @@ class AppData {
         return true
     }
     
-    static func storiesDownloaded() {
+    static func updateLastStoriesDownloadedTime(date: Date) {
         let userdefaults = UserDefaults.standard
-        userdefaults.set(Date(), forKey: downloadedTimeKey)
+        userdefaults.set(date, forKey: downloadedTimeKey)
         userdefaults.synchronize()
     }
 }

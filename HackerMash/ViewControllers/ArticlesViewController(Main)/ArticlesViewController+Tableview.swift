@@ -16,7 +16,7 @@ extension ArticlesViewController: UITableViewDelegate {
         }
         let story = viewModel.rows[indexPath.row].story
         viewModel.rows[indexPath.row].favorite.isRead = true
-        let cell = tableView.cellForRow(at: indexPath) as? ArticlesTCell
+        let cell = tableView.cellForRow(at: indexPath) as? ArticleCell
         cell?.setUpIsReadIndicator(isRead: true)
         controller.localDataManagerFavorites.save(favorite: viewModel.rows[indexPath.row].favorite)
         Router.detailNewsScreen(self, story).route() //refactor with a viewModel here
@@ -38,7 +38,7 @@ extension ArticlesViewController: UITableViewDataSource, ArticleCellResponsder {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticlesTCell", for: indexPath) as! ArticlesTCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticlesTCell", for: indexPath) as! ArticleCell
         if let rowModel = viewModel?.rows[indexPath.row] {
             rowModel.favorite = controller.localDataManagerFavorites.getFavorite(id: rowModel.id) // redundant fetching again
             cell.updateCell(viewModel: rowModel)

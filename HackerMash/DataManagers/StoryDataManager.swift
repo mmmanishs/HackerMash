@@ -14,7 +14,7 @@ class StoryDataManager {
         if AppData.shouldDownloadNewStories() {
             let downloadedPromises = getDownloadedStoriesPromise()
             downloadedPromises.then{ _ in
-                AppData.storiesDownloaded()
+                AppData.updateLastStoriesDownloadedTime(date: Date())
             }
             DispatchQueue.global(qos: .background).async {
                 LocalDataManagerStory().updateStoryDB(promise: downloadedPromises)
