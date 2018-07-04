@@ -40,7 +40,6 @@ enum ColorScheme {
             UINavigationBar.appearance().tintColor = UIColor.white
             UINavigationBar.appearance().barTintColor = UIColor.flatBlack
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
-            
         }
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
     }
