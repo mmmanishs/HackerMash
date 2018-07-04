@@ -22,6 +22,7 @@
 		0631C4812064924F00785FF8 /* DiskPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4802064924F00785FF8 /* DiskPath.swift */; };
 		0631C4832064C76000785FF8 /* StoryDataManager+Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */; };
 		06446BBD206B659300B460CD /* HelperFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06446BBC206B659300B460CD /* HelperFuncs.swift */; };
+		0674EFE220EC840F00E60E60 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674EFE120EC840F00E60E60 /* ArticleViewModel.swift */; };
 		06A14234206205C500BAECA9 /* ArticlesViewController+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A14233206205C500BAECA9 /* ArticlesViewController+Interactor.swift */; };
 		06A14236206205FA00BAECA9 /* ArticlesViewController+SwipeDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A14235206205FA00BAECA9 /* ArticlesViewController+SwipeDelegates.swift */; };
 		06A142382062065000BAECA9 /* ArticlesViewController+Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A142372062065000BAECA9 /* ArticlesViewController+Tableview.swift */; };
@@ -66,6 +67,7 @@
 		0631C4802064924F00785FF8 /* DiskPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPath.swift; sourceTree = "<group>"; };
 		0631C4822064C76000785FF8 /* StoryDataManager+Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryDataManager+Favorites.swift"; sourceTree = "<group>"; };
 		06446BBC206B659300B460CD /* HelperFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFuncs.swift; sourceTree = "<group>"; };
+		0674EFE120EC840F00E60E60 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		06A14233206205C500BAECA9 /* ArticlesViewController+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Interactor.swift"; sourceTree = "<group>"; };
 		06A14235206205FA00BAECA9 /* ArticlesViewController+SwipeDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+SwipeDelegates.swift"; sourceTree = "<group>"; };
 		06A142372062065000BAECA9 /* ArticlesViewController+Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+Tableview.swift"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				06A142372062065000BAECA9 /* ArticlesViewController+Tableview.swift */,
 				06A14239206206A900BAECA9 /* ArticlesViewController+UtilityFunctions.swift */,
 				06EC651820521F8D009C9960 /* ArticlesController.swift */,
+				0674EFE120EC840F00E60E60 /* ArticleViewModel.swift */,
 			);
 			path = "ArticlesViewController(Main)";
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				06A14234206205C500BAECA9 /* ArticlesViewController+Interactor.swift in Sources */,
 				0631C4832064C76000785FF8 /* StoryDataManager+Favorites.swift in Sources */,
 				06446BBD206B659300B460CD /* HelperFuncs.swift in Sources */,
+				0674EFE220EC840F00E60E60 /* ArticleViewModel.swift in Sources */,
 				06028EB12053CFCC00FC0669 /* TSNotification.swift in Sources */,
 				06ACB65320E92C0400FB63A5 /* AppData.swift in Sources */,
 			);
