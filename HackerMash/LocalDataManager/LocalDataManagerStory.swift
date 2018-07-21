@@ -9,7 +9,7 @@
 import Foundation
 import Promises
 class LocalDataManagerStory {
-    func updateStoryDB(promise: Promise<[Story]>) {
+    func updateStoryArchive(promise: Promise<[Story]>) {
         promise.then() { stories in
             let sd = self.read(repo: DiskPath.topStoryArchives)
             sd.date = Date()

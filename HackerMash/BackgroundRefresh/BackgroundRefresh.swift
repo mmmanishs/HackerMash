@@ -16,7 +16,7 @@ class BackgroundRefresh {
         guard startBackgroundTask() else { return }
         let downloadedStories = StoryDataManager().getDownloadedStoriesPromise()
         DispatchQueue.global(qos: .background).async {
-            LocalDataManagerStory().updateStoryDB(promise: downloadedStories)
+            LocalDataManagerStory().updateStoryArchive(promise: downloadedStories)
             LocalDataManagerStory().saveBatchOfStories(promise: downloadedStories)
         }
         downloadedStories.then() { stories in

@@ -13,11 +13,11 @@ class StoryDataManager {
     func getTop() -> Promise<[Story]> {
         if AppData.shouldDownloadNewStories() {
             let downloadedPromises = getDownloadedStoriesPromise()
-            downloadedPromises.then{ _ in
+            downloadedPromises.then { _ in
                 AppData.updateLastStoriesDownloadedTime(date: Date())
             }
             DispatchQueue.global(qos: .background).async {
-                LocalDataManagerStory().updateStoryDB(promise: downloadedPromises)
+                LocalDataManagerStory().updateStoryArchive(promise: downloadedPromises)
                 LocalDataManagerStory().saveBatchOfStories(promise: downloadedPromises)
             }
             return downloadedPromises
