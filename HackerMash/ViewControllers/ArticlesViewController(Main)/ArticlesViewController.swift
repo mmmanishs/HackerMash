@@ -24,6 +24,8 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
     let menu = AZDropdownMenu(titles: ["_", "_","• Top Stories", "• Best Stories", "• Saved Stories"])
     var  currentArticleType: ArticleType = .topStories // The only reason that I would tolerate a global variable like this becasue there does not seem to be any other way that the tableview pull down to refesh can know what data to pull down
     var refershButton: UIBarButtonItem?
+    var headerCell: ArticlesHeaderCell?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.delegate = self
@@ -31,6 +33,8 @@ class ArticlesViewController: UIViewController, ScrollingNavigationControllerDel
             navigationController.scrollingNavbarDelegate = self
         }
         view.backgroundColor = UIColor.white
+        headerCell = tableview.dequeueReusableCell(withIdentifier: "ArticlesHeaderCell") as? ArticlesHeaderCell
+        tableview.tableHeaderView = headerCell
         tableview.tableFooterView = UIView(frame: CGRect.zero)
         configureBarButtons()
     }

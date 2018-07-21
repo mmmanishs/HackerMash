@@ -11,7 +11,7 @@ import Foundation
 extension StoryDataManager {
     func getFavorites() -> [Story] {
         let favorites = LocalDataManagerFavorites().read().favorites
-        let ts = LocalDataManagerStory().read(repo: .topStory)
+        let ts = LocalDataManagerStory().read(repo: .topStoryArchives)
         let data = ts.stories
         var favoriteStories = [Story]()
         for favorite in favorites {

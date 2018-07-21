@@ -23,8 +23,41 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="1" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticlesHeaderCell" rowHeight="50" id="2Ov-H4-c6W" customClass="ArticlesHeaderCell" customModule="HackerMash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Ov-H4-c6W" id="ZMM-fp-HZR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjm-Nf-FtJ">
+                                                    <rect key="frame" x="40" y="15" width="62.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UcK-FK-vKS">
+                                                    <rect key="frame" x="0.0" y="48.5" width="375" height="1"/>
+                                                    <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="KrM-JI-KGq"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="UcK-FK-vKS" secondAttribute="bottom" id="1qX-jr-cNm"/>
+                                                <constraint firstItem="qjm-Nf-FtJ" firstAttribute="centerY" secondItem="ZMM-fp-HZR" secondAttribute="centerY" id="2w3-Qm-6q3"/>
+                                                <constraint firstItem="qjm-Nf-FtJ" firstAttribute="leading" secondItem="ZMM-fp-HZR" secondAttribute="leading" constant="40" id="HSJ-wX-Lwg"/>
+                                                <constraint firstItem="UcK-FK-vKS" firstAttribute="leading" secondItem="ZMM-fp-HZR" secondAttribute="leading" id="fHH-n0-lzj"/>
+                                                <constraint firstAttribute="trailing" secondItem="UcK-FK-vKS" secondAttribute="trailing" id="llZ-Pb-d1n"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="qjm-Nf-FtJ" id="xr7-PZ-H4w"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticlesTCell" rowHeight="100" id="XCS-Dc-vwI" customClass="ArticleCell" customModule="HackerMash">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="100" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XCS-Dc-vwI" id="ISm-m0-fEP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
@@ -117,7 +150,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="circleStrokeSpin"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="1" green="0.40000000000000002" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="padding">
                                         <real key="value" value="0.0"/>
@@ -218,7 +251,6 @@
         <!--Scrolling Navigation Controller-->
         <scene sceneID="G99-Nm-urp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uoV-eH-Tlm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ScrollingNavigationController" id="7bi-vG-iDw" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="3sd-Er-rce"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vGX-zd-uQc">
@@ -229,6 +261,7 @@
                         <segue destination="yxZ-yu-dSw" kind="relationship" relationship="rootViewController" id="VoL-IJ-Fxk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uoV-eH-Tlm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-322" y="1370"/>
         </scene>

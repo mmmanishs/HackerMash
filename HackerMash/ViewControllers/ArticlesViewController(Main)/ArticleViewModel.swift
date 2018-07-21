@@ -10,14 +10,14 @@ import Foundation
 struct ArticlesViewModel {
     var rows: [ArticlesRowViewModel]
     let localDataManager = LocalDataManagerFavorites()
-    
+    var tableHeaderTitle: String = "loading..."
     init() {
         self.rows = [ArticlesRowViewModel]()
     }
     
     mutating func update(withStories stories: [Story]) {
         self.rows.removeAll()
-        stories.forEach(){ story in
+        stories.forEach() { story in
             self.rows.append(ArticlesRowViewModel(
                 id: story.id,
                 timeStamp: story.time,
@@ -26,6 +26,11 @@ struct ArticlesViewModel {
                 url: story.url, story: story,
                 usp: (localDataManager.getFavorite(id: story.id)
             )))
+        }
+        if (rows.count) == 1 {
+            tableHeaderTitle = "\(rows.count) article"
+        } else {
+            tableHeaderTitle = "\(rows.count) articles"
         }
     }
 }

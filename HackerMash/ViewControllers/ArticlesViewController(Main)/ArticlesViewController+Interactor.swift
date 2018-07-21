@@ -32,6 +32,7 @@ extension ArticlesViewController: ViewModelInteractor {
         }
     }
     
-    func updateView(viewModel: ArticlesViewModel) {        
+    func updateView(viewModel: ArticlesViewModel) {
+        headerCell?.title.text = viewModel.tableHeaderTitle
     }
 }
