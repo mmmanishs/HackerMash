@@ -56,12 +56,12 @@ class NewsDetailViewController: UIViewController {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let navigationController = navigationController as? ScrollingNavigationController {
-            navigationController.showNavbar(animated: true)
-        }
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        if let navigationController = navigationController as? ScrollingNavigationController {
+////            navigationController.showNavbar(animated: true)
+//        }
+//    }
 
     func getURLRequest(urlString: String) throws -> URLRequest {
         guard let url = URL(string: urlString) else {
