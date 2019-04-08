@@ -1,2 +1,2 @@
 # HackerMash
-An iOS app for Hacker News
+An iOS client for Hacker News
